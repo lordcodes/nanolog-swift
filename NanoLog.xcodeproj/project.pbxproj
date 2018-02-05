@@ -347,7 +347,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "NanoLog";
+				ORGANIZATIONNAME = NanoLog;
 				TargetAttributes = {
 					52D6D97B1BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
@@ -654,7 +654,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.NanoLog.NanoLog-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.andrewlord1990.NanoLog;
 				PRODUCT_NAME = NanoLog;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -676,7 +676,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.NanoLog.NanoLog-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.andrewlord1990.NanoLog;
 				PRODUCT_NAME = NanoLog;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
