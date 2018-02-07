@@ -12,18 +12,12 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-import Foundation
-import XCTest
-import NanoLog
+public class OpenLogFilter {
+}
 
-class NanoLogTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        //// XCTAssertEqual(NanoLog().text, "Hello, World!")
+// MARK: - LogFilter
+extension OpenLogFilter: LogFilter {
+    public func isLoggable(atPriority priority: LogPriority, withTag tag: String) -> Bool {
+        return true
     }
-    
-    static var allTests = [
-        ("testExample", testExample),
-    ]
 }

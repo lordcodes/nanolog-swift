@@ -12,18 +12,15 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-import Foundation
-import XCTest
-import NanoLog
+public class NanoLogController {
+}
 
-class NanoLogTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        //// XCTAssertEqual(NanoLog().text, "Hello, World!")
+// MARK: - LogController
+extension NanoLogController: LogController {
+    public func v(_ message: @autoclosure () -> Any,
+                  file: String = #file,
+                  function: String = #function,
+                  line: Int = #line) {
+        print("NanoLog|\(file):\(function):\(line)|\(message())")
     }
-    
-    static var allTests = [
-        ("testExample", testExample),
-    ]
 }
