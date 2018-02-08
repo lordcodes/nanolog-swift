@@ -12,7 +12,15 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+import NanoLog
 import UIKit
 
 class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        NanoLog.error("Super long message that can be seen in console")
+        NanoLog.w("Super long message that can be seen in console")
+        NanoLog.verbose("Super long message that can be seen in console")
+    }
 }

@@ -12,6 +12,8 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+import Foundation
+
 public class NanoLogController {
 }
 
@@ -57,6 +59,31 @@ extension NanoLogController: LogController {
                            file: String = #file,
                            function: String = #function,
                            line: Int = #line) {
-        print("NanoLog|\(severity)|\(file):\(function):\(line)|\(message())")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss.SSS"
+        let date = dateFormatter.string(from: Date())
+        let tag = "NanoLog"
+        let filename = fileNameWithoutSuffix(file)
+        print("\(date) | \(tag) | \(severity) | \(filename):\(function):\(line) | \(message())")
+    }
+
+    func fileNameOfFile(_ file: String) -> String {
+        let fileParts = file.components(separatedBy: "/")
+        if let lastPart = fileParts.last {
+            return lastPart
+        }
+        return ""
+    }
+
+    func fileNameWithoutSuffix(_ file: String) -> String {
+        let fileName = fileNameOfFile(file)
+
+        if !fileName.isEmpty {
+            let fileNameParts = fileName.components(separatedBy: ".")
+            if let firstPart = fileNameParts.first {
+                return firstPart
+            }
+        }
+        return ""
     }
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F677E65F202CF7E50043B8AC /* NanoLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F677E660202CF7E50043B8AC /* NanoLog.framework */; };
+		F641CD17202D092A00FA66F8 /* NanoLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F641CD18202D092A00FA66F8 /* NanoLog.framework */; };
 		F6F09BE0202CF74900D7B2B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F09BDF202CF74900D7B2B9 /* AppDelegate.swift */; };
 		F6F09BE2202CF74900D7B2B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F09BE1202CF74900D7B2B9 /* ViewController.swift */; };
 		F6F09BE5202CF74900D7B2B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F09BE3202CF74900D7B2B9 /* Main.storyboard */; };
@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F641CD18202D092A00FA66F8 /* NanoLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NanoLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F677E660202CF7E50043B8AC /* NanoLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NanoLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F09BDC202CF74900D7B2B9 /* NanoLog-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NanoLog-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F09BDF202CF74900D7B2B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F677E65F202CF7E50043B8AC /* NanoLog.framework in Frameworks */,
+				F641CD17202D092A00FA66F8 /* NanoLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +42,7 @@
 		F677E65E202CF7E50043B8AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F641CD18202D092A00FA66F8 /* NanoLog.framework */,
 				F677E660202CF7E50043B8AC /* NanoLog.framework */,
 			);
 			name = Frameworks;
