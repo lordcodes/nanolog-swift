@@ -13,5 +13,5 @@
 // See the License for the specific language governing permissions and limitations under the License.
 
 public protocol LogFilter {
-    func isLoggable(atPriority priority: LogPriority, withTag tag: String) -> Bool
+    func isLoggable(atSeverity severity: Int, withTag tag: String) -> Bool
 }

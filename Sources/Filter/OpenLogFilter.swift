@@ -17,7 +17,7 @@ public class OpenLogFilter {
 
 // MARK: - LogFilter
 extension OpenLogFilter: LogFilter {
-    public func isLoggable(atPriority priority: LogPriority, withTag tag: String) -> Bool {
+    public func isLoggable(atSeverity severity: Int, withTag tag: String) -> Bool {
         return true
     }
 }
