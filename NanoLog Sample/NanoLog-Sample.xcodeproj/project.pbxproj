@@ -58,10 +58,10 @@
 		F6F09BD3202CF74900D7B2B9 = {
 			isa = PBXGroup;
 			children = (
+				F677E65E202CF7E50043B8AC /* Frameworks */,
+				F6F09BDD202CF74900D7B2B9 /* Products */,
 				F677E661202CF7FD0043B8AC /* Resources */,
 				F6F09BDE202CF74900D7B2B9 /* Sources */,
-				F6F09BDD202CF74900D7B2B9 /* Products */,
-				F677E65E202CF7E50043B8AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
