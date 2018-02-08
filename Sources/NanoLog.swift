@@ -13,7 +13,83 @@
 // See the License for the specific language governing permissions and limitations under the License.
 
 public class NanoLog {
-    static func v(_ message: @autoclosure () -> Any, file: String = #file, function: String = #function, line: Int = #line) {
-        print("NanoLog|\(file):\(function):\(line)|\(message())")
+    private static var controller: LogController = NanoLogController()
+
+    static func v(_ message: @autoclosure () -> Any,
+                  file: String = #file,
+                  function: String = #function,
+                  line: Int = #line) {
+        verbose(message, file: file, function: function, line: line)
+    }
+
+    static func verbose(_ message: @autoclosure () -> Any,
+                        file: String = #file,
+                        function: String = #function,
+                        line: Int = #line) {
+        controller.logVerbose(message, file: file, function: function, line: line)
+    }
+
+    static func d(_ message: @autoclosure () -> Any,
+                  file: String = #file,
+                  function: String = #function,
+                  line: Int = #line) {
+        debug(message, file: file, function: function, line: line)
+    }
+
+    static func debug(_ message: @autoclosure () -> Any,
+                      file: String = #file,
+                      function: String = #function,
+                      line: Int = #line) {
+        controller.logDebug(message, file: file, function: function, line: line)
+    }
+
+    static func i(_ message: @autoclosure () -> Any,
+                  file: String = #file,
+                  function: String = #function,
+                  line: Int = #line) {
+        info(message, file: file, function: function, line: line)
+    }
+
+    static func info(_ message: @autoclosure () -> Any,
+                     file: String = #file,
+                     function: String = #function,
+                     line: Int = #line) {
+        controller.logInfo(message, file: file, function: function, line: line)
+    }
+
+    static func w(_ message: @autoclosure () -> Any,
+                  file: String = #file,
+                  function: String = #function,
+                  line: Int = #line) {
+        warning(message, file: file, function: function, line: line)
+    }
+
+    static func warning(_ message: @autoclosure () -> Any,
+                        file: String = #file,
+                        function: String = #function,
+                        line: Int = #line) {
+        controller.logWarning(message, file: file, function: function, line: line)
+    }
+
+    static func e(_ message: @autoclosure () -> Any,
+                  file: String = #file,
+                  function: String = #function,
+                  line: Int = #line) {
+        error(message, file: file, function: function, line: line)
+    }
+
+    static func error(_ message: @autoclosure () -> Any,
+                      file: String = #file,
+                      function: String = #function,
+                      line: Int = #line) {
+        controller.logError(message, file: file, function: function, line: line)
+    }
+
+    static func message(_ message: @autoclosure () -> Any,
+                        withSeverity severity: Int,
+                        file: String = #file,
+                        function: String = #function,
+                        line: Int = #line) {
+        controller.logMessage(message, withSeverity: severity, file: file, function: function, line: line)
     }
 }

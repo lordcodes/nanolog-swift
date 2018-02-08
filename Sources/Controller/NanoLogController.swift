@@ -17,10 +17,46 @@ public class NanoLogController {
 
 // MARK: - LogController
 extension NanoLogController: LogController {
-    public func v(_ message: @autoclosure () -> Any,
-                  file: String = #file,
-                  function: String = #function,
-                  line: Int = #line) {
-        print("NanoLog|\(file):\(function):\(line)|\(message())")
+    public func logVerbose(_ message: @autoclosure () -> Any,
+                           file: String = #file,
+                           function: String = #function,
+                           line: Int = #line) {
+        logMessage(message, withSeverity: LogSeverity.verbose, file: file, function: function, line: line)
+    }
+
+    public func logDebug(_ message: @autoclosure () -> Any,
+                         file: String = #file,
+                         function: String = #function,
+                         line: Int = #line) {
+        logMessage(message, withSeverity: LogSeverity.debug, file: file, function: function, line: line)
+    }
+
+    public func logInfo(_ message: @autoclosure () -> Any,
+                        file: String = #file,
+                        function: String = #function,
+                        line: Int = #line) {
+        logMessage(message, withSeverity: LogSeverity.info, file: file, function: function, line: line)
+    }
+
+    public func logWarning(_ message: @autoclosure () -> Any,
+                           file: String = #file,
+                           function: String = #function,
+                           line: Int = #line) {
+        logMessage(message, withSeverity: LogSeverity.warning, file: file, function: function, line: line)
+    }
+
+    public func logError(_ message: @autoclosure () -> Any,
+                         file: String = #file,
+                         function: String = #function,
+                         line: Int = #line) {
+        logMessage(message, withSeverity: LogSeverity.error, file: file, function: function, line: line)
+    }
+
+    public func logMessage(_ message: @autoclosure () -> Any,
+                           withSeverity severity: Int,
+                           file: String = #file,
+                           function: String = #function,
+                           line: Int = #line) {
+        print("NanoLog|\(severity)|\(file):\(function):\(line)|\(message())")
     }
 }

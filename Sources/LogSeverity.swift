@@ -12,10 +12,10 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-public enum LogPriority {
-    case verbose
-    case debug
-    case info
-    case warning
-    case error
+public struct LogSeverity {
+    static let verbose = 100
+    static let debug = 200
+    static let info = 300
+    static let warning = 400
+    static let error = 500
 }

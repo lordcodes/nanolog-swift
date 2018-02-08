@@ -13,28 +13,19 @@
 // See the License for the specific language governing permissions and limitations under the License.
 
 public protocol LogController {
-    func v(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)
+    func logVerbose(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)
 
+    func logDebug(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)
 
-//    void addAdapter(LogAdapter adapter);
-//
-//    Printer t(String tag);
-//
-//    void d(String message, Object... args);
-//
-//    void d(Object object);
-//
-//    void e(String message, Object... args);
-//
-//    void e(Throwable throwable, String message, Object... args);
-//
-//    void w(String message, Object... args);
-//
-//    void i(String message, Object... args);
-//
-//    void v(String message, Object... args);
-//
-//    void log(int priority, String tag, String message, Throwable throwable);
-//
-//    void clearLogAdapters();
+    func logInfo(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)
+
+    func logWarning(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)
+
+    func logError(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)
+
+    func logMessage(_ message: @autoclosure () -> Any,
+                    withSeverity severity: Int,
+                    file: String,
+                    function: String,
+                    line: Int)
 }
