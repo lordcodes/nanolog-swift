@@ -12,18 +12,44 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-import Foundation
 import XCTest
-import NanoLog
+
+@testable import NanoLog
 
 class NanoLogTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        //// XCTAssertEqual(NanoLog().text, "Hello, World!")
+
+    private let controller = LogControllerFake()
+    private var previousController: LogController!
+
+    override func setUp() {
+        super.setUp()
+
+        previousController = NanoLog.controller
+        NanoLog.controller = controller
     }
-    
+
+    override func tearDown() {
+        super.tearDown()
+
+        NanoLog.controller = previousController
+    }
+}
+
+// MARK: - Tests
+extension NanoLogTests {
+    func test_whenMessage_thenMessageLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.warning
+
+        NanoLog.message(expectedMessage, withSeverity: expectedSeverity)
+
+        XCTAssertEqual(controller.loggedMessage, expectedMessage)
+        XCTAssertEqual(controller.loggedSeverity?.severity, expectedSeverity.severity)
+    }
+}
+
+extension NanoLogTests {
     static var allTests = [
-        ("testExample", testExample),
+        ("test_whenMessage_thenMessageLoggedToController", test_whenMessage_thenMessageLoggedToController),
     ]
 }
