@@ -55,7 +55,7 @@ extension NanoLogController: LogController {
     }
 
     public func logMessage(_ message: @autoclosure () -> Any,
-                           withSeverity severity: Int,
+                           withSeverity severity: LogSeverity,
                            file: String = #file,
                            function: String = #function,
                            line: Int = #line) {
@@ -64,7 +64,7 @@ extension NanoLogController: LogController {
         let date = dateFormatter.string(from: Date())
         let tag = "NanoLog"
         let filename = fileNameWithoutSuffix(file)
-        print("\(date) | \(tag) | \(severity) | \(filename):\(function):\(line) | \(message())")
+        print("\(date) | \(tag) | \(severity.label) | \(filename):\(function):\(line) | \(message())")
     }
 
     func fileNameOfFile(_ file: String) -> String {

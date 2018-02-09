@@ -86,7 +86,7 @@ public class NanoLog {
     }
 
     public static func message(_ message: @autoclosure () -> Any,
-                        withSeverity severity: Int,
+                        withSeverity severity: LogSeverity,
                         file: String = #file,
                         function: String = #function,
                         line: Int = #line) {

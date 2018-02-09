@@ -24,7 +24,7 @@ public protocol LogController {
     func logError(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)
 
     func logMessage(_ message: @autoclosure () -> Any,
-                    withSeverity severity: Int,
+                    withSeverity severity: LogSeverity,
                     file: String,
                     function: String,
                     line: Int)
