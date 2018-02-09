@@ -13,7 +13,7 @@
 // See the License for the specific language governing permissions and limitations under the License.
 
 public class NanoLog {
-    private static var controller: LogController = NanoLogController()
+    static var controller: LogController = NanoLogController()
 
     public static func v(_ message: @autoclosure () -> Any,
                   file: String = #file,
