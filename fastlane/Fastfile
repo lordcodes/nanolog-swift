@@ -1,0 +1,45 @@
+
+fastlane_version "2.80.0"
+
+####################
+# BEFORE
+####################
+
+before_all do
+  setup_travis
+end
+
+####################
+# PUBLIC LANES
+####################
+
+desc "Run all the unit tests"
+lane :test do
+  reset_simulators if is_ci?
+  scan(
+    workspace: "NanoLog.xcworkspace",
+    scheme: "NanoLog-iOS"
+  )
+  scan(
+    workspace: "NanoLog.xcworkspace",
+    scheme: "NanoLog-tvOS"
+  )
+  scan(
+    workspace: "NanoLog.xcworkspace",
+    scheme: "NanoLog-macOS",
+    destination: "platform=macOS"
+  )
+  build_watchos
+end
+
+####################
+# PRIVATE LANES
+####################
+
+desc "Build the Watch OS scheme"
+private_lane :build_watchos do
+  xcodebuild(
+    workspace: "NanoLog.xcworkspace",
+    scheme: "NanoLog-watchOS"
+  )
+end
