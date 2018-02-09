@@ -92,4 +92,8 @@ public class NanoLog {
                         line: Int = #line) {
         controller.logMessage(message, withSeverity: severity, file: file, function: function, line: line)
     }
+
+    public static func loggingTag(_ tag: String) {
+        controller.loggingTag(tag)
+    }
 }

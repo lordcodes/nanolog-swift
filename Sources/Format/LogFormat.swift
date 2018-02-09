@@ -12,6 +12,11 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-public protocol LogFilter {
-    func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool
+public protocol LogFormat {
+    func formattedMessage(from message: @autoclosure () -> Any,
+                          withSeverity severity: LogSeverity,
+                          withTag tag: String,
+                          forFile file: String,
+                          forFunction function: String,
+                          forLine line: Int) -> String
 }

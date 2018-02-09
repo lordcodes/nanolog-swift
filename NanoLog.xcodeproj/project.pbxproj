@@ -35,6 +35,20 @@
 		F65CFC3B202B824B00C3EC6C /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC36202B824A00C3EC6C /* LogController.swift */; };
 		F65CFC3C202B824B00C3EC6C /* OpenLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */; };
 		F65CFC3D202B824B00C3EC6C /* LogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC39202B824A00C3EC6C /* LogFilter.swift */; };
+		F6D231DE202E54A400D862C1 /* LoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231DD202E54A400D862C1 /* LoggingLane.swift */; };
+		F6D231E1202E563F00D862C1 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E0202E563F00D862C1 /* LogFormat.swift */; };
+		F6D231E4202E573300D862C1 /* LogPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E3202E573300D862C1 /* LogPrinter.swift */; };
+		F6D231E5202E573D00D862C1 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E0202E563F00D862C1 /* LogFormat.swift */; };
+		F6D231E6202E573D00D862C1 /* LoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231DD202E54A400D862C1 /* LoggingLane.swift */; };
+		F6D231E7202E573D00D862C1 /* LogPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E3202E573300D862C1 /* LogPrinter.swift */; };
+		F6D231E8202E573D00D862C1 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E0202E563F00D862C1 /* LogFormat.swift */; };
+		F6D231E9202E573D00D862C1 /* LoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231DD202E54A400D862C1 /* LoggingLane.swift */; };
+		F6D231EA202E573D00D862C1 /* LogPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E3202E573300D862C1 /* LogPrinter.swift */; };
+		F6D231EB202E573E00D862C1 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E0202E563F00D862C1 /* LogFormat.swift */; };
+		F6D231EC202E573E00D862C1 /* LoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231DD202E54A400D862C1 /* LoggingLane.swift */; };
+		F6D231ED202E573E00D862C1 /* LogPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E3202E573300D862C1 /* LogPrinter.swift */; };
+		F6D231EF202E5BAE00D862C1 /* PrettyLogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231EE202E5BAE00D862C1 /* PrettyLogFormat.swift */; };
+		F6D231F1202E5C7600D862C1 /* ConsolePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231F0202E5C7600D862C1 /* ConsolePrinter.swift */; };
 		F6FBDB52202DFD6800BB4D85 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */; };
 		F6FBDB53202DFD6800BB4D85 /* LogSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65063D9202C4DDA00535D9B /* LogSeverity.swift */; };
 		F6FBDB54202DFD6800BB4D85 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */; };
@@ -88,6 +102,11 @@
 		F65CFC36202B824A00C3EC6C /* LogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
 		F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenLogFilter.swift; sourceTree = "<group>"; };
 		F65CFC39202B824A00C3EC6C /* LogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFilter.swift; sourceTree = "<group>"; };
+		F6D231DD202E54A400D862C1 /* LoggingLane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingLane.swift; sourceTree = "<group>"; };
+		F6D231E0202E563F00D862C1 /* LogFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormat.swift; sourceTree = "<group>"; };
+		F6D231E3202E573300D862C1 /* LogPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPrinter.swift; sourceTree = "<group>"; };
+		F6D231EE202E5BAE00D862C1 /* PrettyLogFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyLogFormat.swift; sourceTree = "<group>"; };
+		F6D231F0202E5C7600D862C1 /* ConsolePrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolePrinter.swift; sourceTree = "<group>"; };
 		F6FBDB3D202DC61200BB4D85 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		F6FBDB3E202DC65900BB4D85 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		F6FBDB3F202DC65A00BB4D85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -196,8 +215,11 @@
 				F65CFC35202B824A00C3EC6C /* Controller */,
 				F641CD19202D8FCF00FA66F8 /* Extensions */,
 				F65CFC37202B824A00C3EC6C /* Filter */,
+				F6D231DF202E561F00D862C1 /* Format */,
+				F6D231DC202E549600D862C1 /* Lane */,
 				F65063D9202C4DDA00535D9B /* LogSeverity.swift */,
 				8933C7841EB5B820000D00A4 /* NanoLog.swift */,
+				F6D231E2202E572200D862C1 /* Printer */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -252,6 +274,32 @@
 				F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		F6D231DC202E549600D862C1 /* Lane */ = {
+			isa = PBXGroup;
+			children = (
+				F6D231DD202E54A400D862C1 /* LoggingLane.swift */,
+			);
+			path = Lane;
+			sourceTree = "<group>";
+		};
+		F6D231DF202E561F00D862C1 /* Format */ = {
+			isa = PBXGroup;
+			children = (
+				F6D231E0202E563F00D862C1 /* LogFormat.swift */,
+				F6D231EE202E5BAE00D862C1 /* PrettyLogFormat.swift */,
+			);
+			path = Format;
+			sourceTree = "<group>";
+		};
+		F6D231E2202E572200D862C1 /* Printer */ = {
+			isa = PBXGroup;
+			children = (
+				F6D231F0202E5C7600D862C1 /* ConsolePrinter.swift */,
+				F6D231E3202E573300D862C1 /* LogPrinter.swift */,
+			);
+			path = Printer;
 			sourceTree = "<group>";
 		};
 		F6FBDB58202E030300BB4D85 /* Controller */ = {
@@ -429,7 +477,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = NanoLog;
 				TargetAttributes = {
 					52D6D97B1BEFF229002C0205 = {
@@ -543,11 +591,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F65063C5202B83E100535D9B /* NanoLogController.swift in Sources */,
+				F6D231DE202E54A400D862C1 /* LoggingLane.swift in Sources */,
+				F6D231F1202E5C7600D862C1 /* ConsolePrinter.swift in Sources */,
 				F65063DA202C4DDA00535D9B /* LogSeverity.swift in Sources */,
 				F65CFC3C202B824B00C3EC6C /* OpenLogFilter.swift in Sources */,
 				F641CD1B202D8FE300FA66F8 /* StringExtensions.swift in Sources */,
+				F6D231E4202E573300D862C1 /* LogPrinter.swift in Sources */,
 				F65CFC3B202B824B00C3EC6C /* LogController.swift in Sources */,
+				F6D231EF202E5BAE00D862C1 /* PrettyLogFormat.swift in Sources */,
 				F65CFC3D202B824B00C3EC6C /* LogFilter.swift in Sources */,
+				F6D231E1202E563F00D862C1 /* LogFormat.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* NanoLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,10 +619,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FBDB54202DFD6800BB4D85 /* StringExtensions.swift in Sources */,
+				F6D231E9202E573D00D862C1 /* LoggingLane.swift in Sources */,
 				F65063D3202B83F700535D9B /* LogController.swift in Sources */,
 				F65063CA202B83ED00535D9B /* OpenLogFilter.swift in Sources */,
 				F65063CD202B83F100535D9B /* LogFilter.swift in Sources */,
+				F6D231EA202E573D00D862C1 /* LogPrinter.swift in Sources */,
 				8933C7871EB5B820000D00A4 /* NanoLog.swift in Sources */,
+				F6D231E8202E573D00D862C1 /* LogFormat.swift in Sources */,
 				F6FBDB55202DFD6800BB4D85 /* LogSeverity.swift in Sources */,
 				F65063D0202B83F400535D9B /* NanoLogController.swift in Sources */,
 			);
@@ -580,10 +636,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FBDB52202DFD6800BB4D85 /* StringExtensions.swift in Sources */,
+				F6D231E6202E573D00D862C1 /* LoggingLane.swift in Sources */,
 				F65063D4202B83F700535D9B /* LogController.swift in Sources */,
 				F65063CB202B83EE00535D9B /* OpenLogFilter.swift in Sources */,
 				F65063CE202B83F100535D9B /* LogFilter.swift in Sources */,
+				F6D231E7202E573D00D862C1 /* LogPrinter.swift in Sources */,
 				8933C7881EB5B820000D00A4 /* NanoLog.swift in Sources */,
+				F6D231E5202E573D00D862C1 /* LogFormat.swift in Sources */,
 				F6FBDB53202DFD6800BB4D85 /* LogSeverity.swift in Sources */,
 				F65063D1202B83F400535D9B /* NanoLogController.swift in Sources */,
 			);
@@ -594,10 +653,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FBDB56202DFD6900BB4D85 /* StringExtensions.swift in Sources */,
+				F6D231EC202E573E00D862C1 /* LoggingLane.swift in Sources */,
 				F65063D2202B83F700535D9B /* LogController.swift in Sources */,
 				F65063C9202B83ED00535D9B /* OpenLogFilter.swift in Sources */,
 				F65063CC202B83F000535D9B /* LogFilter.swift in Sources */,
+				F6D231ED202E573E00D862C1 /* LogPrinter.swift in Sources */,
 				8933C7861EB5B820000D00A4 /* NanoLog.swift in Sources */,
+				F6D231EB202E573E00D862C1 /* LogFormat.swift in Sources */,
 				F6FBDB57202DFD6900BB4D85 /* LogSeverity.swift in Sources */,
 				F65063CF202B83F300535D9B /* NanoLogController.swift in Sources */,
 			);
@@ -754,7 +816,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -778,7 +840,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;

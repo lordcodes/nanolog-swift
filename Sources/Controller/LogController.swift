@@ -13,6 +13,8 @@
 // See the License for the specific language governing permissions and limitations under the License.
 
 public protocol LogController {
+    func loggingTag(_ tag: String)
+
     func logVerbose(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)
 
     func logDebug(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)

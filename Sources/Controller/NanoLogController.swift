@@ -15,10 +15,23 @@
 import Foundation
 
 public class NanoLogController {
+    private var tag: String = "NanoLog"
+    private let loggingLane: LoggingLane
+
+    init() {
+        let filter = OpenLogFilter()
+        let format = PrettyLogFormat()
+        let printer = ConsolePrinter()
+        loggingLane = LoggingLane(filter: filter, format: format, printer: printer)
+    }
 }
 
 // MARK: - LogController
 extension NanoLogController: LogController {
+    public func loggingTag(_ tag: String) {
+        self.tag = tag
+    }
+
     public func logVerbose(_ message: @autoclosure () -> Any,
                            file: String = #file,
                            function: String = #function,
@@ -59,39 +72,11 @@ extension NanoLogController: LogController {
                            file: String = #file,
                            function: String = #function,
                            line: Int = #line) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss.SSS"
-        let date = dateFormatter.string(from: Date())
-        let tag = "NanoLog"
-        let filename = fileNameWithoutSuffix(file)
-        let strippedFunc = stripParameters(fromFunction: function)
-        print("\(date) | \(tag) | \(severity.label) | \(filename):\(strippedFunc):\(line) | \(message())")
-    }
-
-    func fileNameOfFile(_ file: String) -> String {
-        let fileParts = file.components(separatedBy: "/")
-        if let lastPart = fileParts.last {
-            return lastPart
-        }
-        return ""
-    }
-
-    func fileNameWithoutSuffix(_ file: String) -> String {
-        let fileName = fileNameOfFile(file)
-
-        if !fileName.isEmpty {
-            let fileNameParts = fileName.components(separatedBy: ".")
-            if let firstPart = fileNameParts.first {
-                return firstPart
-            }
-        }
-        return ""
-    }
-
-    func stripParameters(fromFunction function: String) -> String {
-        if let indexOfBrace = function.index(of: "(") {
-            return function.substringCompat(endIndex: indexOfBrace)
-        }
-        return function
+        loggingLane.deliver(message: message,
+                            withSeverity: severity,
+                            withTag: tag,
+                            forFile: file,
+                            forFunction: function,
+                            forLine: line)
     }
 }

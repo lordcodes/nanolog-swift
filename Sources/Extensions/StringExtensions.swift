@@ -15,7 +15,7 @@
 extension String {
     func substringCompat(endIndex: Index) -> String {
         #if swift(>=4.0)
-            return String(describing: [..<endIndex])
+            return String(self[..<endIndex])
         #else
             return substring(to: endIndex)
         #endif
