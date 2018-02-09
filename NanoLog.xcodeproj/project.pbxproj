@@ -41,6 +41,9 @@
 		F6FBDB55202DFD6800BB4D85 /* LogSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65063D9202C4DDA00535D9B /* LogSeverity.swift */; };
 		F6FBDB56202DFD6900BB4D85 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */; };
 		F6FBDB57202DFD6900BB4D85 /* LogSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65063D9202C4DDA00535D9B /* LogSeverity.swift */; };
+		F6FBDB5B202E031400BB4D85 /* LogControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */; };
+		F6FBDB5C202E031500BB4D85 /* LogControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */; };
+		F6FBDB5D202E031500BB4D85 /* LogControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,7 @@
 		F6FBDB3F202DC65A00BB4D85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F6FBDB40202DC65A00BB4D85 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F6FBDB41202DC65A00BB4D85 /* NanoLog.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NanoLog.podspec; sourceTree = "<group>"; };
+		F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogControllerFake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,7 @@
 		8933C7831EB5B7EB000D00A4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F6FBDB58202E030300BB4D85 /* Controller */,
 				8933C7891EB5B82A000D00A4 /* NanoLogTests.swift */,
 			);
 			name = Tests;
@@ -247,6 +252,14 @@
 				F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		F6FBDB58202E030300BB4D85 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8933C7901EB5B82D000D00A4 /* NanoLogTests.swift in Sources */,
+				F6FBDB5B202E031400BB4D85 /* LogControllerFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8933C78F1EB5B82C000D00A4 /* NanoLogTests.swift in Sources */,
+				F6FBDB5C202E031500BB4D85 /* LogControllerFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8933C78E1EB5B82C000D00A4 /* NanoLogTests.swift in Sources */,
+				F6FBDB5D202E031500BB4D85 /* LogControllerFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
