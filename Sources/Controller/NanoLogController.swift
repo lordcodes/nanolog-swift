@@ -64,7 +64,8 @@ extension NanoLogController: LogController {
         let date = dateFormatter.string(from: Date())
         let tag = "NanoLog"
         let filename = fileNameWithoutSuffix(file)
-        print("\(date) | \(tag) | \(severity.label) | \(filename):\(function):\(line) | \(message())")
+        let strippedFunc = stripParameters(fromFunction: function)
+        print("\(date) | \(tag) | \(severity.label) | \(filename):\(strippedFunc):\(line) | \(message())")
     }
 
     func fileNameOfFile(_ file: String) -> String {
@@ -85,5 +86,12 @@ extension NanoLogController: LogController {
             }
         }
         return ""
+    }
+
+    func stripParameters(fromFunction function: String) -> String {
+        if let indexOfBrace = function.index(of: "(") {
+            return function.substringCompat(endIndex: indexOfBrace)
+        }
+        return function
     }
 }

@@ -12,20 +12,12 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-import NanoLog
-import UIKit
-
-class ViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        NanoLog.error("Super long message that can be seen in console")
-        NanoLog.w("Super long message that can be seen in console")
-        someMethod(withIntArg: 2)
-    }
-
-    func someMethod(withIntArg intArg: Int) -> Bool {
-        NanoLog.verbose("Super long message that can be seen in console")
-        return true
+extension String {
+    func substringCompat(endIndex: Index) -> String {
+        #if swift(>=4.0)
+            return String(describing: [..<endIndex])
+        #else
+            return substring(to: endIndex)
+        #endif
     }
 }

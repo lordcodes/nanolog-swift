@@ -17,6 +17,7 @@
 		8933C7901EB5B82D000D00A4 /* NanoLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* NanoLogTests.swift */; };
 		DD7502881C68FEDE006590AF /* NanoLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* NanoLog.framework */; };
 		DD7502921C690C7A006590AF /* NanoLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* NanoLog.framework */; };
+		F641CD1B202D8FE300FA66F8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */; };
 		F65063C5202B83E100535D9B /* NanoLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65063C4202B83E100535D9B /* NanoLogController.swift */; };
 		F65063C9202B83ED00535D9B /* OpenLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */; };
 		F65063CA202B83ED00535D9B /* OpenLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */; };
@@ -72,6 +73,7 @@
 		AD2FAA281CD0B6E100659CF4 /* NanoLogTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NanoLogTests.plist; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* NanoLog-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NanoLog-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD75028D1C690C7A006590AF /* NanoLog-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NanoLog-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		F65063C4202B83E100535D9B /* NanoLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoLogController.swift; sourceTree = "<group>"; };
 		F65063D9202C4DDA00535D9B /* LogSeverity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSeverity.swift; sourceTree = "<group>"; };
 		F65CFC36202B824A00C3EC6C /* LogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				F65CFC35202B824A00C3EC6C /* Controller */,
+				F641CD19202D8FCF00FA66F8 /* Extensions */,
 				F65CFC37202B824A00C3EC6C /* Filter */,
 				F65063D9202C4DDA00535D9B /* LogSeverity.swift */,
 				8933C7841EB5B820000D00A4 /* NanoLog.swift */,
@@ -202,6 +205,14 @@
 				AD2FAA281CD0B6E100659CF4 /* NanoLogTests.plist */,
 			);
 			name = Tests;
+			sourceTree = "<group>";
+		};
+		F641CD19202D8FCF00FA66F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F65CFC35202B824A00C3EC6C /* Controller */ = {
@@ -505,6 +516,7 @@
 				F65063C5202B83E100535D9B /* NanoLogController.swift in Sources */,
 				F65063DA202C4DDA00535D9B /* LogSeverity.swift in Sources */,
 				F65CFC3C202B824B00C3EC6C /* OpenLogFilter.swift in Sources */,
+				F641CD1B202D8FE300FA66F8 /* StringExtensions.swift in Sources */,
 				F65CFC3B202B824B00C3EC6C /* LogController.swift in Sources */,
 				F65CFC3D202B824B00C3EC6C /* LogFilter.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* NanoLog.swift in Sources */,
