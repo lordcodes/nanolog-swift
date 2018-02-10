@@ -16,35 +16,17 @@ import Foundation
 
 public class NanoLogController {
     private var tag: String = "NanoLog"
-    private let loggingLane: LoggingLane
-
-    init() {
-        let filter = OpenLogFilter()
-        let formatComponents: [LogFormatComponent] = [
-            .date(withDateFormat: PrettyLogFormat.defaultDateFormat),
-            .separator(string: " | "),
-            .tag,
-            .separator(string: " | "),
-            .severity(withFormat: .label),
-            .separator(string: " | "),
-            .file(withExtension: false),
-            .separator(string: ":"),
-            .function(withArgs: false),
-            .separator(string: ":"),
-            .lineNumber,
-            .separator(string: " | "),
-            .message
-        ]
-        let format = PrettyLogFormat(withComponents: formatComponents)
-        let printer = ConsolePrinter()
-        loggingLane = LoggingLane(filter: filter, format: format, printer: printer)
-    }
+    private var loggingLane: LoggingLane?
 }
 
 // MARK: - LogController
 extension NanoLogController: LogController {
     public func loggingTag(_ tag: String) {
         self.tag = tag
+    }
+
+    public func loggingLane(_ loggingLane: LoggingLane) {
+        self.loggingLane = loggingLane
     }
 
     public func logVerbose(_ message: @autoclosure () -> Any,
@@ -87,7 +69,7 @@ extension NanoLogController: LogController {
                            file: String = #file,
                            function: String = #function,
                            line: Int = #line) {
-        loggingLane.deliver(message: message,
+        loggingLane?.deliver(message: message,
                             withSeverity: severity,
                             withTag: tag,
                             forFile: file,

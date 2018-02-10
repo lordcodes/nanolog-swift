@@ -19,7 +19,7 @@ public class PrettyLogFormat {
 
     private let components: [LogFormatComponent]
 
-    init(withComponents components: [LogFormatComponent]) {
+    init(withComponents components: [LogFormatComponent] = PrettyLogFormat.defaultFormat()) {
         self.components = components
     }
 }
@@ -106,5 +106,25 @@ private extension PrettyLogFormat {
             return function.substringCompat(endIndex: indexOfBrace)
         }
         return function
+    }
+}
+
+private extension PrettyLogFormat {
+    private static func defaultFormat() -> [LogFormatComponent] {
+        return [
+            .date(withDateFormat: PrettyLogFormat.defaultDateFormat),
+            .separator(string: " | "),
+            .tag,
+            .separator(string: " | "),
+            .severity(withFormat: .label),
+            .separator(string: " | "),
+            .file(withExtension: false),
+            .separator(string: ":"),
+            .function(withArgs: false),
+            .separator(string: ":"),
+            .lineNumber,
+            .separator(string: " | "),
+            .message
+        ]
     }
 }

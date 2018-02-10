@@ -96,4 +96,12 @@ public class NanoLog {
     public static func loggingTag(_ tag: String) {
         controller.loggingTag(tag)
     }
+
+    public static func loggingLane(_ loggingLane: LoggingLane) {
+        controller.loggingLane(loggingLane)
+    }
+
+    public static func enableDefaultConsole() {
+        loggingLane(LoggingLane())
+    }
 }

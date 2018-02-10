@@ -17,7 +17,9 @@ public struct LoggingLane {
     private let format: LogFormat
     private let printer: LogPrinter
 
-    init(filter: LogFilter, format: LogFormat, printer: LogPrinter) {
+    init(filter: LogFilter = LoggingLane.defaultFilter(),
+         format: LogFormat = LoggingLane.defaultFormat(),
+         printer: LogPrinter = LoggingLane.defaultPrinter()) {
         self.filter = filter
         self.format = format
         self.printer = printer
@@ -38,5 +40,19 @@ public struct LoggingLane {
                                                            forLine: line)
             printer.printMessage(formattedMessage)
         }
+    }
+}
+
+private extension LoggingLane {
+    private static func defaultFilter() -> LogFilter {
+        return OpenLogFilter()
+    }
+
+    private static func defaultFormat() -> LogFormat {
+        return PrettyLogFormat()
+    }
+
+    private static func defaultPrinter() -> LogPrinter {
+        return ConsolePrinter()
     }
 }
