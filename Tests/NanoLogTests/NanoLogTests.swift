@@ -12,6 +12,7 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+import Nimble
 import XCTest
 
 @testable import NanoLog
@@ -43,8 +44,8 @@ extension NanoLogTests {
 
         NanoLog.message(expectedMessage, withSeverity: expectedSeverity)
 
-        XCTAssertEqual(controller.loggedMessage, expectedMessage)
-        XCTAssertEqual(controller.loggedSeverity?.severity, expectedSeverity.severity)
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
     }
 }
 
