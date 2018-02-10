@@ -38,6 +38,106 @@ class NanoLogTests: XCTestCase {
 
 // MARK: - Tests
 extension NanoLogTests {
+    func test_whenV_thenVerboseMessageLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.verbose
+
+        NanoLog.v(expectedMessage)
+
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
+    func test_whenVerbose_thenVerboseMessageLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.verbose
+
+        NanoLog.verbose(expectedMessage)
+
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
+    func test_whenD_thenDebugMessageLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.debug
+
+        NanoLog.d(expectedMessage)
+
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
+    func test_whenDebug_thenDebugMessageLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.debug
+
+        NanoLog.debug(expectedMessage)
+
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
+    func test_whenI_thenInfoMessageLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.info
+
+        NanoLog.i(expectedMessage)
+
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
+    func test_whenInfo_thenInfoMessageLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.info
+
+        NanoLog.info(expectedMessage)
+
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
+    func test_whenW_thenWarningMessageLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.warning
+
+        NanoLog.w(expectedMessage)
+
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
+    func test_whenWarning_thenWarningMessagedLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.warning
+
+        NanoLog.warning(expectedMessage)
+
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
+    func test_whenE_thenErrorMessagedLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.error
+
+        NanoLog.e(expectedMessage)
+
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
+    func test_whenError_thenErrorMessagedLoggedToController() {
+        let expectedMessage = "Some message"
+        let expectedSeverity = LogSeverity.error
+
+        NanoLog.error(expectedMessage)
+
+        expect(self.controller.loggedMessage).to(equal(expectedMessage))
+        expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
     func test_whenMessage_thenMessageLoggedToController() {
         let expectedMessage = "Some message"
         let expectedSeverity = LogSeverity.warning
@@ -46,6 +146,14 @@ extension NanoLogTests {
 
         expect(self.controller.loggedMessage).to(equal(expectedMessage))
         expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
+    }
+
+    func test_whenWithLoggingTag_thenTagSetOnController() {
+        let expectedTag = "some-special-tag"
+
+        NanoLog.withLoggingTag(expectedTag)
+
+        expect(self.controller.loggedTag).to(equal(expectedTag))
     }
 }
 
