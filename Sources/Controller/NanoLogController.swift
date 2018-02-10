@@ -15,8 +15,13 @@
 import Foundation
 
 public class NanoLogController {
-    private var tag: String = "NanoLog"
+    private var tag: String
     private var loggingLane: LoggingLane?
+
+    init(tag: String = "NanoLog", loggingLane: LoggingLane? = nil) {
+        self.tag = tag
+        self.loggingLane = loggingLane
+    }
 }
 
 // MARK: - LogController

@@ -93,15 +93,15 @@ public class NanoLog {
         controller.logMessage(message, withSeverity: severity, file: file, function: function, line: line)
     }
 
-    public static func loggingTag(_ tag: String) {
+    public static func withLoggingTag(_ tag: String) {
         controller.loggingTag(tag)
     }
 
-    public static func loggingLane(_ loggingLane: LoggingLane) {
+    public static func withLoggingLane(_ loggingLane: LoggingLane) {
         controller.loggingLane(loggingLane)
     }
 
-    public static func enableDefaultConsole() {
-        loggingLane(LoggingLane())
+    public static func withDefaultConsoleLane() {
+        withLoggingLane(LoggingLane())
     }
 }
