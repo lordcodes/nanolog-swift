@@ -124,6 +124,7 @@
 		F6D231F3202F7DB600D862C1 /* LogFormatComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormatComponent.swift; sourceTree = "<group>"; };
 		F6D231FE202F7F3300D862C1 /* SeverityFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverityFormat.swift; sourceTree = "<group>"; };
 		F6D23200202F978100D862C1 /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		F6D23206202F994300D862C1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F6FBDB3D202DC61200BB4D85 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		F6FBDB3E202DC65900BB4D85 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		F6FBDB3F202DC65A00BB4D85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -191,6 +192,7 @@
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
+				F6D23206202F994300D862C1 /* .gitignore */,
 				F6D23200202F978100D862C1 /* Cartfile.private */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				F6FBDB3D202DC61200BB4D85 /* fastlane */,
