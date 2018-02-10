@@ -15,6 +15,13 @@
 import Foundation
 
 public class PrettyLogFormat {
+    static let defaultDateFormat = "HH:mm:ss.SSS"
+
+    private let components: [LogFormatComponent]
+
+    init(withComponents components: [LogFormatComponent]) {
+        self.components = components
+    }
 }
 
 extension PrettyLogFormat: LogFormat {
@@ -24,13 +31,52 @@ extension PrettyLogFormat: LogFormat {
                           forFile file: String,
                           forFunction function: String,
                           forLine line: Int) -> String {
-        let formattedMessage = "\(message())"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss.SSS"
-        let date = dateFormatter.string(from: Date())
-        let filename = fileNameWithoutSuffix(file)
-        let strippedFunc = stripParameters(fromFunction: function)
-        return "\(date) | \(tag) | \(severity.label) | \(filename):\(strippedFunc):\(line) | \(formattedMessage)"
+        var formattedMessage = ""
+        for component in components {
+            switch component {
+            case .date(let dateFormat):
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = dateFormat
+                let date = dateFormatter.string(from: Date())
+                formattedMessage += date
+            case .file(let withExtension):
+                if withExtension {
+                    formattedMessage += fileNameOfFile(file)
+                } else {
+                    formattedMessage += fileNameWithoutExtension(file)
+                }
+            case .function(let withArgs):
+                if withArgs {
+                    formattedMessage += function
+                } else {
+                    formattedMessage += stripParameters(fromFunction: function)
+                }
+            case .lineNumber:
+                formattedMessage += "\(line)"
+            case .message:
+                formattedMessage += "\(message())"
+            case .separator(let string):
+                formattedMessage += string
+            case .severity(let withFormat):
+                switch withFormat {
+                case .icon:
+                    break
+                case .label:
+                    formattedMessage += severity.label
+                case .letter:
+                    if let firstCharacter = severity.label.first {
+                        formattedMessage += String(firstCharacter)
+                    }
+                case .value:
+                    formattedMessage += "\(severity.severity)"
+                }
+            case .tag:
+                formattedMessage += tag
+            case .thread:
+                break
+            }
+        }
+        return formattedMessage
     }
 }
 
@@ -43,7 +89,7 @@ private extension PrettyLogFormat {
         return ""
     }
 
-    private func fileNameWithoutSuffix(_ file: String) -> String {
+    private func fileNameWithoutExtension(_ file: String) -> String {
         let fileName = fileNameOfFile(file)
 
         if !fileName.isEmpty {

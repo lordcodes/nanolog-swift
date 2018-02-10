@@ -20,7 +20,22 @@ public class NanoLogController {
 
     init() {
         let filter = OpenLogFilter()
-        let format = PrettyLogFormat()
+        let formatComponents: [LogFormatComponent] = [
+            .date(withDateFormat: PrettyLogFormat.defaultDateFormat),
+            .separator(string: " | "),
+            .tag,
+            .separator(string: " | "),
+            .severity(withFormat: .label),
+            .separator(string: " | "),
+            .file(withExtension: false),
+            .separator(string: ":"),
+            .function(withArgs: false),
+            .separator(string: ":"),
+            .lineNumber,
+            .separator(string: " | "),
+            .message
+        ]
+        let format = PrettyLogFormat(withComponents: formatComponents)
         let printer = ConsolePrinter()
         loggingLane = LoggingLane(filter: filter, format: format, printer: printer)
     }
