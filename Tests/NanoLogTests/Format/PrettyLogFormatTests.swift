@@ -131,3 +131,14 @@ private extension PrettyLogFormatTests {
         return dateUtcFormatter.string(from: clock.now!)
     }
 }
+
+#if os(Linux)
+    extension StringExtensionsTests {
+        static var allTests = [
+            ("test_whenFormattedMessage_thenMessageFormattedWithComponents", test_whenFormattedMessage_thenMessageFormattedWithComponents),
+            ("test_whenFormattedMessage_thenUnknownSeverity_givenSeverityWithEmptyLabelAndLetterSeverityFormat", test_whenFormattedMessage_thenUnknownSeverity_givenSeverityWithEmptyLabelAndLetterSeverityFormat),
+            ("test_whenFormattedMessage_thenFunctionUnchanged_givenFunctionWithNoBrackets", test_whenFormattedMessage_thenFunctionUnchanged_givenFunctionWithNoBrackets),
+            ("test_whenFormattedMessage_thenMessageFormattedWithDefaultFormat_givenDefaultFormat", test_whenFormattedMessage_thenMessageFormattedWithDefaultFormat_givenDefaultFormat)
+        ]
+    }
+#endif

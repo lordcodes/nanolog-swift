@@ -175,6 +175,7 @@ extension NanoLogTests {
     }
 }
 
+#if os(Linux)
 extension NanoLogTests {
     static var allTests = [
         ("test_whenV_thenVerboseMessageLoggedToController", test_whenV_thenVerboseMessageLoggedToController),
@@ -193,3 +194,4 @@ extension NanoLogTests {
         ("test_whenWithDefaultConsoleLane_thenLaneSetOnController", test_whenWithDefaultConsoleLane_thenLaneSetOnController)
     ]
 }
+#endif

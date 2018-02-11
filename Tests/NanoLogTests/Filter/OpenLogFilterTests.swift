@@ -29,3 +29,11 @@ extension OpenLogFilterTests {
         expect(actualLoggable).to(beTrue())
     }
 }
+
+#if os(Linux)
+    extension OpenLogFilterTests {
+        static var allTests = [
+            ("test_whenIsLoggable_thenTrue", test_whenIsLoggable_thenTrue)
+        ]
+    }
+#endif

@@ -33,3 +33,11 @@ extension ClockTests {
         expect(dateFormatter.string(from: actualDate)).to(equal(dateFormatter.string(from: expectedDate)))
     }
 }
+
+#if os(Linux)
+    extension ClockTests {
+        static var allTests = [
+            ("test_whenDateTimeNow_thenNewDate", test_whenDateTimeNow_thenNewDate)
+        ]
+    }
+#endif

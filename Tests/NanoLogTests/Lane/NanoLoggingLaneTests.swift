@@ -60,3 +60,12 @@ extension NanoLoggingLaneTests {
         expect(self.printer.messagePrinted).to(equal(expectedMessage))
     }
 }
+
+#if os(Linux)
+    extension ClockTests {
+        static var allTests = [
+            ("test_whenDeliver_thenNoMessagePrinted_givenLoggableFalse", test_whenDeliver_thenNoMessagePrinted_givenLoggableFalse),
+            ("test_whenDeliver_thenMessagePrinted_givenLoggableTrue", test_whenDeliver_thenMessagePrinted_givenLoggableTrue)
+        ]
+    }
+#endif

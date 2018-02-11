@@ -32,3 +32,11 @@ extension StringExtensionsTests {
         expect(actualString).to(equal(expectedString))
     }
 }
+
+#if os(Linux)
+    extension StringExtensionsTests {
+        static var allTests = [
+            ("test_whenSubstringCompatUpToEndIndex_thenSubstringExtracted", test_whenSubstringCompatUpToEndIndex_thenSubstringExtracted)
+        ]
+    }
+#endif

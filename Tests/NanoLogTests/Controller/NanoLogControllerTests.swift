@@ -145,3 +145,18 @@ extension NanoLogControllerTests {
         expect(self.lane.deliverLine).to(equal(expectedLine))
     }
 }
+
+#if os(Linux)
+extension NanoLogControllerTests {
+    static var allTests = [
+        ("test_whenLoggingTag_thenTagSet", test_whenLoggingTag_thenTagSet),
+        ("test_whenLoggingLane_thenMessageDeliveredToIt", test_whenLoggingLane_thenMessageDeliveredToIt),
+        ("test_whenLogVerbose_thenVerboseMessageDelivered", test_whenLogVerbose_thenVerboseMessageDelivered),
+        ("test_whenLogDebug_thenDebugMessageDelivered", test_whenLogDebug_thenDebugMessageDelivered),
+        ("test_whenLogInfo_thenInfoMessageDelivered", test_whenLogInfo_thenInfoMessageDelivered),
+        ("test_whenLogWarning_thenWarningMessageDelivered", test_whenLogWarning_thenWarningMessageDelivered),
+        ("test_whenLogError_thenErrorMessageDelivered", test_whenLogError_thenErrorMessageDelivered),
+        ("test_whenLogMessage_thenMessageWithSeverityDelivered", test_whenLogMessage_thenMessageWithSeverityDelivered)
+    ]
+}
+#endif
