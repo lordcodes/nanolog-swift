@@ -12,12 +12,15 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-extension String {
-    func substringCompat(upToEndIndex endIndex: Index) -> String {
-        #if swift(>=4.0)
-            return String(self[..<endIndex])
-        #else
-            return substring(to: endIndex)
-        #endif
+@testable import NanoLog
+
+class LogPrinterFake {
+    var messagePrinted: String?
+}
+
+// MARK: - LogPrinter
+extension LogPrinterFake: LogPrinter {
+    func printMessage(_ message: String) {
+        messagePrinted = message
     }
 }
