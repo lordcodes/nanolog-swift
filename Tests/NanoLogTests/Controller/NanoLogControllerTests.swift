@@ -40,6 +40,16 @@ extension NanoLogControllerTests {
         expect(self.lane.deliverTag).to(equal(expectedTag))
     }
 
+    func test_whenLoggingLane_thenMessageDeliveredToIt() {
+        let expectedLane = LoggingLaneFake()
+        let expectedMessage = "a test message"
+
+        controller.loggingLane(expectedLane)
+        controller.logMessage(expectedMessage, withSeverity: LogSeverity.error, file: "", function: "", line: 0)
+
+        expect(expectedLane.deliverMessage).to(equal(expectedMessage))
+    }
+
     func test_whenLogVerbose_thenVerboseMessageDelivered() {
         let expectedMessage = "Some message"
         let expectedFile = "Some file"
