@@ -177,6 +177,19 @@ extension NanoLogTests {
 
 extension NanoLogTests {
     static var allTests = [
+        ("test_whenV_thenVerboseMessageLoggedToController", test_whenV_thenVerboseMessageLoggedToController),
+        ("test_whenVerbose_thenVerboseMessageLoggedToController", test_whenVerbose_thenVerboseMessageLoggedToController),
+        ("test_whenD_thenDebugMessageLoggedToController", test_whenD_thenDebugMessageLoggedToController),
+        ("test_whenDebug_thenDebugMessageLoggedToController", test_whenDebug_thenDebugMessageLoggedToController),
+        ("test_whenI_thenInfoMessageLoggedToController", test_whenI_thenInfoMessageLoggedToController),
+        ("test_whenInfo_thenInfoMessageLoggedToController", test_whenInfo_thenInfoMessageLoggedToController),
+        ("test_whenW_thenWarningMessageLoggedToController", test_whenW_thenWarningMessageLoggedToController),
+        ("test_whenWarning_thenWarningMessagedLoggedToController", test_whenWarning_thenWarningMessagedLoggedToController),
+        ("test_whenE_thenErrorMessagedLoggedToController", test_whenE_thenErrorMessagedLoggedToController),
+        ("test_whenError_thenErrorMessagedLoggedToController", test_whenError_thenErrorMessagedLoggedToController),
         ("test_whenMessage_thenMessageLoggedToController", test_whenMessage_thenMessageLoggedToController),
+        ("test_whenWithLoggingTag_thenTagSetOnController", test_whenWithLoggingTag_thenTagSetOnController),
+        ("test_whenWithLoggingLane_thenLaneSetOnController", test_whenWithLoggingLane_thenLaneSetOnController),
+        ("test_whenWithDefaultConsoleLane_thenLaneSetOnController", test_whenWithDefaultConsoleLane_thenLaneSetOnController)
     ]
 }

@@ -181,6 +181,7 @@
 		F6D2324C20308F8100D862C1 /* LogFilterFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFilterFake.swift; sourceTree = "<group>"; };
 		F6D232512030920400D862C1 /* LogPrinterFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPrinterFake.swift; sourceTree = "<group>"; };
 		F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoLoggingLaneTests.swift; sourceTree = "<group>"; };
+		F6D232592030972400D862C1 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = SOURCE_ROOT; };
 		F6FBDB3D202DC61200BB4D85 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		F6FBDB3E202DC65900BB4D85 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		F6FBDB3F202DC65A00BB4D85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -312,6 +313,7 @@
 				F6D232352030483000D862C1 /* Filter */,
 				F6D2323A20304BC800D862C1 /* Format */,
 				F6D2322B20303FB700D862C1 /* Lane */,
+				F6D232592030972400D862C1 /* LinuxMain.swift */,
 				8933C7891EB5B82A000D00A4 /* NanoLogTests.swift */,
 				F6D23250203091EC00D862C1 /* Printer */,
 			);
