@@ -102,6 +102,6 @@ public class NanoLog {
     }
 
     public static func withDefaultConsoleLane() {
-        withLoggingLane(LoggingLane())
+        withLoggingLane(NanoLoggingLane())
     }
 }

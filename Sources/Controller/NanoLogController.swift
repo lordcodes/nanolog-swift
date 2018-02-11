@@ -75,10 +75,10 @@ extension NanoLogController: LogController {
                            function: String = #function,
                            line: Int = #line) {
         loggingLane?.deliver(message: message,
-                            withSeverity: severity,
-                            withTag: tag,
-                            forFile: file,
-                            forFunction: function,
-                            forLine: line)
+                             withSeverity: severity,
+                             withTag: tag,
+                             forFile: file,
+                             forFunction: function,
+                             forLine: line)
     }
 }

@@ -12,11 +12,31 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-public protocol LoggingLane {
+@testable import NanoLog
+
+class LoggingLaneFake {
+    var deliverMessage: String?
+    var deliverSeverity: LogSeverity?
+    var deliverTag: String?
+    var deliverFile: String?
+    var deliverFunction: String?
+    var deliverLine: Int?
+}
+
+// MARK: - LoggingLane
+extension LoggingLaneFake: LoggingLane {
     func deliver(message: @autoclosure () -> Any,
                  withSeverity severity: LogSeverity,
                  withTag tag: String,
                  forFile file: String,
                  forFunction function: String,
-                 forLine line: Int)
+                 forLine line: Int) {
+
+        deliverMessage = "\(message())"
+        deliverSeverity = severity
+        deliverTag = tag
+        deliverFile = file
+        deliverFunction = function
+        deliverLine = line
+    }
 }
