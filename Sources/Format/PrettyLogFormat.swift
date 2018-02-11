@@ -16,6 +16,8 @@ import Foundation
 
 public class PrettyLogFormat {
     static let defaultDateFormat = "HH:mm:ss.SSS"
+    static let defaultSeparator = " | "
+    static let defaultFileSeparator = ":"
 
     private let components: [LogFormatComponent]
 
@@ -33,47 +35,14 @@ extension PrettyLogFormat: LogFormat {
                                  forLine line: Int) -> String {
         var formattedMessage = ""
         for component in components {
-            switch component {
-            case .date(let dateFormat):
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = dateFormat
-                let date = dateFormatter.string(from: Date())
-                formattedMessage += date
-            case .file(let withExtension):
-                if withExtension {
-                    formattedMessage += fileNameOfFile(file)
-                } else {
-                    formattedMessage += fileNameWithoutExtension(file)
-                }
-            case .function(let withArgs):
-                if withArgs {
-                    formattedMessage += function
-                } else {
-                    formattedMessage += stripParameters(fromFunction: function)
-                }
-            case .lineNumber:
-                formattedMessage += "\(line)"
-            case .message:
-                formattedMessage += "\(message())"
-            case .separator(let string):
-                formattedMessage += string
-            case .severity(let withFormat):
-                switch withFormat {
-                case .icon:
-                    break
-                case .label:
-                    formattedMessage += severity.label
-                case .letter:
-                    if let firstCharacter = severity.label.first {
-                        formattedMessage += String(firstCharacter)
-                    }
-                case .value:
-                    formattedMessage += "\(severity.severity)"
-                }
-            case .tag:
-                formattedMessage += tag
-            case .thread:
-                break
+            if let formattedComponent = createFormattedComponent(component,
+                                                                 from: message,
+                                                                 withSeverity: severity,
+                                                                 withTag: tag,
+                                                                 forFile: file,
+                                                                 forFunction: function,
+                                                                 forLine: line) {
+                formattedMessage += formattedComponent
             }
         }
         return formattedMessage
@@ -81,6 +50,73 @@ extension PrettyLogFormat: LogFormat {
 }
 
 private extension PrettyLogFormat {
+    private func createFormattedComponent(_ component: LogFormatComponent,
+                                          from message: @autoclosure () -> Any,
+                                          withSeverity severity: LogSeverity,
+                                          withTag tag: String,
+                                          forFile file: String,
+                                          forFunction function: String,
+                                          forLine line: Int) -> String? {
+        switch component {
+        case .date(let dateFormat):
+            return createDate(withFormat: dateFormat)
+        case .file(let withExtension):
+            return createFile(file, withExtension: withExtension)
+        case .function(let withArgs):
+            return createFunction(function, withArgs: withArgs)
+        case .lineNumber:
+            return "\(line)"
+        case .message:
+            return "\(message())"
+        case .separator(let string):
+            return string
+        case .severity(let withFormat):
+            return createSeverity(severity, withFormat: withFormat)
+        case .tag:
+            return tag
+        case .thread:
+            break
+        }
+        return nil
+    }
+
+    private func createDate(withFormat dateFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        let date = dateFormatter.string(from: Date())
+        return date
+    }
+
+    private func createFile(_ file: String, withExtension: Bool) -> String {
+        if withExtension {
+            return fileNameOfFile(file)
+        }
+        return fileNameWithoutExtension(file)
+    }
+
+    private func createFunction(_ function: String, withArgs: Bool) -> String {
+        if withArgs {
+            return function
+        }
+        return stripParameters(fromFunction: function)
+    }
+
+    private func createSeverity(_ severity: LogSeverity, withFormat format: SeverityFormat) -> String? {
+        switch format {
+        case .icon:
+            break
+        case .label:
+            return severity.label
+        case .letter:
+            if let firstCharacter = severity.label.first {
+                return String(firstCharacter)
+            }
+        case .value:
+            return "\(severity.severity)"
+        }
+        return nil
+    }
+
     private func fileNameOfFile(_ file: String) -> String {
         let fileParts = file.components(separatedBy: "/")
         if let lastPart = fileParts.last {
@@ -113,17 +149,17 @@ private extension PrettyLogFormat {
     private static func defaultFormat() -> [LogFormatComponent] {
         return [
             .date(withDateFormat: PrettyLogFormat.defaultDateFormat),
-            .separator(string: " | "),
+            .separator(string: defaultSeparator),
             .tag,
-            .separator(string: " | "),
+            .separator(string: defaultSeparator),
             .severity(withFormat: .label),
-            .separator(string: " | "),
+            .separator(string: defaultSeparator),
             .file(withExtension: false),
-            .separator(string: ":"),
+            .separator(string: defaultFileSeparator),
             .function(withArgs: false),
-            .separator(string: ":"),
+            .separator(string: defaultFileSeparator),
             .lineNumber,
-            .separator(string: " | "),
+            .separator(string: defaultSeparator),
             .message
         ]
     }
