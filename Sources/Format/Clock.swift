@@ -12,15 +12,18 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-public enum LogFormatComponent {
-    case date(withDateFormat: String)
-    case dateUtc(withDateFormat: String)
-    case file(withExtension: Bool)
-    case function(withArgs: Bool)
-    case lineNumber
-    case message
-    case separator(string: String)
-    case severity(withFormat: SeverityFormat)
-    case tag
-    case thread
+import Foundation
+
+protocol Clock {
+    func dateTimeNow() -> Date
+}
+
+class SystemClock {
+}
+
+// MARK: - Clock
+extension SystemClock: Clock {
+    func dateTimeNow() -> Date {
+        return Date()
+    }
 }

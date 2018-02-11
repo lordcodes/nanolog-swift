@@ -20,9 +20,12 @@ public class PrettyLogFormat {
     static let defaultFileSeparator = ":"
 
     private let components: [LogFormatComponent]
+    private let clock: Clock
 
-    init(withComponents components: [LogFormatComponent] = PrettyLogFormat.defaultFormat()) {
+    init(withComponents components: [LogFormatComponent] = PrettyLogFormat.defaultFormat(),
+         withClock clock: Clock = SystemClock()) {
         self.components = components
+        self.clock = clock
     }
 }
 
@@ -60,6 +63,8 @@ private extension PrettyLogFormat {
         switch component {
         case .date(let dateFormat):
             return createDate(withFormat: dateFormat)
+        case .dateUtc(let dateFormat):
+            return createUtcDate(withFormat: dateFormat)
         case .file(let withExtension):
             return createFile(file, withExtension: withExtension)
         case .function(let withArgs):
@@ -83,7 +88,15 @@ private extension PrettyLogFormat {
     private func createDate(withFormat dateFormat: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
-        let date = dateFormatter.string(from: Date())
+        let date = dateFormatter.string(from: clock.dateTimeNow())
+        return date
+    }
+
+    private func createUtcDate(withFormat dateFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        dateFormatter.dateFormat = dateFormat
+        let date = dateFormatter.string(from: clock.dateTimeNow())
         return date
     }
 
