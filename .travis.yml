@@ -1,21 +1,41 @@
-language: swift
+matrix:
+  include:
+    - os: linux
 
-os:
-  - linux
-  - osx
+      dist: trusty
 
-osx_image: xcode9.2
+      sudo: required
 
-cache:
-  bundler: true
-  directories:
-    - Carthage
+      language: generic
+
+    - os: osx
+
+      osx_image: xcode9.2
+
+      language: swift
+
+      cache:
+        bundler: true
+        directories:
+          - Carthage
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bundle install; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bundle exec fastlane dependencies; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"; fi
+  - >
+    if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      bundle install;
+      bundle exec fastlane dependencies;
+    fi
+  - >
+    if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      eval "$(curl -sL https://swiftenv.fuller.li/install.sh)";
+    fi
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then bundle exec fastlane test; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then swift test; fi
+  - >
+    if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      bundle exec fastlane test;
+    fi
+  - >
+    if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      swift test;
+    fi
