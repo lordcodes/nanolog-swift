@@ -95,6 +95,15 @@
 		F6D2324920305E6200D862C1 /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324820305E6200D862C1 /* ClockTests.swift */; };
 		F6D2324A20305E6200D862C1 /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324820305E6200D862C1 /* ClockTests.swift */; };
 		F6D2324B20305E6200D862C1 /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324820305E6200D862C1 /* ClockTests.swift */; };
+		F6D2324D20308F8100D862C1 /* LogFilterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324C20308F8100D862C1 /* LogFilterFake.swift */; };
+		F6D2324E20308F8100D862C1 /* LogFilterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324C20308F8100D862C1 /* LogFilterFake.swift */; };
+		F6D2324F20308F8100D862C1 /* LogFilterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324C20308F8100D862C1 /* LogFilterFake.swift */; };
+		F6D232522030920400D862C1 /* LogPrinterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232512030920400D862C1 /* LogPrinterFake.swift */; };
+		F6D232532030920400D862C1 /* LogPrinterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232512030920400D862C1 /* LogPrinterFake.swift */; };
+		F6D232542030920400D862C1 /* LogPrinterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232512030920400D862C1 /* LogPrinterFake.swift */; };
+		F6D232562030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */; };
+		F6D232572030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */; };
+		F6D232582030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */; };
 		F6FBDB52202DFD6800BB4D85 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */; };
 		F6FBDB53202DFD6800BB4D85 /* LogSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65063D9202C4DDA00535D9B /* LogSeverity.swift */; };
 		F6FBDB54202DFD6800BB4D85 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */; };
@@ -169,6 +178,9 @@
 		F6D2323F2030508500D862C1 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		F6D232442030510C00D862C1 /* ClockFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFake.swift; sourceTree = "<group>"; };
 		F6D2324820305E6200D862C1 /* ClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTests.swift; sourceTree = "<group>"; };
+		F6D2324C20308F8100D862C1 /* LogFilterFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFilterFake.swift; sourceTree = "<group>"; };
+		F6D232512030920400D862C1 /* LogPrinterFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPrinterFake.swift; sourceTree = "<group>"; };
+		F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoLoggingLaneTests.swift; sourceTree = "<group>"; };
 		F6FBDB3D202DC61200BB4D85 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		F6FBDB3E202DC65900BB4D85 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		F6FBDB3F202DC65A00BB4D85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -301,6 +313,7 @@
 				F6D2323A20304BC800D862C1 /* Format */,
 				F6D2322B20303FB700D862C1 /* Lane */,
 				8933C7891EB5B82A000D00A4 /* NanoLogTests.swift */,
+				F6D23250203091EC00D862C1 /* Printer */,
 			);
 			name = Tests;
 			path = Tests/NanoLogTests;
@@ -392,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				F6D2322C20303FCB00D862C1 /* LoggingLaneFake.swift */,
+				F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */,
 			);
 			path = Lane;
 			sourceTree = "<group>";
@@ -407,6 +421,7 @@
 		F6D232352030483000D862C1 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				F6D2324C20308F8100D862C1 /* LogFilterFake.swift */,
 				F6D232362030483F00D862C1 /* OpenLogFilterTests.swift */,
 			);
 			path = Filter;
@@ -420,6 +435,14 @@
 				F6D2323B20304BD700D862C1 /* PrettyLogFormatTests.swift */,
 			);
 			path = Format;
+			sourceTree = "<group>";
+		};
+		F6D23250203091EC00D862C1 /* Printer */ = {
+			isa = PBXGroup;
+			children = (
+				F6D232512030920400D862C1 /* LogPrinterFake.swift */,
+			);
+			path = Printer;
 			sourceTree = "<group>";
 		};
 		F6FBDB58202E030300BB4D85 /* Controller */ = {
@@ -789,10 +812,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D2324920305E6200D862C1 /* ClockTests.swift in Sources */,
+				F6D232522030920400D862C1 /* LogPrinterFake.swift in Sources */,
 				8933C7901EB5B82D000D00A4 /* NanoLogTests.swift in Sources */,
 				F6D2322320303E7B00D862C1 /* NanoLogControllerTests.swift in Sources */,
+				F6D2324D20308F8100D862C1 /* LogFilterFake.swift in Sources */,
 				F6D2322D20303FCB00D862C1 /* LoggingLaneFake.swift in Sources */,
 				F6D232322030443C00D862C1 /* StringExtensionsTests.swift in Sources */,
+				F6D232562030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */,
 				F6D2323C20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */,
 				F6D232452030510C00D862C1 /* ClockFake.swift in Sources */,
 				F6D232372030483F00D862C1 /* OpenLogFilterTests.swift in Sources */,
@@ -874,10 +900,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D2324A20305E6200D862C1 /* ClockTests.swift in Sources */,
+				F6D232532030920400D862C1 /* LogPrinterFake.swift in Sources */,
 				8933C78F1EB5B82C000D00A4 /* NanoLogTests.swift in Sources */,
 				F6D2322420303E7B00D862C1 /* NanoLogControllerTests.swift in Sources */,
+				F6D2324E20308F8100D862C1 /* LogFilterFake.swift in Sources */,
 				F6D2322E20303FCB00D862C1 /* LoggingLaneFake.swift in Sources */,
 				F6D232332030443C00D862C1 /* StringExtensionsTests.swift in Sources */,
+				F6D232572030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */,
 				F6D2323D20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */,
 				F6D232462030510C00D862C1 /* ClockFake.swift in Sources */,
 				F6D232382030483F00D862C1 /* OpenLogFilterTests.swift in Sources */,
@@ -890,10 +919,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D2324B20305E6200D862C1 /* ClockTests.swift in Sources */,
+				F6D232542030920400D862C1 /* LogPrinterFake.swift in Sources */,
 				8933C78E1EB5B82C000D00A4 /* NanoLogTests.swift in Sources */,
 				F6D2322520303E7B00D862C1 /* NanoLogControllerTests.swift in Sources */,
+				F6D2324F20308F8100D862C1 /* LogFilterFake.swift in Sources */,
 				F6D2322F20303FCB00D862C1 /* LoggingLaneFake.swift in Sources */,
 				F6D232342030443C00D862C1 /* StringExtensionsTests.swift in Sources */,
+				F6D232582030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */,
 				F6D2323E20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */,
 				F6D232472030510C00D862C1 /* ClockFake.swift in Sources */,
 				F6D232392030483F00D862C1 /* OpenLogFilterTests.swift in Sources */,
