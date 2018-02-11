@@ -6,7 +6,6 @@ fastlane_version "2.80.0"
 ####################
 
 before_all do
-  setup_travis
 end
 
 ####################
