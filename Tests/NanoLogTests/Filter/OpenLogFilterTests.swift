@@ -12,12 +12,28 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-extension String {
-    func substringCompat(upToEndIndex endIndex: Index) -> String {
-        #if swift(>=4.0)
-            return String(self[..<endIndex])
-        #else
-            return substring(to: endIndex)
-        #endif
+import Nimble
+import XCTest
+
+@testable import NanoLog
+
+class OpenLogFilterTests: XCTestCase {
+    private let filter = OpenLogFilter()
+}
+
+// MARK: - Tests
+extension OpenLogFilterTests {
+    func test_whenIsLoggable_thenTrue() {
+        let actualLoggable = filter.isLoggable(atSeverity: LogSeverity.info, withTag: "Some tag")
+
+        expect(actualLoggable).to(beTrue())
     }
 }
+
+#if os(Linux)
+    extension OpenLogFilterTests {
+        static var allTests = [
+            ("test_whenIsLoggable_thenTrue", test_whenIsLoggable_thenTrue)
+        ]
+    }
+#endif

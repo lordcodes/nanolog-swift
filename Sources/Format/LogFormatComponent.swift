@@ -12,12 +12,15 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-extension String {
-    func substringCompat(upToEndIndex endIndex: Index) -> String {
-        #if swift(>=4.0)
-            return String(self[..<endIndex])
-        #else
-            return substring(to: endIndex)
-        #endif
-    }
+public enum LogFormatComponent {
+    case date(withDateFormat: String)
+    case dateUtc(withDateFormat: String)
+    case file(withExtension: Bool)
+    case function(withArgs: Bool)
+    case lineNumber
+    case message
+    case separator(string: String)
+    case severity(withFormat: SeverityFormat)
+    case tag
+    case thread
 }

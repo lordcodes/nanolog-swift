@@ -6,12 +6,19 @@ fastlane_version "2.80.0"
 ####################
 
 before_all do
-  setup_travis
 end
 
 ####################
 # PUBLIC LANES
 ####################
+
+desc "Resolve all dependencies"
+lane :dependencies do
+  carthage(
+    command: "bootstrap",
+    cache_builds: true
+  )
+end
 
 desc "Run all the unit tests"
 lane :test do

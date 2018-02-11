@@ -12,12 +12,18 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-extension String {
-    func substringCompat(upToEndIndex endIndex: Index) -> String {
-        #if swift(>=4.0)
-            return String(self[..<endIndex])
-        #else
-            return substring(to: endIndex)
-        #endif
+import Foundation
+
+protocol Clock {
+    func dateTimeNow() -> Date
+}
+
+class SystemClock {
+}
+
+// MARK: - Clock
+extension SystemClock: Clock {
+    func dateTimeNow() -> Date {
+        return Date()
     }
 }

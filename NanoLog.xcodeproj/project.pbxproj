@@ -35,6 +35,75 @@
 		F65CFC3B202B824B00C3EC6C /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC36202B824A00C3EC6C /* LogController.swift */; };
 		F65CFC3C202B824B00C3EC6C /* OpenLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */; };
 		F65CFC3D202B824B00C3EC6C /* LogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC39202B824A00C3EC6C /* LogFilter.swift */; };
+		F6D231DE202E54A400D862C1 /* LoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231DD202E54A400D862C1 /* LoggingLane.swift */; };
+		F6D231E1202E563F00D862C1 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E0202E563F00D862C1 /* LogFormat.swift */; };
+		F6D231E4202E573300D862C1 /* LogPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E3202E573300D862C1 /* LogPrinter.swift */; };
+		F6D231E5202E573D00D862C1 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E0202E563F00D862C1 /* LogFormat.swift */; };
+		F6D231E6202E573D00D862C1 /* LoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231DD202E54A400D862C1 /* LoggingLane.swift */; };
+		F6D231E7202E573D00D862C1 /* LogPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E3202E573300D862C1 /* LogPrinter.swift */; };
+		F6D231E8202E573D00D862C1 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E0202E563F00D862C1 /* LogFormat.swift */; };
+		F6D231E9202E573D00D862C1 /* LoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231DD202E54A400D862C1 /* LoggingLane.swift */; };
+		F6D231EA202E573D00D862C1 /* LogPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E3202E573300D862C1 /* LogPrinter.swift */; };
+		F6D231EB202E573E00D862C1 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E0202E563F00D862C1 /* LogFormat.swift */; };
+		F6D231EC202E573E00D862C1 /* LoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231DD202E54A400D862C1 /* LoggingLane.swift */; };
+		F6D231ED202E573E00D862C1 /* LogPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231E3202E573300D862C1 /* LogPrinter.swift */; };
+		F6D231EF202E5BAE00D862C1 /* PrettyLogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231EE202E5BAE00D862C1 /* PrettyLogFormat.swift */; };
+		F6D231F1202E5C7600D862C1 /* ConsolePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231F0202E5C7600D862C1 /* ConsolePrinter.swift */; };
+		F6D231F4202F7DB600D862C1 /* LogFormatComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231F3202F7DB600D862C1 /* LogFormatComponent.swift */; };
+		F6D231F5202F7DB900D862C1 /* LogFormatComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231F3202F7DB600D862C1 /* LogFormatComponent.swift */; };
+		F6D231F6202F7DB900D862C1 /* LogFormatComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231F3202F7DB600D862C1 /* LogFormatComponent.swift */; };
+		F6D231F7202F7DB900D862C1 /* LogFormatComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231F3202F7DB600D862C1 /* LogFormatComponent.swift */; };
+		F6D231F8202F7DC400D862C1 /* PrettyLogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231EE202E5BAE00D862C1 /* PrettyLogFormat.swift */; };
+		F6D231F9202F7DC400D862C1 /* ConsolePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231F0202E5C7600D862C1 /* ConsolePrinter.swift */; };
+		F6D231FA202F7DC500D862C1 /* PrettyLogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231EE202E5BAE00D862C1 /* PrettyLogFormat.swift */; };
+		F6D231FB202F7DC500D862C1 /* ConsolePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231F0202E5C7600D862C1 /* ConsolePrinter.swift */; };
+		F6D231FC202F7DC500D862C1 /* PrettyLogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231EE202E5BAE00D862C1 /* PrettyLogFormat.swift */; };
+		F6D231FD202F7DC500D862C1 /* ConsolePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231F0202E5C7600D862C1 /* ConsolePrinter.swift */; };
+		F6D231FF202F7F3300D862C1 /* SeverityFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231FE202F7F3300D862C1 /* SeverityFormat.swift */; };
+		F6D23202202F979500D862C1 /* SeverityFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231FE202F7F3300D862C1 /* SeverityFormat.swift */; };
+		F6D23203202F979600D862C1 /* SeverityFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231FE202F7F3300D862C1 /* SeverityFormat.swift */; };
+		F6D23204202F979700D862C1 /* SeverityFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D231FE202F7F3300D862C1 /* SeverityFormat.swift */; };
+		F6D23209202F99FB00D862C1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D23208202F99FB00D862C1 /* Nimble.framework */; };
+		F6D2320C202F9A5500D862C1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D2320B202F9A5500D862C1 /* Nimble.framework */; };
+		F6D23210202F9AC700D862C1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D2320F202F9AC700D862C1 /* Nimble.framework */; };
+		F6D2322320303E7B00D862C1 /* NanoLogControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2322220303E7B00D862C1 /* NanoLogControllerTests.swift */; };
+		F6D2322420303E7B00D862C1 /* NanoLogControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2322220303E7B00D862C1 /* NanoLogControllerTests.swift */; };
+		F6D2322520303E7B00D862C1 /* NanoLogControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2322220303E7B00D862C1 /* NanoLogControllerTests.swift */; };
+		F6D2322720303F2600D862C1 /* NanoLoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2322620303F2600D862C1 /* NanoLoggingLane.swift */; };
+		F6D2322820303F2600D862C1 /* NanoLoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2322620303F2600D862C1 /* NanoLoggingLane.swift */; };
+		F6D2322920303F2600D862C1 /* NanoLoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2322620303F2600D862C1 /* NanoLoggingLane.swift */; };
+		F6D2322A20303F2600D862C1 /* NanoLoggingLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2322620303F2600D862C1 /* NanoLoggingLane.swift */; };
+		F6D2322D20303FCB00D862C1 /* LoggingLaneFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2322C20303FCB00D862C1 /* LoggingLaneFake.swift */; };
+		F6D2322E20303FCB00D862C1 /* LoggingLaneFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2322C20303FCB00D862C1 /* LoggingLaneFake.swift */; };
+		F6D2322F20303FCB00D862C1 /* LoggingLaneFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2322C20303FCB00D862C1 /* LoggingLaneFake.swift */; };
+		F6D232322030443C00D862C1 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232312030443C00D862C1 /* StringExtensionsTests.swift */; };
+		F6D232332030443C00D862C1 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232312030443C00D862C1 /* StringExtensionsTests.swift */; };
+		F6D232342030443C00D862C1 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232312030443C00D862C1 /* StringExtensionsTests.swift */; };
+		F6D232372030483F00D862C1 /* OpenLogFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232362030483F00D862C1 /* OpenLogFilterTests.swift */; };
+		F6D232382030483F00D862C1 /* OpenLogFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232362030483F00D862C1 /* OpenLogFilterTests.swift */; };
+		F6D232392030483F00D862C1 /* OpenLogFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232362030483F00D862C1 /* OpenLogFilterTests.swift */; };
+		F6D2323C20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2323B20304BD700D862C1 /* PrettyLogFormatTests.swift */; };
+		F6D2323D20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2323B20304BD700D862C1 /* PrettyLogFormatTests.swift */; };
+		F6D2323E20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2323B20304BD700D862C1 /* PrettyLogFormatTests.swift */; };
+		F6D232402030508500D862C1 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2323F2030508500D862C1 /* Clock.swift */; };
+		F6D232412030508500D862C1 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2323F2030508500D862C1 /* Clock.swift */; };
+		F6D232422030508500D862C1 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2323F2030508500D862C1 /* Clock.swift */; };
+		F6D232432030508500D862C1 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2323F2030508500D862C1 /* Clock.swift */; };
+		F6D232452030510C00D862C1 /* ClockFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232442030510C00D862C1 /* ClockFake.swift */; };
+		F6D232462030510C00D862C1 /* ClockFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232442030510C00D862C1 /* ClockFake.swift */; };
+		F6D232472030510C00D862C1 /* ClockFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232442030510C00D862C1 /* ClockFake.swift */; };
+		F6D2324920305E6200D862C1 /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324820305E6200D862C1 /* ClockTests.swift */; };
+		F6D2324A20305E6200D862C1 /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324820305E6200D862C1 /* ClockTests.swift */; };
+		F6D2324B20305E6200D862C1 /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324820305E6200D862C1 /* ClockTests.swift */; };
+		F6D2324D20308F8100D862C1 /* LogFilterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324C20308F8100D862C1 /* LogFilterFake.swift */; };
+		F6D2324E20308F8100D862C1 /* LogFilterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324C20308F8100D862C1 /* LogFilterFake.swift */; };
+		F6D2324F20308F8100D862C1 /* LogFilterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2324C20308F8100D862C1 /* LogFilterFake.swift */; };
+		F6D232522030920400D862C1 /* LogPrinterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232512030920400D862C1 /* LogPrinterFake.swift */; };
+		F6D232532030920400D862C1 /* LogPrinterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232512030920400D862C1 /* LogPrinterFake.swift */; };
+		F6D232542030920400D862C1 /* LogPrinterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232512030920400D862C1 /* LogPrinterFake.swift */; };
+		F6D232562030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */; };
+		F6D232572030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */; };
+		F6D232582030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */; };
 		F6FBDB52202DFD6800BB4D85 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */; };
 		F6FBDB53202DFD6800BB4D85 /* LogSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65063D9202C4DDA00535D9B /* LogSeverity.swift */; };
 		F6FBDB54202DFD6800BB4D85 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */; };
@@ -88,6 +157,31 @@
 		F65CFC36202B824A00C3EC6C /* LogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
 		F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenLogFilter.swift; sourceTree = "<group>"; };
 		F65CFC39202B824A00C3EC6C /* LogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFilter.swift; sourceTree = "<group>"; };
+		F6D231DD202E54A400D862C1 /* LoggingLane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingLane.swift; sourceTree = "<group>"; };
+		F6D231E0202E563F00D862C1 /* LogFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormat.swift; sourceTree = "<group>"; };
+		F6D231E3202E573300D862C1 /* LogPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPrinter.swift; sourceTree = "<group>"; };
+		F6D231EE202E5BAE00D862C1 /* PrettyLogFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyLogFormat.swift; sourceTree = "<group>"; };
+		F6D231F0202E5C7600D862C1 /* ConsolePrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolePrinter.swift; sourceTree = "<group>"; };
+		F6D231F3202F7DB600D862C1 /* LogFormatComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormatComponent.swift; sourceTree = "<group>"; };
+		F6D231FE202F7F3300D862C1 /* SeverityFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverityFormat.swift; sourceTree = "<group>"; };
+		F6D23200202F978100D862C1 /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		F6D23206202F994300D862C1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F6D23208202F99FB00D862C1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		F6D2320B202F9A5500D862C1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		F6D2320F202F9AC700D862C1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
+		F6D2322220303E7B00D862C1 /* NanoLogControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoLogControllerTests.swift; sourceTree = "<group>"; };
+		F6D2322620303F2600D862C1 /* NanoLoggingLane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoLoggingLane.swift; sourceTree = "<group>"; };
+		F6D2322C20303FCB00D862C1 /* LoggingLaneFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingLaneFake.swift; sourceTree = "<group>"; };
+		F6D232312030443C00D862C1 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
+		F6D232362030483F00D862C1 /* OpenLogFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLogFilterTests.swift; sourceTree = "<group>"; };
+		F6D2323B20304BD700D862C1 /* PrettyLogFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyLogFormatTests.swift; sourceTree = "<group>"; };
+		F6D2323F2030508500D862C1 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		F6D232442030510C00D862C1 /* ClockFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFake.swift; sourceTree = "<group>"; };
+		F6D2324820305E6200D862C1 /* ClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTests.swift; sourceTree = "<group>"; };
+		F6D2324C20308F8100D862C1 /* LogFilterFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFilterFake.swift; sourceTree = "<group>"; };
+		F6D232512030920400D862C1 /* LogPrinterFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPrinterFake.swift; sourceTree = "<group>"; };
+		F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoLoggingLaneTests.swift; sourceTree = "<group>"; };
+		F6D232592030972400D862C1 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = SOURCE_ROOT; };
 		F6FBDB3D202DC61200BB4D85 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		F6FBDB3E202DC65900BB4D85 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		F6FBDB3F202DC65A00BB4D85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -108,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D23209202F99FB00D862C1 /* Nimble.framework in Frameworks */,
 				52D6D9871BEFF229002C0205 /* NanoLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D2320C202F9A5500D862C1 /* Nimble.framework in Frameworks */,
 				DD7502881C68FEDE006590AF /* NanoLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D23210202F9AC700D862C1 /* Nimble.framework in Frameworks */,
 				DD7502921C690C7A006590AF /* NanoLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +252,8 @@
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
+				F6D23206202F994300D862C1 /* .gitignore */,
+				F6D23200202F978100D862C1 /* Cartfile.private */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				F6FBDB3D202DC61200BB4D85 /* fastlane */,
 				F6FBDB3E202DC65900BB4D85 /* Gemfile */,
@@ -164,6 +263,7 @@
 				F6FBDB3F202DC65A00BB4D85 /* README.md */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				8933C7831EB5B7EB000D00A4 /* Tests */,
+				F6D23207202F99FB00D862C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,8 +296,11 @@
 				F65CFC35202B824A00C3EC6C /* Controller */,
 				F641CD19202D8FCF00FA66F8 /* Extensions */,
 				F65CFC37202B824A00C3EC6C /* Filter */,
+				F6D231DF202E561F00D862C1 /* Format */,
+				F6D231DC202E549600D862C1 /* Lane */,
 				F65063D9202C4DDA00535D9B /* LogSeverity.swift */,
 				8933C7841EB5B820000D00A4 /* NanoLog.swift */,
+				F6D231E2202E572200D862C1 /* Printer */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -206,7 +309,13 @@
 			isa = PBXGroup;
 			children = (
 				F6FBDB58202E030300BB4D85 /* Controller */,
+				F6D232302030442900D862C1 /* Extensions */,
+				F6D232352030483000D862C1 /* Filter */,
+				F6D2323A20304BC800D862C1 /* Format */,
+				F6D2322B20303FB700D862C1 /* Lane */,
+				F6D232592030972400D862C1 /* LinuxMain.swift */,
 				8933C7891EB5B82A000D00A4 /* NanoLogTests.swift */,
+				F6D23250203091EC00D862C1 /* Printer */,
 			);
 			name = Tests;
 			path = Tests/NanoLogTests;
@@ -254,10 +363,95 @@
 			path = Filter;
 			sourceTree = "<group>";
 		};
+		F6D231DC202E549600D862C1 /* Lane */ = {
+			isa = PBXGroup;
+			children = (
+				F6D231DD202E54A400D862C1 /* LoggingLane.swift */,
+				F6D2322620303F2600D862C1 /* NanoLoggingLane.swift */,
+			);
+			path = Lane;
+			sourceTree = "<group>";
+		};
+		F6D231DF202E561F00D862C1 /* Format */ = {
+			isa = PBXGroup;
+			children = (
+				F6D2323F2030508500D862C1 /* Clock.swift */,
+				F6D231E0202E563F00D862C1 /* LogFormat.swift */,
+				F6D231F3202F7DB600D862C1 /* LogFormatComponent.swift */,
+				F6D231EE202E5BAE00D862C1 /* PrettyLogFormat.swift */,
+				F6D231FE202F7F3300D862C1 /* SeverityFormat.swift */,
+			);
+			path = Format;
+			sourceTree = "<group>";
+		};
+		F6D231E2202E572200D862C1 /* Printer */ = {
+			isa = PBXGroup;
+			children = (
+				F6D231F0202E5C7600D862C1 /* ConsolePrinter.swift */,
+				F6D231E3202E573300D862C1 /* LogPrinter.swift */,
+			);
+			path = Printer;
+			sourceTree = "<group>";
+		};
+		F6D23207202F99FB00D862C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6D2320F202F9AC700D862C1 /* Nimble.framework */,
+				F6D2320B202F9A5500D862C1 /* Nimble.framework */,
+				F6D23208202F99FB00D862C1 /* Nimble.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6D2322B20303FB700D862C1 /* Lane */ = {
+			isa = PBXGroup;
+			children = (
+				F6D2322C20303FCB00D862C1 /* LoggingLaneFake.swift */,
+				F6D232552030927700D862C1 /* NanoLoggingLaneTests.swift */,
+			);
+			path = Lane;
+			sourceTree = "<group>";
+		};
+		F6D232302030442900D862C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F6D232312030443C00D862C1 /* StringExtensionsTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F6D232352030483000D862C1 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				F6D2324C20308F8100D862C1 /* LogFilterFake.swift */,
+				F6D232362030483F00D862C1 /* OpenLogFilterTests.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		F6D2323A20304BC800D862C1 /* Format */ = {
+			isa = PBXGroup;
+			children = (
+				F6D232442030510C00D862C1 /* ClockFake.swift */,
+				F6D2324820305E6200D862C1 /* ClockTests.swift */,
+				F6D2323B20304BD700D862C1 /* PrettyLogFormatTests.swift */,
+			);
+			path = Format;
+			sourceTree = "<group>";
+		};
+		F6D23250203091EC00D862C1 /* Printer */ = {
+			isa = PBXGroup;
+			children = (
+				F6D232512030920400D862C1 /* LogPrinterFake.swift */,
+			);
+			path = Printer;
+			sourceTree = "<group>";
+		};
 		F6FBDB58202E030300BB4D85 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */,
+				F6D2322220303E7B00D862C1 /* NanoLogControllerTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +515,7 @@
 				52D6D9821BEFF229002C0205 /* Sources */,
 				52D6D9831BEFF229002C0205 /* Frameworks */,
 				52D6D9841BEFF229002C0205 /* Resources */,
+				F6D2320A202F9A0100D862C1 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -393,6 +588,7 @@
 				DD7502761C68FCFC006590AF /* Sources */,
 				DD7502771C68FCFC006590AF /* Frameworks */,
 				DD7502781C68FCFC006590AF /* Resources */,
+				F6D2320E202F9A6000D862C1 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,6 +607,7 @@
 				DD7502891C690C7A006590AF /* Sources */,
 				DD75028A1C690C7A006590AF /* Frameworks */,
 				DD75028B1C690C7A006590AF /* Resources */,
+				F6D23211202F9AC900D862C1 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -429,7 +626,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = NanoLog;
 				TargetAttributes = {
 					52D6D97B1BEFF229002C0205 = {
@@ -537,17 +734,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F6D2320A202F9A0100D862C1 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks";
+		};
+		F6D2320E202F9A6000D862C1 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks";
+		};
+		F6D23211202F9AC900D862C1 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Nimble.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52D6D9771BEFF229002C0205 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F65063C5202B83E100535D9B /* NanoLogController.swift in Sources */,
+				F6D231DE202E54A400D862C1 /* LoggingLane.swift in Sources */,
+				F6D232402030508500D862C1 /* Clock.swift in Sources */,
+				F6D231F1202E5C7600D862C1 /* ConsolePrinter.swift in Sources */,
 				F65063DA202C4DDA00535D9B /* LogSeverity.swift in Sources */,
 				F65CFC3C202B824B00C3EC6C /* OpenLogFilter.swift in Sources */,
+				F6D231FF202F7F3300D862C1 /* SeverityFormat.swift in Sources */,
+				F6D2322720303F2600D862C1 /* NanoLoggingLane.swift in Sources */,
 				F641CD1B202D8FE300FA66F8 /* StringExtensions.swift in Sources */,
+				F6D231E4202E573300D862C1 /* LogPrinter.swift in Sources */,
 				F65CFC3B202B824B00C3EC6C /* LogController.swift in Sources */,
+				F6D231EF202E5BAE00D862C1 /* PrettyLogFormat.swift in Sources */,
+				F6D231F4202F7DB600D862C1 /* LogFormatComponent.swift in Sources */,
 				F65CFC3D202B824B00C3EC6C /* LogFilter.swift in Sources */,
+				F6D231E1202E563F00D862C1 /* LogFormat.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* NanoLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,7 +813,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D2324920305E6200D862C1 /* ClockTests.swift in Sources */,
+				F6D232522030920400D862C1 /* LogPrinterFake.swift in Sources */,
 				8933C7901EB5B82D000D00A4 /* NanoLogTests.swift in Sources */,
+				F6D2322320303E7B00D862C1 /* NanoLogControllerTests.swift in Sources */,
+				F6D2324D20308F8100D862C1 /* LogFilterFake.swift in Sources */,
+				F6D2322D20303FCB00D862C1 /* LoggingLaneFake.swift in Sources */,
+				F6D232322030443C00D862C1 /* StringExtensionsTests.swift in Sources */,
+				F6D232562030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */,
+				F6D2323C20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */,
+				F6D232452030510C00D862C1 /* ClockFake.swift in Sources */,
+				F6D232372030483F00D862C1 /* OpenLogFilterTests.swift in Sources */,
 				F6FBDB5B202E031400BB4D85 /* LogControllerFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,12 +833,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FBDB54202DFD6800BB4D85 /* StringExtensions.swift in Sources */,
+				F6D231E9202E573D00D862C1 /* LoggingLane.swift in Sources */,
+				F6D232422030508500D862C1 /* Clock.swift in Sources */,
+				F6D231FB202F7DC500D862C1 /* ConsolePrinter.swift in Sources */,
 				F65063D3202B83F700535D9B /* LogController.swift in Sources */,
 				F65063CA202B83ED00535D9B /* OpenLogFilter.swift in Sources */,
+				F6D23203202F979600D862C1 /* SeverityFormat.swift in Sources */,
+				F6D2322920303F2600D862C1 /* NanoLoggingLane.swift in Sources */,
 				F65063CD202B83F100535D9B /* LogFilter.swift in Sources */,
+				F6D231EA202E573D00D862C1 /* LogPrinter.swift in Sources */,
+				F6D231F6202F7DB900D862C1 /* LogFormatComponent.swift in Sources */,
 				8933C7871EB5B820000D00A4 /* NanoLog.swift in Sources */,
+				F6D231E8202E573D00D862C1 /* LogFormat.swift in Sources */,
 				F6FBDB55202DFD6800BB4D85 /* LogSeverity.swift in Sources */,
 				F65063D0202B83F400535D9B /* NanoLogController.swift in Sources */,
+				F6D231FA202F7DC500D862C1 /* PrettyLogFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,12 +856,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FBDB52202DFD6800BB4D85 /* StringExtensions.swift in Sources */,
+				F6D231E6202E573D00D862C1 /* LoggingLane.swift in Sources */,
+				F6D232432030508500D862C1 /* Clock.swift in Sources */,
+				F6D231F9202F7DC400D862C1 /* ConsolePrinter.swift in Sources */,
 				F65063D4202B83F700535D9B /* LogController.swift in Sources */,
 				F65063CB202B83EE00535D9B /* OpenLogFilter.swift in Sources */,
+				F6D23202202F979500D862C1 /* SeverityFormat.swift in Sources */,
+				F6D2322A20303F2600D862C1 /* NanoLoggingLane.swift in Sources */,
 				F65063CE202B83F100535D9B /* LogFilter.swift in Sources */,
+				F6D231E7202E573D00D862C1 /* LogPrinter.swift in Sources */,
+				F6D231F7202F7DB900D862C1 /* LogFormatComponent.swift in Sources */,
 				8933C7881EB5B820000D00A4 /* NanoLog.swift in Sources */,
+				F6D231E5202E573D00D862C1 /* LogFormat.swift in Sources */,
 				F6FBDB53202DFD6800BB4D85 /* LogSeverity.swift in Sources */,
 				F65063D1202B83F400535D9B /* NanoLogController.swift in Sources */,
+				F6D231F8202F7DC400D862C1 /* PrettyLogFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,12 +879,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FBDB56202DFD6900BB4D85 /* StringExtensions.swift in Sources */,
+				F6D231EC202E573E00D862C1 /* LoggingLane.swift in Sources */,
+				F6D232412030508500D862C1 /* Clock.swift in Sources */,
+				F6D231FD202F7DC500D862C1 /* ConsolePrinter.swift in Sources */,
 				F65063D2202B83F700535D9B /* LogController.swift in Sources */,
 				F65063C9202B83ED00535D9B /* OpenLogFilter.swift in Sources */,
+				F6D23204202F979700D862C1 /* SeverityFormat.swift in Sources */,
+				F6D2322820303F2600D862C1 /* NanoLoggingLane.swift in Sources */,
 				F65063CC202B83F000535D9B /* LogFilter.swift in Sources */,
+				F6D231ED202E573E00D862C1 /* LogPrinter.swift in Sources */,
+				F6D231F5202F7DB900D862C1 /* LogFormatComponent.swift in Sources */,
 				8933C7861EB5B820000D00A4 /* NanoLog.swift in Sources */,
+				F6D231EB202E573E00D862C1 /* LogFormat.swift in Sources */,
 				F6FBDB57202DFD6900BB4D85 /* LogSeverity.swift in Sources */,
 				F65063CF202B83F300535D9B /* NanoLogController.swift in Sources */,
+				F6D231FC202F7DC500D862C1 /* PrettyLogFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +901,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D2324A20305E6200D862C1 /* ClockTests.swift in Sources */,
+				F6D232532030920400D862C1 /* LogPrinterFake.swift in Sources */,
 				8933C78F1EB5B82C000D00A4 /* NanoLogTests.swift in Sources */,
+				F6D2322420303E7B00D862C1 /* NanoLogControllerTests.swift in Sources */,
+				F6D2324E20308F8100D862C1 /* LogFilterFake.swift in Sources */,
+				F6D2322E20303FCB00D862C1 /* LoggingLaneFake.swift in Sources */,
+				F6D232332030443C00D862C1 /* StringExtensionsTests.swift in Sources */,
+				F6D232572030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */,
+				F6D2323D20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */,
+				F6D232462030510C00D862C1 /* ClockFake.swift in Sources */,
+				F6D232382030483F00D862C1 /* OpenLogFilterTests.swift in Sources */,
 				F6FBDB5C202E031500BB4D85 /* LogControllerFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,7 +920,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D2324B20305E6200D862C1 /* ClockTests.swift in Sources */,
+				F6D232542030920400D862C1 /* LogPrinterFake.swift in Sources */,
 				8933C78E1EB5B82C000D00A4 /* NanoLogTests.swift in Sources */,
+				F6D2322520303E7B00D862C1 /* NanoLogControllerTests.swift in Sources */,
+				F6D2324F20308F8100D862C1 /* LogFilterFake.swift in Sources */,
+				F6D2322F20303FCB00D862C1 /* LoggingLaneFake.swift in Sources */,
+				F6D232342030443C00D862C1 /* StringExtensionsTests.swift in Sources */,
+				F6D232582030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */,
+				F6D2323E20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */,
+				F6D232472030510C00D862C1 /* ClockFake.swift in Sources */,
+				F6D232392030483F00D862C1 /* OpenLogFilterTests.swift in Sources */,
 				F6FBDB5D202E031500BB4D85 /* LogControllerFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,7 +1068,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -778,7 +1092,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -800,6 +1114,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/NanoLogTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NanoLog.NanoLog-iOS-Tests";
@@ -813,6 +1131,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/NanoLogTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NanoLog.NanoLog-iOS-Tests";
@@ -964,6 +1286,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Configs/NanoLogTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -979,6 +1305,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Configs/NanoLogTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -993,6 +1323,10 @@
 		DD7502961C690C7A006590AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/NanoLogTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NanoLog.NanoLog-tvOS-Tests";
@@ -1006,6 +1340,10 @@
 		DD7502971C690C7A006590AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/NanoLogTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NanoLog.NanoLog-tvOS-Tests";

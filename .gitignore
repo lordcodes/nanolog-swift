@@ -25,8 +25,7 @@ xcuserdata/
 # Pods/
 
 # Carthage
-# Carthage/Checkouts
-# Carthage/Build
+Carthage
 
 # Fastlane
 fastlane/report.xml
