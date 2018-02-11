@@ -12,6 +12,7 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+import NanoLog
 import UIKit
 
 @UIApplicationMain
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        NanoLog.withDefaultConsoleLane()
         return true
     }
 }

@@ -15,6 +15,8 @@
 @testable import NanoLog
 
 class LogControllerFake {
+    var loggedTag: String?
+    var loggedLane: LoggingLane?
     var loggedMessage: String?
     var loggedSeverity: LogSeverity?
     var loggedFile: String?
@@ -24,6 +26,14 @@ class LogControllerFake {
 
 // MARK: - LogController
 extension LogControllerFake: LogController {
+    func loggingTag(_ tag: String) {
+        loggedTag = tag
+    }
+
+    func loggingLane(_ loggingLane: LoggingLane) {
+        loggedLane = loggingLane
+    }
+
     public func logVerbose(_ message: @autoclosure () -> Any, file: String, function: String, line: Int) {
         logMessage(message, withSeverity: LogSeverity.verbose, file: file, function: function, line: line)
     }
