@@ -26,11 +26,11 @@ public class PrettyLogFormat {
 
 extension PrettyLogFormat: LogFormat {
     public func formattedMessage(from message: @autoclosure () -> Any,
-                          withSeverity severity: LogSeverity,
-                          withTag tag: String,
-                          forFile file: String,
-                          forFunction function: String,
-                          forLine line: Int) -> String {
+                                 withSeverity severity: LogSeverity,
+                                 withTag tag: String,
+                                 forFile file: String,
+                                 forFunction function: String,
+                                 forLine line: Int) -> String {
         var formattedMessage = ""
         for component in components {
             switch component {
