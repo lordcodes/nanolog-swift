@@ -19,6 +19,8 @@ public class PrettyLogFormat {
     static let defaultSeparator = " | "
     static let defaultFileSeparator = ":"
 
+    private static let unknown = "Unknown"
+
     private let components: [LogFormatComponent]
     private let clock: Clock
 
@@ -100,11 +102,22 @@ private extension PrettyLogFormat {
         return date
     }
 
-    private func createFile(_ file: String, withExtension: Bool) -> String {
+    private func createFile(_ file: String, withExtension: Bool) -> String? {
         if withExtension {
             return fileNameOfFile(file)
         }
         return fileNameWithoutExtension(file)
+    }
+
+    private func fileNameOfFile(_ file: String) -> String {
+        let fileParts = file.components(separatedBy: "/")
+        return fileParts.last!
+    }
+
+    private func fileNameWithoutExtension(_ file: String) -> String {
+        let fileName = fileNameOfFile(file)
+        let fileNameParts = fileName.components(separatedBy: ".")
+        return fileNameParts.first!
     }
 
     private func createFunction(_ function: String, withArgs: Bool) -> String {
@@ -114,47 +127,27 @@ private extension PrettyLogFormat {
         return stripParameters(fromFunction: function)
     }
 
-    private func createSeverity(_ severity: LogSeverity, withFormat format: SeverityFormat) -> String? {
+    private func stripParameters(fromFunction function: String) -> String {
+        if let indexOfBrace = function.index(of: "(") {
+            return function.substringCompat(upToEndIndex: indexOfBrace)
+        }
+        return function
+    }
+
+    private func createSeverity(_ severity: LogSeverity, withFormat format: SeverityFormat) -> String {
         switch format {
         case .icon:
-            break
+            return PrettyLogFormat.unknown
         case .label:
             return severity.label
         case .letter:
             if let firstCharacter = severity.label.first {
                 return String(firstCharacter)
             }
+            return PrettyLogFormat.unknown
         case .value:
             return "\(severity.severity)"
         }
-        return nil
-    }
-
-    private func fileNameOfFile(_ file: String) -> String {
-        let fileParts = file.components(separatedBy: "/")
-        if let lastPart = fileParts.last {
-            return lastPart
-        }
-        return ""
-    }
-
-    private func fileNameWithoutExtension(_ file: String) -> String {
-        let fileName = fileNameOfFile(file)
-
-        if !fileName.isEmpty {
-            let fileNameParts = fileName.components(separatedBy: ".")
-            if let firstPart = fileNameParts.first {
-                return firstPart
-            }
-        }
-        return ""
-    }
-
-    private func stripParameters(fromFunction function: String) -> String {
-        if let indexOfBrace = function.index(of: "(") {
-            return function.substringCompat(upToEndIndex: indexOfBrace)
-        }
-        return function
     }
 }
 

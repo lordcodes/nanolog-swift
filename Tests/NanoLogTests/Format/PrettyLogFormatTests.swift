@@ -36,6 +36,8 @@ class PrettyLogFormatTests: XCTestCase {
         .separator(string: "|"),
         .message,
         .separator(string: "|"),
+        .severity(withFormat: .icon),
+        .separator(string: "|"),
         .severity(withFormat: .label),
         .separator(string: "|"),
         .severity(withFormat: .letter),
@@ -57,38 +59,75 @@ class PrettyLogFormatTests: XCTestCase {
 extension PrettyLogFormatTests {
     func test_whenFormattedMessage_thenMessageFormattedWithComponents() {
         clock.now = Date()
-        let expectedDate = expectedDateString(forDate: clock.now!)
-        let expectedUtcDate = expectedUtcDateString(forDate: clock.now!)
-        let expectedMessage = "a message"
-        let expectedSeverity = LogSeverity.debug
-        let expectedTag = "a-tag"
-        let expectedFile = "path/afile.swift"
-        let expectedFunction = "afunction(arg:)"
-        let expectedLine = 25
-        let expectedFormattedMessage = "\(expectedDate)|\(expectedUtcDate)|afile.swift|afile|afunction(arg:)|afunction|25|a message|Debug  |D|200|a-tag"
+        let expectedDate = expectedDateString(forDate: clock.now!, dateFormat: "HH:mm:ss")
+        let expectedUtcDate = expectedUtcDateString(forDate: clock.now!, dateFormat: "HH:mm")
+        let expectedFormattedMessage = "\(expectedDate)|\(expectedUtcDate)|afile.swift|afile|afunction(arg:)|afunction|25|a message|Unknown|Debug  |D|200|a-tag"
 
-        let actualMessage = format.formattedMessage(from: expectedMessage,
-                                                    withSeverity: expectedSeverity,
-                                                    withTag: expectedTag,
-                                                    forFile: expectedFile,
-                                                    forFunction: expectedFunction,
-                                                    forLine: expectedLine)
+        let actualMessage = format.formattedMessage(from: "a message",
+                                                    withSeverity: LogSeverity.debug,
+                                                    withTag: "a-tag",
+                                                    forFile: "path/afile.swift",
+                                                    forFunction: "afunction(arg:)",
+                                                    forLine: 25)
+
+        expect(actualMessage).to(equal(expectedFormattedMessage))
+    }
+
+    func test_whenFormattedMessage_thenUnknownSeverity_givenSeverityWithEmptyLabelAndLetterSeverityFormat() {
+        let severity = LogSeverity(severity: 900, label: "")
+        let format = PrettyLogFormat(withComponents: [.severity(withFormat: .letter)])
+
+        let actualMessage = format.formattedMessage(from: "",
+                                                    withSeverity: severity,
+                                                    withTag: "",
+                                                    forFile: "",
+                                                    forFunction: "",
+                                                    forLine: 0)
+
+        expect(actualMessage).to(equal("Unknown"))
+    }
+
+    func test_whenFormattedMessage_thenFunctionUnchanged_givenFunctionWithNoBrackets() {
+        let format = PrettyLogFormat(withComponents: [.function(withArgs: false)])
+
+        let actualMessage = format.formattedMessage(from: "",
+                                                    withSeverity: LogSeverity.error,
+                                                    withTag: "",
+                                                    forFile: "",
+                                                    forFunction: "somefunction",
+                                                    forLine: 0)
+
+        expect(actualMessage).to(equal("somefunction"))
+    }
+
+    func test_whenFormattedMessage_thenMessageFormattedWithDefaultFormat_givenDefaultFormat() {
+        format = PrettyLogFormat(withClock: clock)
+        clock.now = Date()
+        let expectedDate = expectedDateString(forDate: clock.now!, dateFormat: PrettyLogFormat.defaultDateFormat)
+        let expectedFormattedMessage = "\(expectedDate) | a-tag | Debug   | afile:afunction:25 | a message"
+
+        let actualMessage = format.formattedMessage(from: "a message",
+                                                    withSeverity: LogSeverity.debug,
+                                                    withTag: "a-tag",
+                                                    forFile: "path/afile.swift",
+                                                    forFunction: "afunction(arg:)",
+                                                    forLine: 25)
 
         expect(actualMessage).to(equal(expectedFormattedMessage))
     }
 }
 
 private extension PrettyLogFormatTests {
-    private func expectedDateString(forDate date: Date) -> String {
+    private func expectedDateString(forDate date: Date, dateFormat: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
+        dateFormatter.dateFormat = dateFormat
         return dateFormatter.string(from: clock.now!)
     }
 
-    private func expectedUtcDateString(forDate date: Date) -> String {
+    private func expectedUtcDateString(forDate date: Date, dateFormat: String) -> String {
         let dateUtcFormatter = DateFormatter()
         dateUtcFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateUtcFormatter.dateFormat = "HH:mm"
+        dateUtcFormatter.dateFormat = dateFormat
         return dateUtcFormatter.string(from: clock.now!)
     }
 }
