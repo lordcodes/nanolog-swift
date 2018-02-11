@@ -62,7 +62,7 @@ extension NanoLoggingLaneTests {
 }
 
 #if os(Linux)
-    extension ClockTests {
+    extension NanoLoggingLaneTests {
         static var allTests = [
             ("test_whenDeliver_thenNoMessagePrinted_givenLoggableFalse", test_whenDeliver_thenNoMessagePrinted_givenLoggableFalse),
             ("test_whenDeliver_thenMessagePrinted_givenLoggableTrue", test_whenDeliver_thenMessagePrinted_givenLoggableTrue)

@@ -133,7 +133,7 @@ private extension PrettyLogFormatTests {
 }
 
 #if os(Linux)
-    extension StringExtensionsTests {
+    extension PrettyLogFormatTests {
         static var allTests = [
             ("test_whenFormattedMessage_thenMessageFormattedWithComponents", test_whenFormattedMessage_thenMessageFormattedWithComponents),
             ("test_whenFormattedMessage_thenUnknownSeverity_givenSeverityWithEmptyLabelAndLetterSeverityFormat", test_whenFormattedMessage_thenUnknownSeverity_givenSeverityWithEmptyLabelAndLetterSeverityFormat),
@@ -142,3 +142,4 @@ private extension PrettyLogFormatTests {
         ]
     }
 #endif
+
