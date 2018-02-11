@@ -2,8 +2,14 @@ language: swift
 
 osx_image: xcode9.2
 
+cache:
+  bundler: true
+  directories:
+    - Carthage
+
 before_install:
   - bundle install
+  - bundle exec fastlane dependencies
 
 script:
   - bundle exec fastlane test

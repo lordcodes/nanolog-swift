@@ -13,6 +13,14 @@ end
 # PUBLIC LANES
 ####################
 
+desc "Resolve all dependencies"
+lane :dependencies do
+  carthage(
+    command: "bootstrap",
+    cache_builds: true
+  )
+end
+
 desc "Run all the unit tests"
 lane :test do
   reset_simulators if is_ci?
