@@ -103,7 +103,7 @@ private extension PrettyLogFormat {
 
     private func stripParameters(fromFunction function: String) -> String {
         if let indexOfBrace = function.index(of: "(") {
-            return function.substringCompat(endIndex: indexOfBrace)
+            return function.substringCompat(upToEndIndex: indexOfBrace)
         }
         return function
     }
