@@ -13,12 +13,19 @@
 // See the License for the specific language governing permissions and limitations under the License.
 
 public struct LogSeverity {
-    static let verbose = LogSeverity(severity: 100, label: "Verbose")
-    static let debug = LogSeverity(severity: 200, label: "Debug  ")
-    static let info = LogSeverity(severity: 300, label: "Info   ")
-    static let warning = LogSeverity(severity: 400, label: "Warning")
-    static let error = LogSeverity(severity: 500, label: "Error  ")
+    public static var verbose = LogSeverity(severity: 100, label: "VERBOSE", icon: "⬛")
+    public static var debug = LogSeverity(severity: 200, label: "DEBUG  ", icon: "🔵")
+    public static var info = LogSeverity(severity: 300, label: "INFO   ", icon: "💚")
+    public static var warning = LogSeverity(severity: 400, label: "WARNING", icon: "🔶")
+    public static var error = LogSeverity(severity: 500, label: "ERROR  ", icon: "🛑")
 
     let severity: Int
     let label: String
+    let icon: String
+
+    public init(severity: Int, label: String, icon: String) {
+        self.severity = severity
+        self.label = label
+        self.icon = icon
+    }
 }
