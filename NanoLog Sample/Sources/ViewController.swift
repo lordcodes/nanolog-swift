@@ -19,13 +19,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NanoLog.error("Super long message that can be seen in console")
-        NanoLog.w("Super long message that can be seen in console")
+        NanoLog.error("Super long message that is an error")
+        NanoLog.w("Super long message that is a warning")
+        anotherMethod(withString: "testing")
         someMethod(withIntArg: 2)
     }
 
-    func someMethod(withIntArg intArg: Int) -> Bool {
-        NanoLog.verbose("Super long message that can be seen in console")
-        return true
+    func anotherMethod(withString string: String) {
+        NanoLog.info("Super long message that is for info")
+        NanoLog.d("Super long message that is for debugging, showing string: \(string)")
+    }
+
+    func someMethod(withIntArg intArg: Int) {
+        NanoLog.verbose("Super long message that is verbose")
     }
 }

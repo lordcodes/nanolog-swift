@@ -298,9 +298,9 @@
 				F65CFC37202B824A00C3EC6C /* Filter */,
 				F6D231DF202E561F00D862C1 /* Format */,
 				F6D231DC202E549600D862C1 /* Lane */,
-				F65063D9202C4DDA00535D9B /* LogSeverity.swift */,
 				8933C7841EB5B820000D00A4 /* NanoLog.swift */,
 				F6D231E2202E572200D862C1 /* Printer */,
+				F6E0F5DE2038830F00DD32B8 /* Severity */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -445,6 +445,14 @@
 				F6D232512030920400D862C1 /* LogPrinterFake.swift */,
 			);
 			path = Printer;
+			sourceTree = "<group>";
+		};
+		F6E0F5DE2038830F00DD32B8 /* Severity */ = {
+			isa = PBXGroup;
+			children = (
+				F65063D9202C4DDA00535D9B /* LogSeverity.swift */,
+			);
+			path = Severity;
 			sourceTree = "<group>";
 		};
 		F6FBDB58202E030300BB4D85 /* Controller */ = {
