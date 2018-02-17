@@ -137,7 +137,7 @@ private extension PrettyLogFormat {
     private func createSeverity(_ severity: LogSeverity, withFormat format: SeverityFormat) -> String {
         switch format {
         case .icon:
-            return PrettyLogFormat.unknown
+            return severity.icon
         case .label:
             return severity.label
         case .letter:
@@ -158,6 +158,8 @@ private extension PrettyLogFormat {
             .separator(string: defaultSeparator),
             .tag,
             .separator(string: defaultSeparator),
+            .severity(withFormat: .icon),
+            .separator(string: " "),
             .severity(withFormat: .label),
             .separator(string: defaultSeparator),
             .file(withExtension: false),
