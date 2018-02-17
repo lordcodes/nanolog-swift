@@ -61,7 +61,7 @@ extension PrettyLogFormatTests {
         clock.now = Date()
         let expectedDate = expectedDateString(forDate: clock.now!, dateFormat: "HH:mm:ss")
         let expectedUtcDate = expectedUtcDateString(forDate: clock.now!, dateFormat: "HH:mm")
-        let expectedFormattedMessage = "\(expectedDate)|\(expectedUtcDate)|afile.swift|afile|afunction(arg:)|afunction|25|a message|Unknown|Debug  |D|200|a-tag"
+        let expectedFormattedMessage = "\(expectedDate)|\(expectedUtcDate)|afile.swift|afile|afunction(arg:)|afunction|25|a message|🔵|DEBUG  |D|200|a-tag"
 
         let actualMessage = format.formattedMessage(from: "a message",
                                                     withSeverity: LogSeverity.debug,
@@ -74,7 +74,7 @@ extension PrettyLogFormatTests {
     }
 
     func test_whenFormattedMessage_thenUnknownSeverity_givenSeverityWithEmptyLabelAndLetterSeverityFormat() {
-        let severity = LogSeverity(severity: 900, label: "")
+        let severity = LogSeverity(severity: 900, label: "", icon: "")
         let format = PrettyLogFormat(withComponents: [.severity(withFormat: .letter)])
 
         let actualMessage = format.formattedMessage(from: "",
@@ -104,7 +104,7 @@ extension PrettyLogFormatTests {
         format = PrettyLogFormat(withClock: clock)
         clock.now = Date()
         let expectedDate = expectedDateString(forDate: clock.now!, dateFormat: PrettyLogFormat.defaultDateFormat)
-        let expectedFormattedMessage = "\(expectedDate) | a-tag | Debug   | afile:afunction:25 | a message"
+        let expectedFormattedMessage = "\(expectedDate) | a-tag | 🔵 DEBUG   | afile:afunction:25 | a message"
 
         let actualMessage = format.formattedMessage(from: "a message",
                                                     withSeverity: LogSeverity.debug,
