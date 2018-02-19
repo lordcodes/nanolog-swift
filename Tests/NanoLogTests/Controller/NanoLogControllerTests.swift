@@ -25,7 +25,7 @@ class NanoLogControllerTests: XCTestCase {
         super.setUp()
 
         controller = NanoLogController()
-        controller.loggingLane(lane)
+        controller.addLoggingLane(lane)
     }
 }
 
@@ -40,11 +40,11 @@ extension NanoLogControllerTests {
         expect(self.lane.deliverTag).to(equal(expectedTag))
     }
 
-    func test_whenLoggingLane_thenMessageDeliveredToIt() {
+    func test_whenAddLoggingLane_thenMessageDeliveredToIt() {
         let expectedLane = LoggingLaneFake()
         let expectedMessage = "a test message"
 
-        controller.loggingLane(expectedLane)
+        controller.addLoggingLane(expectedLane)
         controller.logMessage(expectedMessage, withSeverity: LogSeverity.error, file: "", function: "", line: 0)
 
         expect(expectedLane.deliverMessage).to(equal(expectedMessage))

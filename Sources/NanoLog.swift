@@ -97,11 +97,11 @@ public class NanoLog {
         controller.loggingTag(tag)
     }
 
-    public static func withLoggingLane(_ loggingLane: LoggingLane) {
-        controller.loggingLane(loggingLane)
+    public static func addLoggingLane(_ loggingLane: LoggingLane) {
+        controller.addLoggingLane(loggingLane)
     }
 
-    public static func withDefaultConsoleLane() {
-        withLoggingLane(NanoLoggingLane())
+    public static func addDefaultConsoleLane() {
+        addLoggingLane(NanoLoggingLane())
     }
 }

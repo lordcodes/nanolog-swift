@@ -156,22 +156,22 @@ extension NanoLogTests {
         expect(self.controller.loggedTag).to(equal(expectedTag))
     }
 
-    func test_whenWithLoggingLane_thenLaneSetOnController() {
-        NanoLog.withLoggingLane(NanoLoggingLane())
+    func test_whenAddLoggingLane_thenLaneSetOnController() {
+        NanoLog.addLoggingLane(NanoLoggingLane())
 
-        expect(self.controller.loggedLane).toNot(beNil())
+        expect(self.controller.loggedLanes.count).to(equal(1))
     }
 
-    func test_whenWithDefaultConsoleLane_thenLaneSetOnController() {
-        NanoLog.withDefaultConsoleLane()
-        controller.loggedLane?.deliver(message: "",
-                                       withSeverity: LogSeverity.debug,
-                                       withTag: "",
-                                       forFile: "",
-                                       forFunction: "",
-                                       forLine: 0)
+    func test_whenAddDefaultConsoleLane_thenLaneSetOnController() {
+        NanoLog.addDefaultConsoleLane()
+        controller.loggedLanes[0].deliver(message: "",
+                                          withSeverity: LogSeverity.debug,
+                                          withTag: "",
+                                          forFile: "",
+                                          forFunction: "",
+                                          forLine: 0)
 
-        expect(self.controller.loggedLane).toNot(beNil())
+        expect(self.controller.loggedLanes.count).to(equal(1))
     }
 }
 
