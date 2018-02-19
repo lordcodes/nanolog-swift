@@ -173,6 +173,17 @@ extension NanoLogTests {
 
         expect(self.controller.loggedLanes.count).to(equal(1))
     }
+
+    func test_whenClearLoggingLanes_thenMessageNotDeliveredToLane() {
+        let lane = LoggingLaneFake()
+        NanoLog.addLoggingLane(lane)
+        NanoLog.addLoggingLane(NanoLoggingLane())
+
+        NanoLog.clearLoggingLanes()
+        NanoLog.message("message", withSeverity: LogSeverity.error)
+
+        expect(lane.deliverMessage).to(beNil())
+    }
 }
 
 #if os(Linux)
@@ -190,8 +201,9 @@ extension NanoLogTests {
         ("test_whenError_thenErrorMessagedLoggedToController", test_whenError_thenErrorMessagedLoggedToController),
         ("test_whenMessage_thenMessageLoggedToController", test_whenMessage_thenMessageLoggedToController),
         ("test_whenWithLoggingTag_thenTagSetOnController", test_whenWithLoggingTag_thenTagSetOnController),
-        ("test_whenWithLoggingLane_thenLaneSetOnController", test_whenWithLoggingLane_thenLaneSetOnController),
-        ("test_whenWithDefaultConsoleLane_thenLaneSetOnController", test_whenWithDefaultConsoleLane_thenLaneSetOnController)
+        ("test_whenAddLoggingLane_thenLaneSetOnController", test_whenAddLoggingLane_thenLaneSetOnController),
+        ("test_whenAddDefaultConsoleLane_thenLaneSetOnController", test_whenAddDefaultConsoleLane_thenLaneSetOnController),
+        ("test_whenClearLoggingLanes_thenMessageNotDeliveredToLane", test_whenClearLoggingLanes_thenMessageNotDeliveredToLane)
     ]
 }
 #endif

@@ -34,6 +34,10 @@ extension NanoLogController: LogController {
         loggingLanes.append(loggingLane)
     }
 
+    public func clearLoggingLanes() {
+        loggingLanes.removeAll()
+    }
+
     public func logVerbose(_ message: @autoclosure () -> Any,
                            file: String = #file,
                            function: String = #function,

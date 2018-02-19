@@ -104,4 +104,8 @@ public class NanoLog {
     public static func addDefaultConsoleLane() {
         addLoggingLane(NanoLoggingLane())
     }
+
+    public static func clearLoggingLanes() {
+        controller.clearLoggingLanes()
+    }
 }

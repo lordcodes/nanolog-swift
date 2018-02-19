@@ -17,6 +17,8 @@ public protocol LogController {
 
     func addLoggingLane(_ loggingLane: LoggingLane)
 
+    func clearLoggingLanes()
+
     func logVerbose(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)
 
     func logDebug(_ message: @autoclosure () -> Any, file: String, function: String, line: Int)

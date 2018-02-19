@@ -50,6 +50,17 @@ extension NanoLogControllerTests {
         expect(expectedLane.deliverMessage).to(equal(expectedMessage))
     }
 
+    func test_whenClearLoggingLanes_thenMessageNotDeliveredToLane() {
+        let lane = LoggingLaneFake()
+        controller.addLoggingLane(lane)
+        controller.addLoggingLane(NanoLoggingLane())
+
+        controller.clearLoggingLanes()
+        controller.logMessage("message", withSeverity: LogSeverity.error, file: "", function: "", line: 0)
+
+        expect(lane.deliverMessage).to(beNil())
+    }
+
     func test_whenLogVerbose_thenVerboseMessageDelivered() {
         let expectedMessage = "Some message"
         let expectedFile = "Some file"
@@ -150,7 +161,8 @@ extension NanoLogControllerTests {
 extension NanoLogControllerTests {
     static var allTests = [
         ("test_whenLoggingTag_thenTagSet", test_whenLoggingTag_thenTagSet),
-        ("test_whenLoggingLane_thenMessageDeliveredToIt", test_whenLoggingLane_thenMessageDeliveredToIt),
+        ("test_whenAddLoggingLane_thenMessageDeliveredToIt", test_whenAddLoggingLane_thenMessageDeliveredToIt),
+        ("test_whenClearLoggingLanes_thenMessageNotDeliveredToLane", test_whenClearLoggingLanes_thenMessageNotDeliveredToLane),
         ("test_whenLogVerbose_thenVerboseMessageDelivered", test_whenLogVerbose_thenVerboseMessageDelivered),
         ("test_whenLogDebug_thenDebugMessageDelivered", test_whenLogDebug_thenDebugMessageDelivered),
         ("test_whenLogInfo_thenInfoMessageDelivered", test_whenLogInfo_thenInfoMessageDelivered),

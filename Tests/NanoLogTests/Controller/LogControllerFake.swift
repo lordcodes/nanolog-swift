@@ -34,6 +34,10 @@ extension LogControllerFake: LogController {
         loggedLanes.append(loggingLane)
     }
 
+    func clearLoggingLanes() {
+        loggedLanes.removeAll()
+    }
+
     public func logVerbose(_ message: @autoclosure () -> Any, file: String, function: String, line: Int) {
         logMessage(message, withSeverity: LogSeverity.verbose, file: file, function: function, line: line)
     }
