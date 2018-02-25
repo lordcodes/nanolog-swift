@@ -16,11 +16,11 @@ import Foundation
 
 public class NanoLogController {
     private var tag: String
-    private var loggingLane: LoggingLane?
+    private var loggingLanes: [LoggingLane]
 
-    init(tag: String = "NanoLog", loggingLane: LoggingLane? = nil) {
+    init(tag: String = "NanoLog", loggingLanes: [LoggingLane] = [LoggingLane]()) {
         self.tag = tag
-        self.loggingLane = loggingLane
+        self.loggingLanes = loggingLanes
     }
 }
 
@@ -30,8 +30,12 @@ extension NanoLogController: LogController {
         self.tag = tag
     }
 
-    public func loggingLane(_ loggingLane: LoggingLane) {
-        self.loggingLane = loggingLane
+    public func addLoggingLane(_ loggingLane: LoggingLane) {
+        loggingLanes.append(loggingLane)
+    }
+
+    public func clearLoggingLanes() {
+        loggingLanes.removeAll()
     }
 
     public func logVerbose(_ message: @autoclosure () -> Any,
@@ -74,11 +78,14 @@ extension NanoLogController: LogController {
                            file: String = #file,
                            function: String = #function,
                            line: Int = #line) {
-        loggingLane?.deliver(message: message,
-                             withSeverity: severity,
-                             withTag: tag,
-                             forFile: file,
-                             forFunction: function,
-                             forLine: line)
+
+        for lane in loggingLanes {
+            lane.deliver(message: message,
+                         withSeverity: severity,
+                         withTag: tag,
+                         forFile: file,
+                         forFunction: function,
+                         forLine: line)
+        }
     }
 }
