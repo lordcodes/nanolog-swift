@@ -16,7 +16,7 @@
 
 class LogControllerFake {
     var loggedTag: String?
-    var loggedLane: LoggingLane?
+    var loggedLanes = [LoggingLane]()
     var loggedMessage: String?
     var loggedSeverity: LogSeverity?
     var loggedFile: String?
@@ -30,8 +30,12 @@ extension LogControllerFake: LogController {
         loggedTag = tag
     }
 
-    func loggingLane(_ loggingLane: LoggingLane) {
-        loggedLane = loggingLane
+    func addLoggingLane(_ loggingLane: LoggingLane) {
+        loggedLanes.append(loggingLane)
+    }
+
+    func clearLoggingLanes() {
+        loggedLanes.removeAll()
     }
 
     public func logVerbose(_ message: @autoclosure () -> Any, file: String, function: String, line: Int) {

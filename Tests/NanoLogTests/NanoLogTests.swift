@@ -156,22 +156,33 @@ extension NanoLogTests {
         expect(self.controller.loggedTag).to(equal(expectedTag))
     }
 
-    func test_whenWithLoggingLane_thenLaneSetOnController() {
-        NanoLog.withLoggingLane(NanoLoggingLane())
+    func test_whenAddLoggingLane_thenLaneSetOnController() {
+        NanoLog.addLoggingLane(NanoLoggingLane())
 
-        expect(self.controller.loggedLane).toNot(beNil())
+        expect(self.controller.loggedLanes.count).to(equal(1))
     }
 
-    func test_whenWithDefaultConsoleLane_thenLaneSetOnController() {
-        NanoLog.withDefaultConsoleLane()
-        controller.loggedLane?.deliver(message: "",
-                                       withSeverity: LogSeverity.debug,
-                                       withTag: "",
-                                       forFile: "",
-                                       forFunction: "",
-                                       forLine: 0)
+    func test_whenAddDefaultConsoleLane_thenLaneSetOnController() {
+        NanoLog.addDefaultConsoleLane()
+        controller.loggedLanes[0].deliver(message: "",
+                                          withSeverity: LogSeverity.debug,
+                                          withTag: "",
+                                          forFile: "",
+                                          forFunction: "",
+                                          forLine: 0)
 
-        expect(self.controller.loggedLane).toNot(beNil())
+        expect(self.controller.loggedLanes.count).to(equal(1))
+    }
+
+    func test_whenClearLoggingLanes_thenMessageNotDeliveredToLane() {
+        let lane = LoggingLaneFake()
+        NanoLog.addLoggingLane(lane)
+        NanoLog.addLoggingLane(NanoLoggingLane())
+
+        NanoLog.clearLoggingLanes()
+        NanoLog.message("message", withSeverity: LogSeverity.error)
+
+        expect(lane.deliverMessage).to(beNil())
     }
 }
 
@@ -190,8 +201,9 @@ extension NanoLogTests {
         ("test_whenError_thenErrorMessagedLoggedToController", test_whenError_thenErrorMessagedLoggedToController),
         ("test_whenMessage_thenMessageLoggedToController", test_whenMessage_thenMessageLoggedToController),
         ("test_whenWithLoggingTag_thenTagSetOnController", test_whenWithLoggingTag_thenTagSetOnController),
-        ("test_whenWithLoggingLane_thenLaneSetOnController", test_whenWithLoggingLane_thenLaneSetOnController),
-        ("test_whenWithDefaultConsoleLane_thenLaneSetOnController", test_whenWithDefaultConsoleLane_thenLaneSetOnController)
+        ("test_whenAddLoggingLane_thenLaneSetOnController", test_whenAddLoggingLane_thenLaneSetOnController),
+        ("test_whenAddDefaultConsoleLane_thenLaneSetOnController", test_whenAddDefaultConsoleLane_thenLaneSetOnController),
+        ("test_whenClearLoggingLanes_thenMessageNotDeliveredToLane", test_whenClearLoggingLanes_thenMessageNotDeliveredToLane)
     ]
 }
 #endif
