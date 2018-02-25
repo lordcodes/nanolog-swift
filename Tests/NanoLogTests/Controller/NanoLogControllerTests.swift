@@ -25,7 +25,7 @@ class NanoLogControllerTests: XCTestCase {
         super.setUp()
 
         controller = NanoLogController()
-        controller.loggingLane(lane)
+        controller.addLoggingLane(lane)
     }
 }
 
@@ -40,14 +40,25 @@ extension NanoLogControllerTests {
         expect(self.lane.deliverTag).to(equal(expectedTag))
     }
 
-    func test_whenLoggingLane_thenMessageDeliveredToIt() {
+    func test_whenAddLoggingLane_thenMessageDeliveredToIt() {
         let expectedLane = LoggingLaneFake()
         let expectedMessage = "a test message"
 
-        controller.loggingLane(expectedLane)
+        controller.addLoggingLane(expectedLane)
         controller.logMessage(expectedMessage, withSeverity: LogSeverity.error, file: "", function: "", line: 0)
 
         expect(expectedLane.deliverMessage).to(equal(expectedMessage))
+    }
+
+    func test_whenClearLoggingLanes_thenMessageNotDeliveredToLane() {
+        let lane = LoggingLaneFake()
+        controller.addLoggingLane(lane)
+        controller.addLoggingLane(NanoLoggingLane())
+
+        controller.clearLoggingLanes()
+        controller.logMessage("message", withSeverity: LogSeverity.error, file: "", function: "", line: 0)
+
+        expect(lane.deliverMessage).to(beNil())
     }
 
     func test_whenLogVerbose_thenVerboseMessageDelivered() {
@@ -150,7 +161,8 @@ extension NanoLogControllerTests {
 extension NanoLogControllerTests {
     static var allTests = [
         ("test_whenLoggingTag_thenTagSet", test_whenLoggingTag_thenTagSet),
-        ("test_whenLoggingLane_thenMessageDeliveredToIt", test_whenLoggingLane_thenMessageDeliveredToIt),
+        ("test_whenAddLoggingLane_thenMessageDeliveredToIt", test_whenAddLoggingLane_thenMessageDeliveredToIt),
+        ("test_whenClearLoggingLanes_thenMessageNotDeliveredToLane", test_whenClearLoggingLanes_thenMessageNotDeliveredToLane),
         ("test_whenLogVerbose_thenVerboseMessageDelivered", test_whenLogVerbose_thenVerboseMessageDelivered),
         ("test_whenLogDebug_thenDebugMessageDelivered", test_whenLogDebug_thenDebugMessageDelivered),
         ("test_whenLogInfo_thenInfoMessageDelivered", test_whenLogInfo_thenInfoMessageDelivered),
