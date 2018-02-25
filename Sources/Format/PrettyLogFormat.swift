@@ -24,7 +24,7 @@ public class PrettyLogFormat {
     private let components: [LogFormatComponent]
     private let clock: Clock
 
-    init(withComponents components: [LogFormatComponent] = PrettyLogFormat.defaultFormat(),
+    public init(withComponents components: [LogFormatComponent] = PrettyLogFormat.defaultFormat(),
          withClock clock: Clock = SystemClock()) {
         self.components = components
         self.clock = clock
@@ -151,8 +151,8 @@ private extension PrettyLogFormat {
     }
 }
 
-private extension PrettyLogFormat {
-    private static func defaultFormat() -> [LogFormatComponent] {
+public extension PrettyLogFormat {
+    public static func defaultFormat() -> [LogFormatComponent] {
         return [
             .date(withDateFormat: PrettyLogFormat.defaultDateFormat),
             .separator(string: defaultSeparator),
