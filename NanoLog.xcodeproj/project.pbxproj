@@ -36,6 +36,12 @@
 		F658D9D62042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9D42042FD6C00ACF465 /* MinimumSeverityFilter.swift */; };
 		F658D9D72042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9D42042FD6C00ACF465 /* MinimumSeverityFilter.swift */; };
 		F658D9D82042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9D42042FD6C00ACF465 /* MinimumSeverityFilter.swift */; };
+		F658D9DB2043174900ACF465 /* LogSeverityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9DA2043174900ACF465 /* LogSeverityTests.swift */; };
+		F658D9DC2043174900ACF465 /* LogSeverityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9DA2043174900ACF465 /* LogSeverityTests.swift */; };
+		F658D9DD2043174900ACF465 /* LogSeverityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9DA2043174900ACF465 /* LogSeverityTests.swift */; };
+		F658D9DF2043191100ACF465 /* MinimumSeverityFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9DE2043191100ACF465 /* MinimumSeverityFilterTests.swift */; };
+		F658D9E02043191100ACF465 /* MinimumSeverityFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9DE2043191100ACF465 /* MinimumSeverityFilterTests.swift */; };
+		F658D9E12043191100ACF465 /* MinimumSeverityFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9DE2043191100ACF465 /* MinimumSeverityFilterTests.swift */; };
 		F65CFC3B202B824B00C3EC6C /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC36202B824A00C3EC6C /* LogController.swift */; };
 		F65CFC3C202B824B00C3EC6C /* OpenLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */; };
 		F65CFC3D202B824B00C3EC6C /* LogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC39202B824A00C3EC6C /* LogFilter.swift */; };
@@ -159,6 +165,8 @@
 		F65063C4202B83E100535D9B /* NanoLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoLogController.swift; sourceTree = "<group>"; };
 		F65063D9202C4DDA00535D9B /* LogSeverity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSeverity.swift; sourceTree = "<group>"; };
 		F658D9D42042FD6C00ACF465 /* MinimumSeverityFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumSeverityFilter.swift; sourceTree = "<group>"; };
+		F658D9DA2043174900ACF465 /* LogSeverityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSeverityTests.swift; sourceTree = "<group>"; };
+		F658D9DE2043191100ACF465 /* MinimumSeverityFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumSeverityFilterTests.swift; sourceTree = "<group>"; };
 		F65CFC36202B824A00C3EC6C /* LogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
 		F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenLogFilter.swift; sourceTree = "<group>"; };
 		F65CFC39202B824A00C3EC6C /* LogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFilter.swift; sourceTree = "<group>"; };
@@ -321,6 +329,7 @@
 				F6D232592030972400D862C1 /* LinuxMain.swift */,
 				8933C7891EB5B82A000D00A4 /* NanoLogTests.swift */,
 				F6D23250203091EC00D862C1 /* Printer */,
+				F658D9D92043173000ACF465 /* Severity */,
 			);
 			name = Tests;
 			path = Tests/NanoLogTests;
@@ -348,6 +357,14 @@
 				F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F658D9D92043173000ACF465 /* Severity */ = {
+			isa = PBXGroup;
+			children = (
+				F658D9DA2043174900ACF465 /* LogSeverityTests.swift */,
+			);
+			path = Severity;
 			sourceTree = "<group>";
 		};
 		F65CFC35202B824A00C3EC6C /* Controller */ = {
@@ -430,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				F6D2324C20308F8100D862C1 /* LogFilterFake.swift */,
+				F658D9DE2043191100ACF465 /* MinimumSeverityFilterTests.swift */,
 				F6D232362030483F00D862C1 /* OpenLogFilterTests.swift */,
 			);
 			path = Filter;
@@ -838,7 +856,9 @@
 				F6D232562030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */,
 				F6D2323C20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */,
 				F6D232452030510C00D862C1 /* ClockFake.swift in Sources */,
+				F658D9DB2043174900ACF465 /* LogSeverityTests.swift in Sources */,
 				F6D232372030483F00D862C1 /* OpenLogFilterTests.swift in Sources */,
+				F658D9DF2043191100ACF465 /* MinimumSeverityFilterTests.swift in Sources */,
 				F6FBDB5B202E031400BB4D85 /* LogControllerFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -929,7 +949,9 @@
 				F6D232572030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */,
 				F6D2323D20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */,
 				F6D232462030510C00D862C1 /* ClockFake.swift in Sources */,
+				F658D9DC2043174900ACF465 /* LogSeverityTests.swift in Sources */,
 				F6D232382030483F00D862C1 /* OpenLogFilterTests.swift in Sources */,
+				F658D9E02043191100ACF465 /* MinimumSeverityFilterTests.swift in Sources */,
 				F6FBDB5C202E031500BB4D85 /* LogControllerFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -948,7 +970,9 @@
 				F6D232582030927700D862C1 /* NanoLoggingLaneTests.swift in Sources */,
 				F6D2323E20304BD700D862C1 /* PrettyLogFormatTests.swift in Sources */,
 				F6D232472030510C00D862C1 /* ClockFake.swift in Sources */,
+				F658D9DD2043174900ACF465 /* LogSeverityTests.swift in Sources */,
 				F6D232392030483F00D862C1 /* OpenLogFilterTests.swift in Sources */,
+				F658D9E12043191100ACF465 /* MinimumSeverityFilterTests.swift in Sources */,
 				F6FBDB5D202E031500BB4D85 /* LogControllerFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
