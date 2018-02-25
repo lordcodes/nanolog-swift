@@ -18,7 +18,7 @@ public class NanoLogController {
     private var tag: String
     private var loggingLanes: [LoggingLane]
 
-    init(tag: String = "NanoLog", loggingLanes: [LoggingLane] = [LoggingLane]()) {
+    public init(tag: String = "NanoLog", loggingLanes: [LoggingLane] = [LoggingLane]()) {
         self.tag = tag
         self.loggingLanes = loggingLanes
     }

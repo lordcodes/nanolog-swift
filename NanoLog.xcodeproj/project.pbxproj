@@ -32,6 +32,10 @@
 		F65063D3202B83F700535D9B /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC36202B824A00C3EC6C /* LogController.swift */; };
 		F65063D4202B83F700535D9B /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC36202B824A00C3EC6C /* LogController.swift */; };
 		F65063DA202C4DDA00535D9B /* LogSeverity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65063D9202C4DDA00535D9B /* LogSeverity.swift */; };
+		F658D9D52042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9D42042FD6C00ACF465 /* MinimumSeverityFilter.swift */; };
+		F658D9D62042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9D42042FD6C00ACF465 /* MinimumSeverityFilter.swift */; };
+		F658D9D72042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9D42042FD6C00ACF465 /* MinimumSeverityFilter.swift */; };
+		F658D9D82042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658D9D42042FD6C00ACF465 /* MinimumSeverityFilter.swift */; };
 		F65CFC3B202B824B00C3EC6C /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC36202B824A00C3EC6C /* LogController.swift */; };
 		F65CFC3C202B824B00C3EC6C /* OpenLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */; };
 		F65CFC3D202B824B00C3EC6C /* LogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CFC39202B824A00C3EC6C /* LogFilter.swift */; };
@@ -154,6 +158,7 @@
 		F641CD1A202D8FE300FA66F8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		F65063C4202B83E100535D9B /* NanoLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoLogController.swift; sourceTree = "<group>"; };
 		F65063D9202C4DDA00535D9B /* LogSeverity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSeverity.swift; sourceTree = "<group>"; };
+		F658D9D42042FD6C00ACF465 /* MinimumSeverityFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumSeverityFilter.swift; sourceTree = "<group>"; };
 		F65CFC36202B824A00C3EC6C /* LogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
 		F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenLogFilter.swift; sourceTree = "<group>"; };
 		F65CFC39202B824A00C3EC6C /* LogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFilter.swift; sourceTree = "<group>"; };
@@ -358,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				F65CFC39202B824A00C3EC6C /* LogFilter.swift */,
+				F658D9D42042FD6C00ACF465 /* MinimumSeverityFilter.swift */,
 				F65CFC38202B824A00C3EC6C /* OpenLogFilter.swift */,
 			);
 			path = Filter;
@@ -804,6 +810,7 @@
 				F6D231F1202E5C7600D862C1 /* ConsolePrinter.swift in Sources */,
 				F65063DA202C4DDA00535D9B /* LogSeverity.swift in Sources */,
 				F65CFC3C202B824B00C3EC6C /* OpenLogFilter.swift in Sources */,
+				F658D9D52042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */,
 				F6D231FF202F7F3300D862C1 /* SeverityFormat.swift in Sources */,
 				F6D2322720303F2600D862C1 /* NanoLoggingLane.swift in Sources */,
 				F641CD1B202D8FE300FA66F8 /* StringExtensions.swift in Sources */,
@@ -846,6 +853,7 @@
 				F6D231FB202F7DC500D862C1 /* ConsolePrinter.swift in Sources */,
 				F65063D3202B83F700535D9B /* LogController.swift in Sources */,
 				F65063CA202B83ED00535D9B /* OpenLogFilter.swift in Sources */,
+				F658D9D72042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */,
 				F6D23203202F979600D862C1 /* SeverityFormat.swift in Sources */,
 				F6D2322920303F2600D862C1 /* NanoLoggingLane.swift in Sources */,
 				F65063CD202B83F100535D9B /* LogFilter.swift in Sources */,
@@ -869,6 +877,7 @@
 				F6D231F9202F7DC400D862C1 /* ConsolePrinter.swift in Sources */,
 				F65063D4202B83F700535D9B /* LogController.swift in Sources */,
 				F65063CB202B83EE00535D9B /* OpenLogFilter.swift in Sources */,
+				F658D9D82042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */,
 				F6D23202202F979500D862C1 /* SeverityFormat.swift in Sources */,
 				F6D2322A20303F2600D862C1 /* NanoLoggingLane.swift in Sources */,
 				F65063CE202B83F100535D9B /* LogFilter.swift in Sources */,
@@ -892,6 +901,7 @@
 				F6D231FD202F7DC500D862C1 /* ConsolePrinter.swift in Sources */,
 				F65063D2202B83F700535D9B /* LogController.swift in Sources */,
 				F65063C9202B83ED00535D9B /* OpenLogFilter.swift in Sources */,
+				F658D9D62042FD6C00ACF465 /* MinimumSeverityFilter.swift in Sources */,
 				F6D23204202F979700D862C1 /* SeverityFormat.swift in Sources */,
 				F6D2322820303F2600D862C1 /* NanoLoggingLane.swift in Sources */,
 				F65063CC202B83F000535D9B /* LogFilter.swift in Sources */,
