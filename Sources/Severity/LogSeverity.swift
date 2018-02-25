@@ -29,3 +29,15 @@ public struct LogSeverity {
         self.icon = icon
     }
 }
+
+extension LogSeverity: Comparable {
+    public static func ==(lhs: LogSeverity, rhs: LogSeverity) -> Bool {
+        return lhs.severity == rhs.severity &&
+            lhs.label == rhs.label &&
+            lhs.icon == rhs.icon
+    }
+
+    public static func <(lhs: LogSeverity, rhs: LogSeverity) -> Bool {
+        return lhs.severity < rhs.severity
+    }
+}

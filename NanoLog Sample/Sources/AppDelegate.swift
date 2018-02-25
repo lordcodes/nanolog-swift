@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        NanoLog.addDefaultConsoleLane()
+
+        let lane = NanoLoggingLane(filter: MinimumSeverityFilter(for: LogSeverity.debug))
+        NanoLog.addLoggingLane(lane)
         return true
     }
 }

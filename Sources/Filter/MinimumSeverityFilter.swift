@@ -12,20 +12,16 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-import Foundation
-
-public protocol Clock {
-    func dateTimeNow() -> Date
-}
-
-public class SystemClock {
-    public init() {
+public class MinimumSeverityFilter {
+    private let minimumSeverity: LogSeverity
+    
+    public init(for minimumSeverity: LogSeverity) {
+        self.minimumSeverity = minimumSeverity
     }
 }
 
-// MARK: - Clock
-extension SystemClock: Clock {
-    public func dateTimeNow() -> Date {
-        return Date()
+extension MinimumSeverityFilter: LogFilter {
+    public func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool {
+        return severity >= minimumSeverity
     }
 }

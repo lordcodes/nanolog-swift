@@ -17,9 +17,9 @@ public struct NanoLoggingLane {
     private let format: LogFormat
     private let printer: LogPrinter
 
-    init(filter: LogFilter = NanoLoggingLane.defaultFilter(),
-         format: LogFormat = NanoLoggingLane.defaultFormat(),
-         printer: LogPrinter = NanoLoggingLane.defaultPrinter()) {
+    public init(filter: LogFilter = NanoLoggingLane.defaultFilter(),
+                format: LogFormat = NanoLoggingLane.defaultFormat(),
+                printer: LogPrinter = NanoLoggingLane.defaultPrinter()) {
         self.filter = filter
         self.format = format
         self.printer = printer
@@ -45,16 +45,16 @@ extension NanoLoggingLane: LoggingLane {
     }
 }
 
-private extension NanoLoggingLane {
-    private static func defaultFilter() -> LogFilter {
+extension NanoLoggingLane {
+    public static func defaultFilter() -> LogFilter {
         return OpenLogFilter()
     }
 
-    private static func defaultFormat() -> LogFormat {
+    public static func defaultFormat() -> LogFormat {
         return PrettyLogFormat()
     }
 
-    private static func defaultPrinter() -> LogPrinter {
+    public static func defaultPrinter() -> LogPrinter {
         return ConsolePrinter()
     }
 }
