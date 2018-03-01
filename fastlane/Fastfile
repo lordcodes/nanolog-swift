@@ -20,42 +20,33 @@ lane :dependencies do
   )
 end
 
-desc "Run tests for iOS"
-lane :test_ios do
+desc "Run all the unit tests"
+lane :test do
   reset_simulators if is_ci?
   scan(
     workspace: "NanoLog.xcworkspace",
     scheme: "NanoLog-iOS"
   )
-end
-
-desc "Run tests for tvOS"
-lane :test_tvos do
-  reset_simulators if is_ci?
   scan(
     workspace: "NanoLog.xcworkspace",
     scheme: "NanoLog-tvOS"
   )
-end
-
-desc "Run tests for MacOS"
-lane :test_macos do
-  reset_simulators if is_ci?
   scan(
     workspace: "NanoLog.xcworkspace",
     scheme: "NanoLog-macOS",
     destination: "platform=macOS"
   )
-end
-
-desc "Run tests for Watch OS"
-lane :test_watchos do
-  xcodebuild(
-    workspace: "NanoLog.xcworkspace",
-    scheme: "NanoLog-watchOS"
-  )
+  build_watchos
 end
 
 ####################
 # PRIVATE LANES
 ####################
+
+desc "Build the Watch OS scheme"
+private_lane :build_watchos do
+  xcodebuild(
+    workspace: "NanoLog.xcworkspace",
+    scheme: "NanoLog-watchOS"
+  )
+end
