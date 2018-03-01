@@ -9,6 +9,45 @@ matrix:
       osx_image: xcode9.2
       language: swift
 
+      env:
+        - LANE=test_ios
+
+      cache:
+        bundler: true
+        directories:
+          - Carthage
+
+    - os: osx
+      osx_image: xcode9.2
+      language: swift
+
+      env:
+        - LANE=test_tvos
+
+      cache:
+        bundler: true
+        directories:
+          - Carthage
+
+    - os: osx
+      osx_image: xcode9.2
+      language: swift
+
+      env:
+        - LANE=test_macos
+
+      cache:
+        bundler: true
+        directories:
+          - Carthage
+
+    - os: osx
+      osx_image: xcode9.2
+      language: swift
+
+      env:
+        - LANE=test_watchos
+
       cache:
         bundler: true
         directories:
@@ -28,7 +67,7 @@ before_install:
 script:
   - >
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      bundle exec fastlane test;
+      bundle exec fastlane $LANE;
     fi
   - >
     if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
