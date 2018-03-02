@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
   spec.name = 'NanoLog'
   spec.version = '0.1'
-  spec.summary = ''
+  spec.summary = 'Simple logging for Swift'
   spec.description = <<-DESC
-    Your description here.
+    Simple logging for Swift.
   DESC
   spec.homepage = 'https://github.com/andrewlord1990/nanolog-swift'
   spec.license = { type: 'MIT', file: 'LICENSE' }
