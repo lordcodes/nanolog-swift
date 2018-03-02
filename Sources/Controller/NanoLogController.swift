@@ -12,8 +12,6 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-import Foundation
-
 public class NanoLogController {
     private var tag: String
     private var loggingLanes: [LoggingLane]
