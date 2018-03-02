@@ -11,7 +11,8 @@ before_install:
 
 stages:
   - test
-  - deploy github
+  - name: deploy github
+    if: tag IS present
 
 jobs:
   include:
