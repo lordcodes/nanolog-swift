@@ -15,6 +15,16 @@ Install _fastlane_ using
 or alternatively using `brew cask install fastlane`
 
 # Available Actions
+### dependencies
+```
+fastlane dependencies
+```
+Resolve all dependencies
+### lint_podspec
+```
+fastlane lint_podspec
+```
+Run Podspec Linting
 ### test
 ```
 fastlane test

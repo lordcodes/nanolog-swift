@@ -10,12 +10,21 @@ before_install:
     fi
 
 stages:
+  - check
   - test
   - name: deploy github
     if: tag IS present
 
 jobs:
   include:
+
+    - stage: check
+      os: osx
+      osx_image: xcode9.2
+      language: swift
+
+      env: LANE=lint_podspec
+      script: bundle exec fastlane $LANE
 
     - stage: test
       os: linux
