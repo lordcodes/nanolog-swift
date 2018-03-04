@@ -31,10 +31,12 @@ jobs:
       dist: trusty
       sudo: required
       language: generic
-      script: swift test
+      env: JOB=test
+      script: swift $JOB
 
     - stage: test
-      script: bundle exec fastlane test
+      env: LANE=test
+      script: bundle exec fastlane $LANE
 
     - stage: test
       env: LANE=lint_podspec
