@@ -1,3 +1,12 @@
+os: osx
+osx_image: xcode9.2
+language: swift
+
+cache:
+  bundler: true
+  directories:
+    - Carthage
+
 before_install:
   - |
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
@@ -10,7 +19,6 @@ before_install:
     fi
 
 stages:
-  - check
   - test
   - name: deploy github
     if: tag IS present
@@ -18,33 +26,19 @@ stages:
 jobs:
   include:
 
-    - stage: check
-      os: osx
-      osx_image: xcode9.2
-      language: swift
-
-      env: LANE=lint_podspec
-      script: bundle exec fastlane $LANE
-
     - stage: test
       os: linux
       dist: trusty
       sudo: required
       language: generic
-
       script: swift test
 
     - stage: test
-      os: osx
-      osx_image: xcode9.2
-      language: swift
-
-      cache:
-        bundler: true
-        directories:
-          - Carthage
-
       script: bundle exec fastlane test
+
+    - stage: test
+      env: LANE=lint_podspec
+      script: bundle exec fastlane $LANE
 
     - stage: deploy github
       script: skip
