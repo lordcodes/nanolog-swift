@@ -25,6 +25,11 @@ Resolve all dependencies
 fastlane lint_podspec
 ```
 Run Podspec Linting
+### deploy_pod
+```
+fastlane deploy_pod
+```
+Deploy Pod
 ### test
 ```
 fastlane test

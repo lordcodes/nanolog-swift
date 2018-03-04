@@ -42,7 +42,8 @@ jobs:
       env: LANE=lint_podspec
       script: bundle exec fastlane $LANE
 
-    - stage: deploy github
+    - stage: deploy
+      env: TYPE=github
       script: skip
       before_deploy:
         - carthage build --no-skip-current --cache-builds
@@ -57,4 +58,14 @@ jobs:
           overwrite: true
           on:
             repo: andrewlord1990/nanolog-swift
+            tags: true
+
+    - stage: deploy
+      env: TYPE=cocoapods
+      script: skip
+      deploy:
+        - provider: script
+          script: bundle exec fastlane deploy_pod
+          skip_cleanup: true
+          on:
             tags: true

@@ -28,6 +28,13 @@ lane :lint_podspec do
   )
 end
 
+desc "Deploy Pod"
+lane :deploy_pod do
+  pod_push(
+    verbose: true
+  )
+end
+
 desc "Run all the unit tests"
 lane :test do
   reset_simulators if is_ci?
