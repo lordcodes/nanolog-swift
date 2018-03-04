@@ -20,7 +20,7 @@ before_install:
 
 stages:
   - test
-  - name: deploy github
+  - name: deploy
     if: tag IS present
 
 jobs:
