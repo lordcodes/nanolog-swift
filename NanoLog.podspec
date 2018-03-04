@@ -1,19 +1,22 @@
-Pod::Spec.new do |s|
-  s.name         = "NanoLog"
-  s.version      = "0.1"
-  s.summary      = ""
-  s.description  = <<-DESC
-    Your description here.
+Pod::Spec.new do |spec|
+  spec.name = 'NanoLog'
+  spec.version = '0.1'
+  spec.summary = 'Simple logging for Swift'
+  spec.description = <<-DESC
+    Simple logging for Swift.
   DESC
-  s.homepage     = "https://github.com/andrewlord1990/nanolog-swift"
-  s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.author             = { "Andrew Lord" => "andrewlord1990@gmail.com" }
-  s.social_media_url   = ""
-  s.ios.deployment_target = "8.0"
-  s.osx.deployment_target = "10.9"
-  s.watchos.deployment_target = "2.0"
-  s.tvos.deployment_target = "9.0"
-  s.source       = { :git => "https://github.com/andrewlord1990/nanolog-swift.git", :tag => s.version.to_s }
-  s.source_files  = "Sources/**/*"
-  s.frameworks  = "Foundation"
+  spec.homepage = 'https://github.com/andrewlord1990/nanolog-swift'
+  spec.license = { type: 'MIT', file: 'LICENSE' }
+  spec.author = { 'Andrew Lord' => 'andrewlord1990@gmail.com' }
+  spec.social_media_url = ''
+
+  spec.ios.deployment_target = '8.0'
+  spec.osx.deployment_target = '10.10'
+  spec.watchos.deployment_target = '2.0'
+  spec.tvos.deployment_target = '9.0'
+
+  spec.source = { git: 'https://github.com/andrewlord1990/nanolog-swift.git', tag: "v"+spec.version.to_s }
+  spec.source_files = 'Sources/**/*'
+
+  spec.frameworks = 'Foundation'
 end
