@@ -1,41 +1,71 @@
-matrix:
-  include:
-    - os: linux
+os: osx
+osx_image: xcode9.2
+language: swift
 
-      dist: trusty
-
-      sudo: required
-
-      language: generic
-
-    - os: osx
-
-      osx_image: xcode9.2
-
-      language: swift
-
-      cache:
-        bundler: true
-        directories:
-          - Carthage
+cache:
+  bundler: true
+  directories:
+    - Carthage
 
 before_install:
-  - >
+  - |
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       bundle install;
       bundle exec fastlane dependencies;
     fi
-  - >
+  - |
     if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       eval "$(curl -sL https://swiftenv.fuller.li/install.sh)";
     fi
 
-script:
-  - >
-    if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      bundle exec fastlane test;
-    fi
-  - >
-    if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      swift test;
-    fi
+stages:
+  - test
+  - name: deploy
+    if: tag IS present
+
+jobs:
+  include:
+
+    - stage: test
+      os: linux
+      dist: trusty
+      sudo: required
+      language: generic
+      env: JOB=test
+      script: swift $JOB
+
+    - stage: test
+      env: LANE=test
+      script: bundle exec fastlane $LANE
+
+    - stage: test
+      env: LANE=lint_podspec
+      script: bundle exec fastlane $LANE
+
+    - stage: deploy
+      env: TYPE=github
+      script: skip
+      before_deploy:
+        - carthage build --no-skip-current --cache-builds
+        - carthage archive NanoLog
+      deploy:
+        - provider: releases
+          api_key:
+            secure:  NhlY2KKWoVnyEOEVHmHPJSJLEErxTnGrhisllqAYOcZsitFZL4w8LH64wQ8dm8zVhCAQWjotLsD7OHiwnTvlcpcQIa5bbhWpxRzhxoFdVGoN6eOHEFLOlPdqE8EsyvpYfbBjMrhQ8cDm49MTnt8nuzD2rgnBscuqWacRAtVS0BhyFuU/39ZKE/wQgu65M/PxqSumro5JOgtWs9Tu5tWurqNt7m6s3HbUmyNw1qY1CQXrZKpAgN0gxp0V0VTXXKQTZcRbZzJiarg9De+G/sTAuaITG9qRg1bIajRhF9Jj7DDhLYsrf9NisjsxFvYJUYzgk/v8pSS1/ld4kv6Zj6N5hwXTudwrjeMVObx+oeWMAkuskJy7wWFnyACZS+HJqCNVO6/2SXiEOrPfYUz8xsTuMDccsCGTdlCC/6KdgUZPb3VcUztgMfTWDPKmgq4o8lU/E2vkBGkSdxfbjcaD1dF2FuBLoUoF/FMXzVMTXuZ4ocR+/xOcVSUbD1yCWWlztXrLLyhPVQx1somAs3n07s1AiKtVLSnwDNKmNdvM6JYF7RhzjppJUGamGDT7oNUOJmzpJnFTOs44I4cEZFY+YKapw1mY3mw7lTRCvSr7YfC3YFeyyq9vPLFlzH6bU0LjlVBbFEmmutdeLTEdLI3c7W9D+Qa79FMcXhHuOn4l5K6ntLc=
+          file:
+            - NanoLog.framework.zip
+          skip_cleanup: true
+          overwrite: true
+          on:
+            repo: andrewlord1990/nanolog-swift
+            tags: true
+
+    - stage: deploy
+      env: TYPE=cocoapods
+      script: skip
+      deploy:
+        - provider: script
+          script: bundle exec fastlane deploy_pod
+          skip_cleanup: true
+          on:
+            tags: true
