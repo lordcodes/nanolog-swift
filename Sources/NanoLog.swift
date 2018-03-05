@@ -12,9 +12,28 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+/**
+ `NanoLog` allows you to log messages at different severity levels. You can choose where these logs are delivered by
+ registering different logging lanes. Calling `addDefaultConsoleLane()` will give you the default Xcode console setup.
+
+ `NanoLog` can be seen as the static API to the NanoLog framework. You can also use a `LogController` instance directly
+ by using `NanoLogController`.
+ */
 public class NanoLog {
     static var controller: LogController = NanoLogController()
 
+    /**
+     Log a message of verbose severity.
+
+     The verbose severity is intended for detailed information, generally during development. These will often be short
+     term, but may remain in the app if useful for tracing some particular behaviour or functionality.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func v(_ message: @autoclosure () -> Any,
                   file: String = #file,
                   function: String = #function,
@@ -22,6 +41,18 @@ public class NanoLog {
         verbose(message, file: file, function: function, line: line)
     }
 
+    /**
+     Log a message of verbose severity.
+
+     Verbose severity is intended for detailed information, generally during development. These will often be short
+     term, but may remain in the app if useful for tracing some particular behaviour or functionality.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func verbose(_ message: @autoclosure () -> Any,
                         file: String = #file,
                         function: String = #function,
@@ -29,6 +60,18 @@ public class NanoLog {
         controller.logVerbose(message, file: file, function: function, line: line)
     }
 
+    /**
+     Log a message of debug severity.
+
+     Debug severity is intended for developer information when debugging a particular issue or general app behaviour.
+     These logs may remain in order to help with debugging future issues.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func d(_ message: @autoclosure () -> Any,
                   file: String = #file,
                   function: String = #function,
@@ -36,6 +79,18 @@ public class NanoLog {
         debug(message, file: file, function: function, line: line)
     }
 
+    /**
+     Log a message of debug severity.
+
+     Debug severity is intended for developer information when debugging a particular issue or general app behaviour.
+     These logs may remain in order to help with debugging future issues.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func debug(_ message: @autoclosure () -> Any,
                       file: String = #file,
                       function: String = #function,
@@ -43,6 +98,18 @@ public class NanoLog {
         controller.logDebug(message, file: file, function: function, line: line)
     }
 
+    /**
+     Log a message of info severity.
+
+     Info severity is informational logging, generally to document important business processes. They can be used to
+     work out what an application is doing, as opposed to just debugging a particular issue.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func i(_ message: @autoclosure () -> Any,
                   file: String = #file,
                   function: String = #function,
@@ -50,6 +117,18 @@ public class NanoLog {
         info(message, file: file, function: function, line: line)
     }
 
+    /**
+     Log a message of info severity.
+
+     Info severity is informational logging, generally to document important business processes. They can be used to
+     work out what an application is doing, as opposed to just debugging a particular issue.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func info(_ message: @autoclosure () -> Any,
                      file: String = #file,
                      function: String = #function,
@@ -57,6 +136,18 @@ public class NanoLog {
         controller.logInfo(message, file: file, function: function, line: line)
     }
 
+    /**
+     Log a message of warning severity.
+
+     Warning severity is for logging potential issues. They should signify things that allow the app to continue, but
+     that extra caution should be taken.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func w(_ message: @autoclosure () -> Any,
                   file: String = #file,
                   function: String = #function,
@@ -64,6 +155,18 @@ public class NanoLog {
         warning(message, file: file, function: function, line: line)
     }
 
+    /**
+     Log a message of warning severity.
+
+     Warning severity is for logging potential issues. They should signify things that allow the app to continue, but
+     that extra caution should be taken.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func warning(_ message: @autoclosure () -> Any,
                         file: String = #file,
                         function: String = #function,
@@ -71,6 +174,18 @@ public class NanoLog {
         controller.logWarning(message, file: file, function: function, line: line)
     }
 
+    /**
+     Log a message of error severity.
+
+     Error severity is for logging errors that should be looked into immediately. They are a sign that something has
+     gone wrong and that the behaviour was unexpected.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func e(_ message: @autoclosure () -> Any,
                   file: String = #file,
                   function: String = #function,
@@ -78,6 +193,18 @@ public class NanoLog {
         error(message, file: file, function: function, line: line)
     }
 
+    /**
+     Log a message of error severity.
+
+     Error severity is for logging errors that should be looked into immediately. They are a sign that something has
+     gone wrong and that the behaviour was unexpected.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func error(_ message: @autoclosure () -> Any,
                       file: String = #file,
                       function: String = #function,
@@ -85,6 +212,16 @@ public class NanoLog {
         controller.logError(message, file: file, function: function, line: line)
     }
 
+    /**
+     Log a message with a specified severity.
+
+     Parameters:
+         - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
+         - withSeverity:
+         - file: The file the log call came from. You don't need to pass a value for file.
+         - function: The function the log call came from. You don't need to pass a value for function.
+         - line: The line number of the log call. You don't need to pass a value for line.
+     */
     public static func message(_ message: @autoclosure () -> Any,
                         withSeverity severity: LogSeverity,
                         file: String = #file,
@@ -93,14 +230,31 @@ public class NanoLog {
         controller.logMessage(message, withSeverity: severity, file: file, function: function, line: line)
     }
 
+    /**
+     Register a tag that can be used within logging messages. This can be useful to filter the logging output for all
+     the relevant log messages.
+
+     Parameters:
+        - tag: The tag to register.
+     */
     public static func withLoggingTag(_ tag: String) {
         controller.loggingTag(tag)
     }
 
+    /**
+     Add a lane to deliver log messages to. Lanes allow you to customise the logging of messages. You can use the
+     `NanoLoggingLane` implementation and simply choose a filter, format and printer.
+
+     Parameters:
+        - loggingLane: Lane to deliver messages to.
+     */
     public static func addLoggingLane(_ loggingLane: LoggingLane) {
         controller.addLoggingLane(loggingLane)
     }
 
+    /**
+     Add the default Xcode console logging lane.
+     */
     public static func addDefaultConsoleLane() {
         addLoggingLane(NanoLoggingLane())
     }
