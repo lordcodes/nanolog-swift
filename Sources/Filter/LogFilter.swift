@@ -12,6 +12,18 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+/**
+ Filter for log messages that should be delivered to a particular logging lane. `LogFilter` allows you to selectively
+ choose whether to deliver messages. A common use-case for this functionality would be to have meessages logged to
+ different locations based on their severity.
+ */
 public protocol LogFilter {
+    /**
+     Specify whether a method should be logged or not.
+
+     Parameters:
+     - severity: The severity the message is logged at.
+     - tag: The tag attached to a particular message.
+     */
     func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool
 }
