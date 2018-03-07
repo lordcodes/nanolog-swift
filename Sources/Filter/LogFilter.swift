@@ -21,9 +21,8 @@ public protocol LogFilter {
     /**
      Specify whether a method should be logged or not.
 
-     Parameters:
-     - severity: The severity the message is logged at.
-     - tag: The tag attached to a particular message.
+     - parameter severity: The severity the message is logged at.
+     - parameter tag: The tag attached to a particular message.
      */
     func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool
 }
