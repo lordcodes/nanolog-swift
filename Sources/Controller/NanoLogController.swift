@@ -29,9 +29,8 @@ public class NanoLogController {
     /**
      Create a `NanoLogController` using the specified tag and logging lanes.
 
-     Parameters:
-     - tag: A tag that can be used within logging messages.
-     - loggingLanes: Lanes to deliver log messages to.
+     - parameter tag: A tag that can be used within logging messages.
+     - parameter loggingLanes: Lanes to deliver log messages to.
      */
     public init(tag: String = "NanoLog", loggingLanes: [LoggingLane] = [LoggingLane]()) {
         self.tag = tag
@@ -50,11 +49,11 @@ extension NanoLogController: LogController {
      The verbose severity is intended for detailed information, generally during development. These will often be short
      term, but may remain in the app if useful for tracing some particular behaviour or functionality.
 
-     Parameters:
-     - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
-     - file: The file the log call came from. You don't need to pass a value for file.
-     - function: The function the log call came from. You don't need to pass a value for function.
-     - line: The line number of the log call. You don't need to pass a value for line.
+     - parameter message: The message to be logged. The autoclosure will only be evaluated if the message needs to be
+                          logged.
+     - parameter file: The file the log call came from. You don't need to pass a value for file.
+     - parameter function: The function the log call came from. You don't need to pass a value for function.
+     - parameter line: The line number of the log call. You don't need to pass a value for line.
      */
     public func logVerbose(_ message: @autoclosure () -> Any,
                            file: String = #file,
@@ -69,11 +68,11 @@ extension NanoLogController: LogController {
      Debug severity is intended for developer information when debugging a particular issue or general app behaviour.
      These logs may remain in order to help with debugging future issues.
 
-     Parameters:
-     - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
-     - file: The file the log call came from. You don't need to pass a value for file.
-     - function: The function the log call came from. You don't need to pass a value for function.
-     - line: The line number of the log call. You don't need to pass a value for line.
+     - parameter message: The message to be logged. The autoclosure will only be evaluated if the message needs to be
+                          logged.
+     - parameter file: The file the log call came from. You don't need to pass a value for file.
+     - parameter function: The function the log call came from. You don't need to pass a value for function.
+     - parameter line: The line number of the log call. You don't need to pass a value for line.
      */
     public func logDebug(_ message: @autoclosure () -> Any,
                          file: String = #file,
@@ -88,11 +87,11 @@ extension NanoLogController: LogController {
      Info severity is informational logging, generally to document important business processes. They can be used to
      work out what an application is doing, as opposed to just debugging a particular issue.
 
-     Parameters:
-     - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
-     - file: The file the log call came from. You don't need to pass a value for file.
-     - function: The function the log call came from. You don't need to pass a value for function.
-     - line: The line number of the log call. You don't need to pass a value for line.
+     - parameter message: The message to be logged. The autoclosure will only be evaluated if the message needs to be
+                          logged.
+     - parameter file: The file the log call came from. You don't need to pass a value for file.
+     - parameter function: The function the log call came from. You don't need to pass a value for function.
+     - parameter line: The line number of the log call. You don't need to pass a value for line.
      */
     public func logInfo(_ message: @autoclosure () -> Any,
                         file: String = #file,
@@ -107,11 +106,11 @@ extension NanoLogController: LogController {
      Warning severity is for logging potential issues. They should signify things that allow the app to continue, but
      that extra caution should be taken.
 
-     Parameters:
-     - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
-     - file: The file the log call came from. You don't need to pass a value for file.
-     - function: The function the log call came from. You don't need to pass a value for function.
-     - line: The line number of the log call. You don't need to pass a value for line.
+     - parameter message: The message to be logged. The autoclosure will only be evaluated if the message needs to be
+                          logged.
+     - parameter file: The file the log call came from. You don't need to pass a value for file.
+     - parameter function: The function the log call came from. You don't need to pass a value for function.
+     - parameter line: The line number of the log call. You don't need to pass a value for line.
      */
     public func logWarning(_ message: @autoclosure () -> Any,
                            file: String = #file,
@@ -126,11 +125,11 @@ extension NanoLogController: LogController {
      Error severity is for logging errors that should be looked into immediately. They are a sign that something has
      gone wrong and that the behaviour was unexpected.
 
-     Parameters:
-     - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
-     - file: The file the log call came from. You don't need to pass a value for file.
-     - function: The function the log call came from. You don't need to pass a value for function.
-     - line: The line number of the log call. You don't need to pass a value for line.
+     - parameter message: The message to be logged. The autoclosure will only be evaluated if the message needs to be
+                          logged.
+     - parameter file: The file the log call came from. You don't need to pass a value for file.
+     - parameter function: The function the log call came from. You don't need to pass a value for function.
+     - parameter line: The line number of the log call. You don't need to pass a value for line.
      */
     public func logError(_ message: @autoclosure () -> Any,
                          file: String = #file,
@@ -142,12 +141,12 @@ extension NanoLogController: LogController {
     /**
      Log a message with a specified severity to all registered lanes.
 
-     Parameters:
-     - message: The message to be logged. The autoclosure will only be evaluated if the message needs to be logged.
-     - withSeverity: The severity to to log the message with.
-     - file: The file the log call came from. You don't need to pass a value for file.
-     - function: The function the log call came from. You don't need to pass a value for function.
-     - line: The line number of the log call. You don't need to pass a value for line.
+     - parameter message: The message to be logged. The autoclosure will only be evaluated if the message needs to be
+                          logged.
+     - parameter severity: The severity to to log the message with.
+     - parameter file: The file the log call came from. You don't need to pass a value for file.
+     - parameter function: The function the log call came from. You don't need to pass a value for function.
+     - parameter line: The line number of the log call. You don't need to pass a value for line.
      */
     public func logMessage(_ message: @autoclosure () -> Any,
                            withSeverity severity: LogSeverity,
@@ -171,8 +170,7 @@ extension NanoLogController: LogController {
      Register a tag that can be used within logging messages. This can be useful to filter the logging output for all
      the relevant log messages.
 
-     Parameters:
-     - tag: The tag to register.
+     - parameter tag: The tag to register.
      */
     public func loggingTag(_ tag: String) {
         self.tag = tag
@@ -182,8 +180,7 @@ extension NanoLogController: LogController {
      Add a lane to deliver log messages to. Lanes allow you to customise the logging of messages. For the simplest
      approach, you can use `NanoLoggingLane` and simply choose a filter, format and printer.
 
-     Parameters:
-     - loggingLane: Lane to deliver messages to.
+     - parameter loggingLane: Lane to deliver messages to.
      */
     public func addLoggingLane(_ loggingLane: LoggingLane) {
         loggingLanes.append(loggingLane)
