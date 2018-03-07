@@ -259,7 +259,10 @@ public class NanoLog {
         addLoggingLane(NanoLoggingLane())
     }
 
-    public static func clearLoggingLanes() {
-        controller.clearLoggingLanes()
+    /**
+     Remove all registered logging lanes.
+     */
+    public static func removeAllLoggingLanes() {
+        controller.removeAllLoggingLanes()
     }
 }

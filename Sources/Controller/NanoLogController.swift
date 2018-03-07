@@ -32,7 +32,7 @@ extension NanoLogController: LogController {
         loggingLanes.append(loggingLane)
     }
 
-    public func clearLoggingLanes() {
+    public func removeAllLoggingLanes() {
         loggingLanes.removeAll()
     }
 
