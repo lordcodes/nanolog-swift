@@ -35,6 +35,11 @@ Deploy Pod
 fastlane test
 ```
 Run all the unit tests
+### generate_docs
+```
+fastlane generate_docs
+```
+Generate docs
 
 ----
 
