@@ -12,11 +12,22 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+/**
+ A `LogFilter` implementation that allows all messages through. This is the default filter used in `NanoLogController`.
+ */
 public class OpenLogFilter {
 }
 
 // MARK: - LogFilter
 extension OpenLogFilter: LogFilter {
+    /**
+     Specify whether a method should be logged or not.
+
+     All messages will be logged.
+
+     - parameter severity: The severity the message is logged at.
+     - parameter tag: The tag attached to a particular message.
+     */
     public func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool {
         return true
     }

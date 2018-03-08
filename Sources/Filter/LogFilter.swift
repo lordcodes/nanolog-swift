@@ -14,8 +14,8 @@
 
 /**
  Filter for log messages that should be delivered to a particular logging lane. `LogFilter` allows you to selectively
- choose whether to deliver messages. A common use-case for this functionality would be to have meessages logged to
- different locations based on their severity.
+ choose whether to deliver messages. For example, a common use-case would be to have messages logged to different
+ locations based on their severity.
  */
 public protocol LogFilter {
     /**

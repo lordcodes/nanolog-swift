@@ -18,11 +18,8 @@
  wish to.
  */
 public class NanoLogController {
-
-    // MARK: Properties
-
-    private var tag = "NanoLog"
-    private var loggingLanes = [LoggingLane]()
+    private var tag: String
+    private var loggingLanes: [LoggingLane]
 
     // MARK: Initializers
 

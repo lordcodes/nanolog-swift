@@ -12,15 +12,37 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+/**
+ A `LogFilter` implementation that will only allow through messages that are logged with a severity above or equal to
+ a minimum severity.
+ */
 public class MinimumSeverityFilter {
     private let minimumSeverity: LogSeverity
-    
+
+    // MARK: Initializers
+
+    /**
+     Create a `MinimumSeverityFilter` for a specified minimum severity.
+
+     - parameter minimumSeverity: The minimum severity for which to allow messages to be logged.
+     */
     public init(for minimumSeverity: LogSeverity) {
         self.minimumSeverity = minimumSeverity
     }
 }
 
+//MARK: - LogFilter
 extension MinimumSeverityFilter: LogFilter {
+    /**
+     Specify whether a method should be logged or not.
+
+     A message can be logged if its severity is above or equal to the minimum severity level of the
+     `MinimumSeverityFilter`. The ordering is calculated using the natural ordering due to `LogSeverity`
+     conforming to `Comparable`.
+
+     - parameter severity: The severity the message is logged at.
+     - parameter tag: The tag attached to a particular message.
+     */
     public func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool {
         return severity >= minimumSeverity
     }
