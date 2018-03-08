@@ -33,6 +33,9 @@ public class MinimumSeverityFilter {
 
 //MARK: - LogFilter
 extension MinimumSeverityFilter: LogFilter {
+
+    // MARK: Filter
+
     /**
      Specify whether a method should be logged or not.
 

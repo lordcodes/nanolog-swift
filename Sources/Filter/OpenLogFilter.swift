@@ -16,10 +16,19 @@
  A `LogFilter` implementation that allows all messages through. This is the default filter used in `NanoLogController`.
  */
 public class OpenLogFilter {
+
+    // MARK: Initializers
+
+    /// Create an `OpenLogFilter`.
+    public init() {
+    }
 }
 
 // MARK: - LogFilter
 extension OpenLogFilter: LogFilter {
+
+    // MARK: Filter
+
     /**
      Specify whether a method should be logged or not.
 
