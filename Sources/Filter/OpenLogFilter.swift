@@ -27,6 +27,8 @@ extension OpenLogFilter: LogFilter {
 
      - parameter severity: The severity the message is logged at.
      - parameter tag: The tag attached to a particular message.
+
+     - returns: Whether a message should be logged, which is always true.
      */
     public func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool {
         return true

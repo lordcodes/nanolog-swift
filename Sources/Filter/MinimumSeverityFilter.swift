@@ -42,6 +42,8 @@ extension MinimumSeverityFilter: LogFilter {
 
      - parameter severity: The severity the message is logged at.
      - parameter tag: The tag attached to a particular message.
+
+     - returns: Whether a message should be logged, based on if its severity is above or equal to the minimum severity.
      */
     public func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool {
         return severity >= minimumSeverity
