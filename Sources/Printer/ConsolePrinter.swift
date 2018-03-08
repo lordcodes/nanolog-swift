@@ -12,12 +12,30 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+/**
+ Output a formatted log message to the Xcode console.
+ */
 public class ConsolePrinter {
+
+    // MARK: Initializers
+
+    /**
+     Create a `ConsolePrinter`.
+     */
     public init() {
     }
 }
 
+// MARK: - LogPrinter
 extension ConsolePrinter: LogPrinter {
+
+    // MARK: Printing
+
+    /**
+     Output the specified log message to the Xcode console.
+
+     - parameter message: The final formatted log message.
+     */
     public func printMessage(_ message: String) {
         print(message)
     }

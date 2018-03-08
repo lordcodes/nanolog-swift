@@ -28,6 +28,13 @@ public struct NanoLoggingLane {
 
     // MARK: Initializers
 
+    /**
+     Create a `NanoLoggingLane` using the specified `LogFilter`, `LogFormat` and `LogPrinter`.
+
+     - parameter filter: The filter to select whether a message is logged.
+     - parameter format: The format to output messages with.
+     - parameter printer: How to output messages.
+     */
     public init(filter: LogFilter = NanoLoggingLane.defaultFilter(),
                 format: LogFormat = NanoLoggingLane.defaultFormat(),
                 printer: LogPrinter = NanoLoggingLane.defaultPrinter()) {
@@ -38,7 +45,11 @@ public struct NanoLoggingLane {
     }
 }
 
+// MARK: - LoggingLane
 extension NanoLoggingLane: LoggingLane {
+
+    // MARK: Logging
+
     /**
      Deliver a log message to an output location.
 

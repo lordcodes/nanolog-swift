@@ -14,6 +14,11 @@
 
 import Foundation
 
+/**
+ Prepare formatted logging messages ready for being delivered.
+
+ By providing a sequence of `LogFormatComponent`s, `PrettyLogFormat` produces formatted log messages ready for output.
+ */
 public class PrettyLogFormat {
 
     // MARK: Constants
@@ -51,6 +56,9 @@ public class PrettyLogFormat {
 
 // MARK: - LogFormat
 extension PrettyLogFormat: LogFormat {
+
+    // MARK: Formatting
+
     /**
      Create a formatted log message ready for output, using the specified sequence of `LogFormatComponent`s.
 

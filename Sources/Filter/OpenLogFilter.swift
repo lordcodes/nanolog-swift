@@ -27,7 +27,7 @@ public class OpenLogFilter {
 // MARK: - LogFilter
 extension OpenLogFilter: LogFilter {
 
-    // MARK: Filter
+    // MARK: Filtering
 
     /**
      Specify whether a method should be logged or not.
