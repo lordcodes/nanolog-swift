@@ -24,8 +24,11 @@ public class PrettyLogFormat {
     private let components: [LogFormatComponent]
     private let clock: Clock
 
-    public init(withComponents components: [LogFormatComponent] = PrettyLogFormat.defaultFormat(),
-         withClock clock: Clock = SystemClock()) {
+    public convenience init(withComponents components: [LogFormatComponent] = PrettyLogFormat.defaultFormat()) {
+        self.init(withComponents: components, withClock: SystemClock())
+    }
+
+    init(withComponents components: [LogFormatComponent], withClock clock: Clock) {
         self.components = components
         self.clock = clock
     }
