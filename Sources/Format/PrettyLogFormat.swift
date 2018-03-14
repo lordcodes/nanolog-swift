@@ -14,9 +14,22 @@
 
 import Foundation
 
+/**
+ Prepare formatted logging messages ready for being delivered.
+
+ By providing a sequence of `LogFormatComponent`s, `PrettyLogFormat` produces formatted log messages ready for output.
+ */
 public class PrettyLogFormat {
+
+    // MARK: Constants
+
+    /// The default format with which to output dates.
     static let defaultDateFormat = "HH:mm:ss.SSS"
+
+    /// The default separator to use between log components.
     static let defaultSeparator = " | "
+
+    /// The default separator to use between the file, function and line number log components.
     static let defaultFileSeparator = ":"
 
     private static let unknown = "Unknown"
@@ -24,20 +37,47 @@ public class PrettyLogFormat {
     private let components: [LogFormatComponent]
     private let clock: Clock
 
-    public init(withComponents components: [LogFormatComponent] = PrettyLogFormat.defaultFormat(),
-         withClock clock: Clock = SystemClock()) {
+    // MARK: Initializers
+
+    /**
+     Create a `PrettyLogFormat`, which uses the specified sequence of `LogFormatComponent`s to output log messages.
+
+     - parameter components: The components to use in the output. There is a default format provided.
+     */
+    public convenience init(withComponents components: [LogFormatComponent] = PrettyLogFormat.defaultFormat()) {
+        self.init(withComponents: components, withClock: SystemClock())
+    }
+
+    init(withComponents components: [LogFormatComponent], withClock clock: Clock) {
         self.components = components
         self.clock = clock
     }
 }
 
+// MARK: - LogFormat
 extension PrettyLogFormat: LogFormat {
+
+    // MARK: Formatting
+
+    /**
+     Create a formatted log message ready for output, using the specified sequence of `LogFormatComponent`s.
+
+     - parameter message: The message to be logged.
+     - parameter severity: The severity the message is logged at.
+     - parameter tag: The tag attached to a particular message.
+     - parameter file: The file the log call came from.
+     - parameter function: The function the log call came from.
+     - parameter line: The line number of the log call.
+
+     - returns: The formatted log message.
+     */
     public func formattedMessage(from message: @autoclosure () -> Any,
                                  withSeverity severity: LogSeverity,
                                  withTag tag: String,
                                  forFile file: String,
                                  forFunction function: String,
                                  forLine line: Int) -> String {
+
         var formattedMessage = ""
         for component in components {
             if let formattedComponent = createFormattedComponent(component,
@@ -81,10 +121,7 @@ private extension PrettyLogFormat {
             return createSeverity(severity, withFormat: withFormat)
         case .tag:
             return tag
-        case .thread:
-            break
         }
-        return nil
     }
 
     private func createDate(withFormat dateFormat: String) -> String {
@@ -152,6 +189,11 @@ private extension PrettyLogFormat {
 }
 
 public extension PrettyLogFormat {
+    /**
+     The default output format.
+
+     - returns: The sequence of `LogFormatComponent`s in the default output format.
+     */
     public static func defaultFormat() -> [LogFormatComponent] {
         return [
             .date(withDateFormat: PrettyLogFormat.defaultDateFormat),

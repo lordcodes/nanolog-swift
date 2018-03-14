@@ -12,7 +12,26 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+/**
+ Prepare formatted logging messages ready for being delivered.
+
+ `LogFormat` takes log messages and their supplementary information and produces a formatted message ready for output.
+ The easiest way to `LogFormat` is via `PrettyLogFormat`, where you can specify a `LogFormatComponent` sequence with
+ which to build the log messages.
+ */
 public protocol LogFormat {
+    /**
+     Create a formatted log message ready for output.
+
+     - parameter message: The message to be logged.
+     - parameter severity: The severity the message is logged at.
+     - parameter tag: The tag attached to a particular message.
+     - parameter file: The file the log call came from.
+     - parameter function: The function the log call came from.
+     - parameter line: The line number of the log call.
+
+     - returns: The formatted log message.
+     */
     func formattedMessage(from message: @autoclosure () -> Any,
                           withSeverity severity: LogSeverity,
                           withTag tag: String,

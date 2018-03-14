@@ -12,9 +12,20 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+/**
+ The format with which to output the log message severity. You may want to use multiple severity components, so that
+ you can include the severity icon and label for example.
+ */
 public enum SeverityFormat {
+    /// The severity icon, by default a coloured emoji.
     case icon
+
+    /// The severity label, by default in capitals.
     case label
+
+    /// The first letter of the severity label as a capital letter.
     case letter
+
+    /// The value assigned to the severity level.
     case value
 }

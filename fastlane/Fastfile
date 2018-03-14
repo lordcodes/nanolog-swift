@@ -54,6 +54,11 @@ lane :test do
   build_watchos
 end
 
+desc "Generate docs"
+lane :generate_docs do
+  jazzy
+end
+
 ####################
 # PRIVATE LANES
 ####################

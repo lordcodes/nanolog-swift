@@ -12,7 +12,23 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+/**
+ Deliver a log message to a particular output location.
+
+ `LoggingLane` allows you to customise how log messages are outputted, such as to the Xcode console or to a file. You
+ can have messages outputted wherever you like as long as you conform to the `LoggingLane` protocol.
+ */
 public protocol LoggingLane {
+    /**
+     Deliver a log message to an output location.
+
+     - parameter message: The message to be logged.
+     - parameter severity: The severity the message is logged at.
+     - parameter tag: The tag attached to a particular message.
+     - parameter file: The file the log call came from.
+     - parameter function: The function the log call came from.
+     - parameter line: The line number of the log call.
+     */
     func deliver(message: @autoclosure () -> Any,
                  withSeverity severity: LogSeverity,
                  withTag tag: String,
