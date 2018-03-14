@@ -101,7 +101,7 @@ extension PrettyLogFormatTests {
     }
 
     func test_whenFormattedMessage_thenMessageFormattedWithDefaultFormat_givenDefaultFormat() {
-        format = PrettyLogFormat(withClock: clock)
+        format = PrettyLogFormat(withComponents: PrettyLogFormat.defaultFormat(), withClock: clock)
         clock.now = Date()
         let expectedDate = expectedDateString(forDate: clock.now!, dateFormat: PrettyLogFormat.defaultDateFormat)
         let expectedFormattedMessage = "\(expectedDate) | a-tag | 🔵 DEBUG   | afile:afunction:25 | a message"
