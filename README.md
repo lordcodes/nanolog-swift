@@ -12,6 +12,40 @@ A **powerful** and **extensible** logging framework for Swift that is **small** 
 
 ***
 
+## Key Benefits
+
+#### ▶︎ Easy-to-use
+
+You can be up and running with 1 line and then logging right away. Log statements are just as simple as using `print`.
+
+#### ▶︎ Lightweight
+
+The framework contains a small set of powerful features, so you don't need to include a large amount of code you won't use into your project to use NanoLog.
+
+#### ▶︎ Extensible
+
+The framework makes use of protocols for each layer in the logging process. This allows you to customise behaviour to your needs if you wish to. It comes bundled with the default console logging implementation.
+
+#### ▶︎ Severity levels
+
+Log messages at different severity levels, allowing to you see this in the console, but also deal with the levels differently if you want to. For example, only errors could be reported to your server in the production app. See [LogSeverity](Sources/Severity/LogSeverity.swift).
+
+#### ▶︎ Coloured output
+
+Each severity level has a coloured emoji icon, allowing you to attach colour to the log messages in the Xcode console. These icons can be changed to your liking if you don't want to use the default ones. See [LogSeverity](Sources/Severity/LogSeverity.swift).
+
+#### ▶︎ Context of log call
+
+The file, function (with arguments) and line number of the log call are included in the log output. This gives you context of where the logging is coming from. See [PrettyLogFormat](Sources/Format/PrettyLogFormat.swift).
+
+#### ▶︎ Customisable log format
+
+The log format is completely customisable, beyond the default implementation included. You can build up your preferred format from a set of different components, such as date/time, file/method/line, tag, message. See [PrettyLogFormat](Sources/Format/PrettyLogFormat.swift).
+
+#### ▶︎ Fully documented
+
+The public API is fully documented, including code documentation and ability to generate Jazzy docs.
+
 ## Platform support
 
 - Swift 4+
