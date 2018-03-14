@@ -12,6 +12,16 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
+/**
+ Output a log message.
+
+ `LogPrinter` is where the final formatted message is outputted, for example to the Xcode console.
+ */
 public protocol LogPrinter {
+    /**
+     Output the specified log message to its output location.
+
+     - parameter message: The final formatted log message.
+     */
     func printMessage(_ message: String)
 }

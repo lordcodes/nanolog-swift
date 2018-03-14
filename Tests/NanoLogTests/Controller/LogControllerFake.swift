@@ -34,7 +34,7 @@ extension LogControllerFake: LogController {
         loggedLanes.append(loggingLane)
     }
 
-    func clearLoggingLanes() {
+    func removeAllLoggingLanes() {
         loggedLanes.removeAll()
     }
 

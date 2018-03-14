@@ -1,0 +1,8 @@
+author: Andrew Lord
+author_url: http://www.andrew-lord.co.uk
+github_url: https://github.com/andrewlord1990/nanolog-swift
+root_url: https://andrewlord1990.github.io/nanolog-swift/
+module: NanoLog
+output: docs
+theme: apple
+xcodebuild_arguments: [-workspace, 'NanoLog.xcworkspace', -scheme, 'NanoLog-iOS']

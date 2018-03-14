@@ -14,18 +14,16 @@
 
 import Foundation
 
-public protocol Clock {
+protocol Clock {
     func dateTimeNow() -> Date
 }
 
-public class SystemClock {
-    public init() {
-    }
+class SystemClock {
 }
 
 // MARK: - Clock
 extension SystemClock: Clock {
-    public func dateTimeNow() -> Date {
+    func dateTimeNow() -> Date {
         return Date()
     }
 }
