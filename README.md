@@ -8,6 +8,8 @@
 
 A **powerful** and **extensible** logging framework for Swift that is **small** and **easy** to use!
 
+![Console logging](web/img/example-console-output.png)
+
 ***
 
 ## Platform support
@@ -75,7 +77,7 @@ If you prefer not to use any of the dependency managers, you can integrate NanoL
 <details>
   <summary><strong>Embedded Framework</strong></summary>
   <p>
-    
+
 - Download the latest release from [Releases](https://github.com/andrewlord1990/nanolog-swift/releases)
 - Store the downloaded framework somewhere accessible
 - Open your app project file in the Project Navigator
@@ -85,14 +87,14 @@ If you prefer not to use any of the dependency managers, you can integrate NanoL
 - Add the downloaded `NanoLog.framework`
 
 If you had already added another version of NanoLog, make sure to replace it with the new version.
-    
+
   </p>
 </details>
 
 <details>
   <summary><strong>Git Submodules</strong></summary>
   <p>
-    
+
 - Open up Terminal, or your preferred console application
 - `cd` to the top-level of your project directory
 - If your project is not already a Git repository, run:
