@@ -46,7 +46,7 @@ The log format is completely customisable, beyond the default implementation inc
 
 The public API is fully documented, including code documentation and ability to generate Jazzy docs.
 
-## Platform support
+## Platform Support
 
 - Swift 4+
 - Apple platforms:
@@ -160,6 +160,74 @@ $ git submodule update --init --recursive
 
 </p>
 </details>
+
+## Usage
+
+NanoLog can be used primarily through a [static API](Sources/NanoLog.swift), however, if you would prefer, a [non-static API](Sources/Controller/NanoLogController.swift) is also available.
+
+### Enable Logging
+
+To setup logging, you will need to register a [`LoggingLane`](Sources/Lane/LoggingLane.swift). The easiest way to do this is using [`NanoLoggingLane`](Sources/Lane/NanoLoggingLane.swift).
+
+Preferably, you will want to enable logging as early as possible in the app's lifecycle. This minimises any logging that will occur before logging has been enabled. This can be done in the `UIApplicationDelegate` initializer, or alternatively in the `application(_:willFinishLaunchingWithOptions:)` function.
+
+**Using init**
+```swift
+import NanoLog
+import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+  init() {
+    super.init()
+    
+    NanoLog.addDefaultConsoleLane()
+  }
+}
+```
+
+**Using application(_:willFinishLaunchingWithOptions:)**
+```swift
+import NanoLog
+import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+  
+  func application(_ application: UIApplication,
+                   willFinishLaunchingWithOptions launchOptions: 
+                      [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+
+    NanoLog.addDefaultConsoleLane()
+    return true
+  }
+}
+```
+
+This configuration will result in a logs being outputted to the Xcode console, using the default logging format.
+
+### Perform Logging
+
+For logging messages, there are methods available in [`NanoLog`](Sources/NanoLog.swift) that refer to the different severity levels. Each has a full-form and abbreviated form, depending on your preference, such as `NanoLog.e` and `NanoLog.error`.
+
+```swift
+func startLogging() {
+  NanoLog.error("A really important error")
+  NanoLog.w("Something you should probably look into")
+  anotherMethod(withString: "testing")
+  someMethod(withIntArg: 2)
+}
+
+func anotherMethod(withString string: String) {
+  NanoLog.info("Some useful information")
+  NanoLog.d("Some debugging data that contains the argument: \(string)")
+}
+
+func someMethod(withIntArg intArg: Int) {
+  NanoLog.verbose("Something verbose")
+}
+```
 
 ## Contributing
 
