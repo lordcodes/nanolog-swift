@@ -229,6 +229,43 @@ func someMethod(withIntArg intArg: Int) {
 }
 ```
 
+## Advanced Usage
+
+Beyond the default setup, you have the option of configuring whether particular messages are logged, where they are logged to and how they are logged.
+
+### Console Logging Format
+
+`PrettyLogFormat` allows you to use a customisable logging format, which drives how messages are formatted before being sent to the console. This is as simple as providing an array of `LogFormatComponent`.
+
+```swift
+let defaultSeparator = " | "
+let defaultFileSeparator = ":"
+
+let loggingFormat = PrettyLogFormat(withComponents: [
+    .date(withDateFormat: "HH:mm:ss.SSS"),
+    .separator(string: defaultSeparator),
+    .tag,
+    .separator(string: defaultSeparator),
+    .severity(withFormat: .icon),
+    .separator(string: " "),
+    .severity(withFormat: .label),
+    .separator(string: defaultSeparator),
+    .file(withExtension: false),
+    .separator(string: defaultFileSeparator),
+    .function(withArgs: false),
+    .separator(string: defaultFileSeparator),
+    .lineNumber,
+    .separator(string: defaultSeparator),
+    .message
+])
+
+let lane = NanoLoggingLane(format: loggingFormat)
+
+NanoLog.addLoggingLane(lane)
+```
+
+The example is how the default logging format is specified internally to the framework. There are other options available to you, have a look at [`LogFormatComponent`](Sources/Format/LogFormatComponent) for details.
+
 ## Contributing
 
 Issues and pull requests are welcome!
