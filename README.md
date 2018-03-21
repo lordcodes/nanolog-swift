@@ -240,18 +240,15 @@ Beyond the default setup, you have the option of configuring whether particular 
 `PrettyLogFormat` allows you to use a customisable logging format, which drives how messages are formatted before being sent to the console. This is as simple as providing an array of `LogFormatComponent`.
 
 ```swift
-let defaultSeparator = " | "
-let defaultFileSeparator = ":"
-
 let loggingFormat = PrettyLogFormat(withComponents: [
     .date(withDateFormat: "HH:mm:ss.SSS"),
-    .separator(string: defaultSeparator),
+    .separator(string: " | "),
     .severity(withFormat: .label),
-    .separator(string: defaultSeparator),
+    .separator(string: " | "),
     .file(withExtension: false),
-    .separator(string: defaultFileSeparator),
+    .separator(string: ":"),
     .lineNumber,
-    .separator(string: defaultSeparator),
+    .separator(string: " | "),
     .message
 ])
 
