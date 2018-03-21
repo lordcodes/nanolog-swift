@@ -235,6 +235,8 @@ Beyond the default setup, you have the option of configuring whether particular 
 
 ### Console Logging Format
 
+#### Using PrettyLogFormat
+
 `PrettyLogFormat` allows you to use a customisable logging format, which drives how messages are formatted before being sent to the console. This is as simple as providing an array of `LogFormatComponent`.
 
 ```swift
@@ -264,7 +266,30 @@ let lane = NanoLoggingLane(format: loggingFormat)
 NanoLog.addLoggingLane(lane)
 ```
 
-The example is how the default logging format is specified internally to the framework. There are other options available to you, have a look at [`LogFormatComponent`](Sources/Format/LogFormatComponent) for details.
+The example is how the default logging format is specified internally to the framework. There are other options available to you, have a look at [`LogFormatComponent`](Sources/Format/LogFormatComponent.swift) for details.
+
+#### Using Own Implementation
+
+You can also use your own implementation of the [`LogFormat`](Sources/Format/LogFormat.swift) protocol. It is as simple as implementing the `formattedMessage(from:withSeverity:withTag:forFile:forFunction:forLine)` function and returning a `String` for output.
+
+```swift
+class CustomLogFormat: LogFormat {
+  public func formattedMessage(from message: @autoclosure () -> Any,
+                               withSeverity severity: LogSeverity,
+                               withTag tag: String,
+                               forFile file: String,
+                               forFunction function: String,
+                               forLine line: Int) -> String {
+
+      return "\(severity.label): \(message)"
+    }
+  }
+  
+let lane = NanoLoggingLane(format: CustomLogFormat())
+NanoLog.addLoggingLane(lane)
+```
+
+I would suggest trying out `PrettyLogFormat` first, as it is easier to specify a list of components. Then, if what you want to do requires either extra components or something more complicated then consider your own `LogFormat` implementation.
 
 ## Contributing
 
