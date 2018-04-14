@@ -20,6 +20,14 @@ lane :dependencies do
   )
 end
 
+desc "Update all dependencies"
+lane :update_dependencies do
+  carthage(
+    command: "update",
+    cache_builds: true
+  )
+end
+
 desc "Run Podspec Linting"
 lane :lint_podspec do
   pod_lib_lint(
