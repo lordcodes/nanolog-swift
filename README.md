@@ -233,7 +233,14 @@ func someMethod(withIntArg intArg: Int) {
 
 Beyond the default setup, you have the option of configuring whether particular messages are logged, where they are logged to and how they are logged.
 
-### Cusomise Logging Format
+Each layer of the logging process uses protocols, to allow you to use your own implementations if you wish. This includes:
+
+- `LoggingLane` to have more specific control over how messages are logged.
+- `LogFormat` to customise the format with which messages are logged, described below.
+- `LogFilter` to choose which messages are logged, described below.
+- `LogPrinter` to specify the printing process for messages, described below.
+
+### Customise Logging Format
 
 When adding a `NanoLoggingLane` instance, you can choose which filter, format and printer are used. A common use-case is to customise the logging format.
 
