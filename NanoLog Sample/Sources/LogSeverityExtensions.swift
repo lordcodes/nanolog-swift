@@ -13,27 +13,9 @@
 // See the License for the specific language governing permissions and limitations under the License.
 
 import NanoLog
-import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
-    override init() {
-        super.init()
-
-        addDebugAndAboveConsoleLane()
-    }
-}
-
-private extension AppDelegate {
-    private func addDefaultLane() {
-        NanoLog.addDefaultConsoleLane()
-    }
-
-    private func addDebugAndAboveConsoleLane() {
-        let lane = NanoLoggingLane(filter: MinimumSeverityFilter(for: LogSeverity.debug))
-        NanoLog.addLoggingLane(lane)
-    }
+extension LogSeverity {
+    static var concern: LogSeverity = {
+        LogSeverity(severity: 350, label: "CONCERN", icon: "⚪️")
+    }()
 }
