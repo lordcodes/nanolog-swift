@@ -282,6 +282,43 @@ NanoLog.addLoggingLane(lane)
 
 I would suggest trying out `PrettyLogFormat` first, as it is easier to specify a list of components. Then, if what you want to do requires either extra components or something more complicated then consider your own `LogFormat` implementation.
 
+### Adding extra LogSeverity
+
+To add an extra `LogSeverity` you can simply create a `LogSeverity` instance and then use it via the NanoLog API.
+
+```swift
+let concernSeverity = LogSeverity(severity: 350, label: "CONCERN", icon: "⚪️")
+
+NanoLog.message("A general concern", withSeverity: concernSeverity)
+```
+
+Using an extension to `LogSeverity` you can make you new severity more discoverable.
+
+```swift
+extension LogSeverity {
+    static var concern: LogSeverity = {
+        LogSeverity(severity: 350, label: "CONCERN", icon: "⚪️")
+    }()
+}
+
+NanoLog.message("A general concern", withSeverity: .concern)
+```
+
+You can also add an extension to `NanoLog` to access it through a named function. This allows you to use it just like any of the built-in severity levels.
+
+```swift
+extension NanoLog {
+    static func concern(_ message: @autoclosure () -> Any,
+                        file: String = #file,
+                        function: String = #function,
+                        line: Int = #line) {
+        NanoLog.message(message, withSeverity: .concern, file: file, function: function, line: line)
+    }
+}
+
+NanoLog.concern("A general concern")
+```
+
 ## Contributing
 
 Issues and pull requests are welcome!
