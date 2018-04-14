@@ -20,6 +20,11 @@ or alternatively using `brew cask install fastlane`
 fastlane dependencies
 ```
 Resolve all dependencies
+### update_dependencies
+```
+fastlane update_dependencies
+```
+Update all dependencies
 ### lint_podspec
 ```
 fastlane lint_podspec

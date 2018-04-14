@@ -1,5 +1,5 @@
 
-fastlane_version "2.80.0"
+fastlane_version "2.91.0"
 
 ####################
 # BEFORE
@@ -16,6 +16,14 @@ desc "Resolve all dependencies"
 lane :dependencies do
   carthage(
     command: "bootstrap",
+    cache_builds: true
+  )
+end
+
+desc "Update all dependencies"
+lane :update_dependencies do
+  carthage(
+    command: "update",
     cache_builds: true
   )
 end
