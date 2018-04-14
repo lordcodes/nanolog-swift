@@ -235,6 +235,8 @@ Beyond the default setup, you have the option of configuring whether particular 
 
 ### Console Logging Format
 
+When adding a `NanoLoggingLane` instance, you can choose which filter, format and printer are used. A common use-case is to customise the logging format.
+
 #### Using PrettyLogFormat
 
 `PrettyLogFormat` allows you to use a customisable logging format, which drives how messages are formatted before being sent to the console. This is as simple as providing an array of `LogFormatComponent`.
@@ -253,7 +255,6 @@ let loggingFormat = PrettyLogFormat(withComponents: [
 ])
 
 let lane = NanoLoggingLane(format: loggingFormat)
-
 NanoLog.addLoggingLane(lane)
 ```
 
@@ -281,6 +282,28 @@ NanoLog.addLoggingLane(lane)
 ```
 
 I would suggest trying out `PrettyLogFormat` first, as it is easier to specify a list of components. Then, if what you want to do requires either extra components or something more complicated then consider your own `LogFormat` implementation.
+
+### Filtering messages
+
+Another common use-case for customisation would be to filter which messages are logged. An example of this would be only logging messages above a particular severity.
+
+```swift
+let lane = NanoLoggingLane(filter: MinimumSeverityFilter(for: LogSeverity.debug))
+NanoLog.addLoggingLane(lane)
+```
+
+You can write your own logging filters as well.
+
+```swift
+class ImportantFilter: LogFilter {
+    func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool {
+        return tag == "IMPORTANT"
+    }
+}
+
+let lane = NanoLoggingLane(filter: ImportantFilter())
+NanoLog.addLoggingLane(lane)
+```
 
 ### Adding extra severity level
 
