@@ -305,6 +305,26 @@ let lane = NanoLoggingLane(filter: ImportantFilter())
 NanoLog.addLoggingLane(lane)
 ```
 
+### Printing messages
+
+The default `LogPrinter` prints messages to the console. You can use your own `LogPrinter` implementation to send messages elsewhere.
+
+```swift
+class MessageStore: LogPrinter {
+    var storedMessages = [String]()
+
+    public func printMessage(_ message: String) {
+        storedMessages.append(message)
+    }
+}
+
+let messageStore = MessageStore()
+let lane = NanoLoggingLane(printer: messageStore)
+NanoLog.addLoggingLane(lane)
+```
+
+Can add as many logging lanes as you wish, the example above stores the messages that are logged.
+
 ### Adding extra severity level
 
 To add an extra `LogSeverity` you can simply create a `LogSeverity` instance and then use it via the NanoLog API.
