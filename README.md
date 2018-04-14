@@ -282,7 +282,7 @@ NanoLog.addLoggingLane(lane)
 
 I would suggest trying out `PrettyLogFormat` first, as it is easier to specify a list of components. Then, if what you want to do requires either extra components or something more complicated then consider your own `LogFormat` implementation.
 
-### Adding extra LogSeverity
+### Adding extra severity level
 
 To add an extra `LogSeverity` you can simply create a `LogSeverity` instance and then use it via the NanoLog API.
 
@@ -318,6 +318,16 @@ extension NanoLog {
 
 NanoLog.concern("A general concern")
 ```
+
+### Modifying existing severity level
+
+You can re-assign the built-in severity levels, which is useful if you want to change their label or icon for example.
+
+```swift
+LogSeverity.error = LogSeverity(severity: 500, label: "ALERT", icon: "🔺")
+```
+
+In the above example, any log calls at the 'error' severity will now use the new label and icon.
 
 ## Contributing
 
