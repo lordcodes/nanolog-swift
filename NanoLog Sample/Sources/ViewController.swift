@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         NanoLog.w("Something you should probably look into")
         anotherMethod(withString: "testing")
         someMethod(withIntArg: 2)
+        NanoLog.message("A general concern", withSeverity: .concern)
     }
 
     func anotherMethod(withString string: String) {

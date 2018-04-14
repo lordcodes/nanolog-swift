@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F641CD17202D092A00FA66F8 /* NanoLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F641CD18202D092A00FA66F8 /* NanoLog.framework */; };
+		F65129232082090600787192 /* LogSeverityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65129222082090600787192 /* LogSeverityExtensions.swift */; };
 		F6F09BE0202CF74900D7B2B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F09BDF202CF74900D7B2B9 /* AppDelegate.swift */; };
 		F6F09BE2202CF74900D7B2B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F09BE1202CF74900D7B2B9 /* ViewController.swift */; };
 		F6F09BE5202CF74900D7B2B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F09BE3202CF74900D7B2B9 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		F641CD18202D092A00FA66F8 /* NanoLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NanoLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F65129222082090600787192 /* LogSeverityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSeverityExtensions.swift; sourceTree = "<group>"; };
 		F677E660202CF7E50043B8AC /* NanoLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NanoLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F09BDC202CF74900D7B2B9 /* NanoLog-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NanoLog-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F09BDF202CF74900D7B2B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				F6F09BDF202CF74900D7B2B9 /* AppDelegate.swift */,
 				F6F09BE8202CF74900D7B2B9 /* LaunchScreen.storyboard */,
+				F65129222082090600787192 /* LogSeverityExtensions.swift */,
 				F6F09BE3202CF74900D7B2B9 /* Main.storyboard */,
 				F6F09BE1202CF74900D7B2B9 /* ViewController.swift */,
 			);
@@ -160,6 +163,7 @@
 			files = (
 				F6F09BE2202CF74900D7B2B9 /* ViewController.swift in Sources */,
 				F6F09BE0202CF74900D7B2B9 /* AppDelegate.swift in Sources */,
+				F65129232082090600787192 /* LogSeverityExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
