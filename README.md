@@ -233,7 +233,7 @@ func someMethod(withIntArg intArg: Int) {
 
 Beyond the default setup, you have the option of configuring whether particular messages are logged, where they are logged to and how they are logged.
 
-### Console Logging Format
+### Cusomise Logging Format
 
 When adding a `NanoLoggingLane` instance, you can choose which filter, format and printer are used. A common use-case is to customise the logging format.
 
@@ -283,7 +283,7 @@ NanoLog.addLoggingLane(lane)
 
 I would suggest trying out `PrettyLogFormat` first, as it is easier to specify a list of components. Then, if what you want to do requires either extra components or something more complicated then consider your own `LogFormat` implementation.
 
-### Filtering messages
+### Filtering Messages
 
 Another common use-case for customisation would be to filter which messages are logged. An example of this would be only logging messages above a particular severity.
 
@@ -305,7 +305,7 @@ let lane = NanoLoggingLane(filter: ImportantFilter())
 NanoLog.addLoggingLane(lane)
 ```
 
-### Printing messages
+### Printing Messages
 
 The default `LogPrinter` prints messages to the console. You can use your own `LogPrinter` implementation to send messages elsewhere.
 
@@ -325,7 +325,7 @@ NanoLog.addLoggingLane(lane)
 
 Can add as many logging lanes as you wish, the example above stores the messages that are logged.
 
-### Adding extra severity level
+### Adding Severity Levels
 
 To add an extra `LogSeverity` you can simply create a `LogSeverity` instance and then use it via the NanoLog API.
 
@@ -362,7 +362,7 @@ extension NanoLog {
 NanoLog.concern("A general concern")
 ```
 
-### Modifying existing severity level
+### Customising Existing Severity Levels
 
 You can re-assign the built-in severity levels, which is useful if you want to change their label or icon for example.
 
