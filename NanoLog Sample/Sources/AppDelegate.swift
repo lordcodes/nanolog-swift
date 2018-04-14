@@ -20,11 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    override init() {
+        super.init()
 
+        addDebugAndAboveConsoleLane()
+    }
+}
+
+private extension AppDelegate {
+    private func addDefaultLane() {
+        NanoLog.addDefaultConsoleLane()
+    }
+
+    private func addDebugAndAboveConsoleLane() {
         let lane = NanoLoggingLane(filter: MinimumSeverityFilter(for: LogSeverity.debug))
         NanoLog.addLoggingLane(lane)
-        return true
     }
 }
