@@ -61,7 +61,8 @@ extension PrettyLogFormatTests {
         clock.now = Date()
         let expectedDate = expectedDateString(forDate: clock.now!, dateFormat: "HH:mm:ss")
         let expectedUtcDate = expectedUtcDateString(forDate: clock.now!, dateFormat: "HH:mm")
-        let expectedFormattedMessage = "\(expectedDate)|\(expectedUtcDate)|afile.swift|afile|afunction(arg:)|afunction|25|a message|🔵|DEBUG  |D|200|a-tag"
+        let expectedFormattedMessage = "\(expectedDate)|\(expectedUtcDate)|afile.swift|afile|afunction(arg:)|" +
+            "afunction|25|a message|🔵|DEBUG  |D|200|a-tag"
 
         let actualMessage = format.formattedMessage(from: "a message",
                                                     withSeverity: LogSeverity.debug,
@@ -135,11 +136,14 @@ private extension PrettyLogFormatTests {
 #if os(Linux)
     extension PrettyLogFormatTests {
         static var allTests = [
-            ("test_whenFormattedMessage_thenMessageFormattedWithComponents", test_whenFormattedMessage_thenMessageFormattedWithComponents),
-            ("test_whenFormattedMessage_thenUnknownSeverity_givenSeverityWithEmptyLabelAndLetterSeverityFormat", test_whenFormattedMessage_thenUnknownSeverity_givenSeverityWithEmptyLabelAndLetterSeverityFormat),
-            ("test_whenFormattedMessage_thenFunctionUnchanged_givenFunctionWithNoBrackets", test_whenFormattedMessage_thenFunctionUnchanged_givenFunctionWithNoBrackets),
-            ("test_whenFormattedMessage_thenMessageFormattedWithDefaultFormat_givenDefaultFormat", test_whenFormattedMessage_thenMessageFormattedWithDefaultFormat_givenDefaultFormat)
+            ("test_whenFormattedMessage_thenMessageFormattedWithComponents",
+             test_whenFormattedMessage_thenMessageFormattedWithComponents),
+            ("test_whenFormattedMessage_thenUnknownSeverity_givenSeverityWithEmptyLabelAndLetterSeverityFormat",
+             test_whenFormattedMessage_thenUnknownSeverity_givenSeverityWithEmptyLabelAndLetterSeverityFormat),
+            ("test_whenFormattedMessage_thenFunctionUnchanged_givenFunctionWithNoBrackets",
+             test_whenFormattedMessage_thenFunctionUnchanged_givenFunctionWithNoBrackets),
+            ("test_whenFormattedMessage_thenMessageFormattedWithDefaultFormat_givenDefaultFormat",
+             test_whenFormattedMessage_thenMessageFormattedWithDefaultFormat_givenDefaultFormat)
         ]
     }
 #endif
-

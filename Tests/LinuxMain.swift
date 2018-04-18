@@ -8,5 +8,5 @@ XCTMain([
     testCase(NanoLogTests.allTests),
     testCase(OpenLogFilterTests.allTests),
     testCase(PrettyLogFormatTests.allTests),
-    testCase(StringExtensionsTests.allTests),
+    testCase(StringExtensionsTests.allTests)
 ])
