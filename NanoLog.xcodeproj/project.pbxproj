@@ -124,6 +124,9 @@
 		F6FBDB5C202E031500BB4D85 /* LogControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */; };
 		F6FBDB5D202E031500BB4D85 /* LogControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */; };
 		F6FFF2F42087CE4E0018C572 /* LogCallSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF2F32087CE4E0018C572 /* LogCallSite.swift */; };
+		F6FFF2F52087D3210018C572 /* LogCallSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF2F32087CE4E0018C572 /* LogCallSite.swift */; };
+		F6FFF2F62087D3210018C572 /* LogCallSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF2F32087CE4E0018C572 /* LogCallSite.swift */; };
+		F6FFF2F72087D3220018C572 /* LogCallSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF2F32087CE4E0018C572 /* LogCallSite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -958,6 +961,7 @@
 				F6FBDB55202DFD6800BB4D85 /* LogSeverity.swift in Sources */,
 				F65063D0202B83F400535D9B /* NanoLogController.swift in Sources */,
 				F6D231FA202F7DC500D862C1 /* PrettyLogFormat.swift in Sources */,
+				F6FFF2F62087D3210018C572 /* LogCallSite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,6 +986,7 @@
 				F6FBDB53202DFD6800BB4D85 /* LogSeverity.swift in Sources */,
 				F65063D1202B83F400535D9B /* NanoLogController.swift in Sources */,
 				F6D231F8202F7DC400D862C1 /* PrettyLogFormat.swift in Sources */,
+				F6FFF2F72087D3220018C572 /* LogCallSite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1006,6 +1011,7 @@
 				F6FBDB57202DFD6900BB4D85 /* LogSeverity.swift in Sources */,
 				F65063CF202B83F300535D9B /* NanoLogController.swift in Sources */,
 				F6D231FC202F7DC500D862C1 /* PrettyLogFormat.swift in Sources */,
+				F6FFF2F52087D3210018C572 /* LogCallSite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
