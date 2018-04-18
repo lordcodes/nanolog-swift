@@ -16,7 +16,7 @@ before_install:
     fi
   - |
     if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      eval "$(curl -sL https://github.com/kylef/swiftenv/blob/master/docs/install.sh)";
+      eval "$(curl -sL https://swiftenv.fuller.li/en/latest/install.sh)";
     fi
 
 stages:
