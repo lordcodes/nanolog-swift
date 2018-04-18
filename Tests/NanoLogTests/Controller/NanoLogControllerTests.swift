@@ -160,7 +160,7 @@ extension NanoLogControllerTests {
 #if os(Linux)
 extension NanoLogControllerTests {
     static var allTests = [
-        ("test_whenRegisterLoggingTag_thenTagSet", test_whenLoggingTag_thenTagSet),
+        ("test_whenRegisterLoggingTag_thenTagSet", test_whenRegisterLoggingTag_thenTagSet),
         ("test_whenAddLoggingLane_thenMessageDeliveredToIt", test_whenAddLoggingLane_thenMessageDeliveredToIt),
         ("test_whenRemoveAllLoggingLanes_thenMessageNotDeliveredToLane", test_whenRemoveAllLoggingLanes_thenMessageNotDeliveredToLane),
         ("test_whenLogVerbose_thenVerboseMessageDelivered", test_whenLogVerbose_thenVerboseMessageDelivered),

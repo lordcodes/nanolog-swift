@@ -196,7 +196,7 @@ extension NanoLogTests {
         ("test_whenE_thenErrorMessagedLoggedToController", test_whenE_thenErrorMessagedLoggedToController),
         ("test_whenError_thenErrorMessagedLoggedToController", test_whenError_thenErrorMessagedLoggedToController),
         ("test_whenMessage_thenMessageLoggedToController", test_whenMessage_thenMessageLoggedToController),
-        ("test_whenWithLoggingTag_thenTagSetOnController", test_whenWithLoggingTag_thenTagSetOnController),
+        ("test_whenRegisterLoggingTag_thenTagSetOnController", test_whenRegisterLoggingTag_thenTagSetOnController),
         ("test_whenAddLoggingLane_thenLaneSetOnController", test_whenAddLoggingLane_thenLaneSetOnController),
         ("test_whenAddDefaultConsoleLane_thenLaneSetOnController", test_whenAddDefaultConsoleLane_thenLaneSetOnController),
         ("test_whenRemoveAllLoggingLanes_thenMessageNotDeliveredToLane", test_whenRemoveAllLoggingLanes_thenMessageNotDeliveredToLane)
