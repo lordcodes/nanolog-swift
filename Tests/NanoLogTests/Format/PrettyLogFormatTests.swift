@@ -64,12 +64,11 @@ extension PrettyLogFormatTests {
         let expectedFormattedMessage = "\(expectedDate)|\(expectedUtcDate)|afile.swift|afile|afunction(arg:)|" +
             "afunction|25|a message|🔵|DEBUG  |D|200|a-tag"
 
-        let actualMessage = format.formattedMessage(from: "a message",
-                                                    withSeverity: LogSeverity.debug,
-                                                    withTag: "a-tag",
-                                                    forFile: "path/afile.swift",
-                                                    forFunction: "afunction(arg:)",
-                                                    forLine: 25)
+        let actualMessage = format.formattedMessage(
+            from: "a message",
+            withSeverity: LogSeverity.debug,
+            taggedWith: "a-tag",
+            calledAt: LogCallSite(file: "path/afile.swift", function: "afunction(arg:)", line: 25))
 
         expect(actualMessage).to(equal(expectedFormattedMessage))
     }
@@ -80,10 +79,8 @@ extension PrettyLogFormatTests {
 
         let actualMessage = format.formattedMessage(from: "",
                                                     withSeverity: severity,
-                                                    withTag: "",
-                                                    forFile: "",
-                                                    forFunction: "",
-                                                    forLine: 0)
+                                                    taggedWith: "",
+                                                    calledAt: LogCallSite(file: "", function: "", line: 0))
 
         expect(actualMessage).to(equal("Unknown"))
     }
@@ -93,10 +90,8 @@ extension PrettyLogFormatTests {
 
         let actualMessage = format.formattedMessage(from: "",
                                                     withSeverity: LogSeverity.error,
-                                                    withTag: "",
-                                                    forFile: "",
-                                                    forFunction: "somefunction",
-                                                    forLine: 0)
+                                                    taggedWith: "",
+                                                    calledAt: LogCallSite(file: "", function: "somefunction", line: 0))
 
         expect(actualMessage).to(equal("somefunction"))
     }
@@ -107,12 +102,11 @@ extension PrettyLogFormatTests {
         let expectedDate = expectedDateString(forDate: clock.now!, dateFormat: PrettyLogFormat.defaultDateFormat)
         let expectedFormattedMessage = "\(expectedDate) | a-tag | 🔵 DEBUG   | afile:afunction:25 | a message"
 
-        let actualMessage = format.formattedMessage(from: "a message",
-                                                    withSeverity: LogSeverity.debug,
-                                                    withTag: "a-tag",
-                                                    forFile: "path/afile.swift",
-                                                    forFunction: "afunction(arg:)",
-                                                    forLine: 25)
+        let actualMessage = format.formattedMessage(
+            from: "a message",
+            withSeverity: LogSeverity.debug,
+            taggedWith: "a-tag",
+            calledAt: LogCallSite(file: "path/afile.swift", function: "afunction(arg:)", line: 25))
 
         expect(actualMessage).to(equal(expectedFormattedMessage))
     }

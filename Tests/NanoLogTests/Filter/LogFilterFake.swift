@@ -20,7 +20,7 @@ class LogFilterFake {
 
 // MARK: - LogFilter
 extension LogFilterFake: LogFilter {
-    func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool {
+    func isLoggable(at severity: LogSeverity, taggedWith tag: String) -> Bool {
         return loggable
     }
 }

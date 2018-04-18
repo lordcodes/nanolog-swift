@@ -148,10 +148,10 @@ extension NanoLogTests {
         expect(self.controller.loggedSeverity?.severity).to(equal(expectedSeverity.severity))
     }
 
-    func test_whenWithLoggingTag_thenTagSetOnController() {
+    func test_whenRegisterLoggingTag_thenTagSetOnController() {
         let expectedTag = "some-special-tag"
 
-        NanoLog.withLoggingTag(expectedTag)
+        NanoLog.register(loggingTag: expectedTag)
 
         expect(self.controller.loggedTag).to(equal(expectedTag))
     }
@@ -164,12 +164,8 @@ extension NanoLogTests {
 
     func test_whenAddDefaultConsoleLane_thenLaneSetOnController() {
         NanoLog.addDefaultConsoleLane()
-        controller.loggedLanes[0].deliver(message: "",
-                                          withSeverity: LogSeverity.debug,
-                                          withTag: "",
-                                          forFile: "",
-                                          forFunction: "",
-                                          forLine: 0)
+        controller.loggedLanes[0].deliver("", withSeverity: LogSeverity.debug, taggedWith: "",
+                                          calledAt: LogCallSite(file: "", function: "", line: 0))
 
         expect(self.controller.loggedLanes.count).to(equal(1))
     }
