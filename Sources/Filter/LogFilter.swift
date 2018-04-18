@@ -27,5 +27,5 @@ public protocol LogFilter {
 
      - returns: Whether a message should be logged.
      */
-    func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool
+    func isLoggable(at severity: LogSeverity, taggedWith tag: String) -> Bool
 }

@@ -31,7 +31,7 @@ public class MinimumSeverityFilter {
     }
 }
 
-//MARK: - LogFilter
+// MARK: - LogFilter
 extension MinimumSeverityFilter: LogFilter {
 
     // MARK: Filtering
@@ -48,7 +48,7 @@ extension MinimumSeverityFilter: LogFilter {
 
      - returns: Whether a message should be logged, based on if its severity is above or equal to the minimum severity.
      */
-    public func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool {
+    public func isLoggable(at severity: LogSeverity, taggedWith tag: String) -> Bool {
         return severity >= minimumSeverity
     }
 }
