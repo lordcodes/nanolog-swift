@@ -12,7 +12,7 @@ before_install:
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       bundle install;
       bundle exec fastlane dependencies;
-      ./Scripts/install_swiftlint.sh
+      ./Scripts/install-swiftlint.sh
     fi
   - |
     if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
