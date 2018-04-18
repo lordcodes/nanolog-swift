@@ -275,10 +275,8 @@ You can also use your own implementation of the [`LogFormat`](Sources/Format/Log
 class CustomLogFormat: LogFormat {
   public func formattedMessage(from message: @autoclosure () -> Any,
                                withSeverity severity: LogSeverity,
-                               withTag tag: String,
-                               forFile file: String,
-                               forFunction function: String,
-                               forLine line: Int) -> String {
+                               taggedWith tag: String,
+                               calledAt callSite: LogCallSite) -> String {
 
       return "\(severity.label): \(message)"
     }
@@ -303,7 +301,7 @@ You can write your own logging filters as well.
 
 ```swift
 class ImportantFilter: LogFilter {
-    func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool {
+    func isLoggable(at severity severity: LogSeverity, taggedWith tag: String) -> Bool {
         return tag == "IMPORTANT"
     }
 }
