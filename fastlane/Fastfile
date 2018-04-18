@@ -43,6 +43,14 @@ lane :deploy_pod do
   )
 end
 
+desc "Run all pre-build checks"
+lane :check do
+  swiftlint(
+    output_file: ENV["LOCAL_OUTPUT_DIR"] + "/swiftlint-results.html",
+    reporter: "html"
+  )
+end
+
 desc "Run all the unit tests"
 lane :test do
   reset_simulators if is_ci?
