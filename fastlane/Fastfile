@@ -46,7 +46,7 @@ end
 desc "Run all pre-build checks"
 lane :check do
   swiftlint(
-    output_file: ENV["LOCAL_OUTPUT_DIR"] + "/swiftlint-results.html",
+    output_file: "swiftlint-results.html",
     reporter: "html"
   )
 end
