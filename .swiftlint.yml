@@ -1,6 +1,11 @@
 disabled_rules:
   - weak_delegate
 
+included:
+  - Sources
+  - Tests
+  - NanoLog Sample/Sources
+
 excluded:
   - Carthage
 
