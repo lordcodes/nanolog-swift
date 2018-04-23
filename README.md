@@ -10,6 +10,12 @@ A **powerful** and **extensible** logging framework for Swift that is **small** 
 
 ![Console logging](web/img/example-console-output.png)
 
+&nbsp;
+
+<p align="center">
+    <a href="#usage">Features</a> • <a href="#installation">Installation</a> • <a href="#usage">Usage</a>
+</p>
+
 ***
 
 ## Key Benefits
