@@ -114,7 +114,7 @@ public protocol LogController {
 
      - parameter tag: The tag to register.
      */
-    func loggingTag(_ tag: String)
+    func register(loggingTag tag: String)
 
     /**
      Add a lane to deliver log messages to. Lanes allow you to customise the logging of messages. For the simplest

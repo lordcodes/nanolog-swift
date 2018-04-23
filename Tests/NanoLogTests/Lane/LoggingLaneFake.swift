@@ -18,25 +18,19 @@ class LoggingLaneFake {
     var deliverMessage: String?
     var deliverSeverity: LogSeverity?
     var deliverTag: String?
-    var deliverFile: String?
-    var deliverFunction: String?
-    var deliverLine: Int?
+    var deliverCallSite: LogCallSite?
 }
 
 // MARK: - LoggingLane
 extension LoggingLaneFake: LoggingLane {
-    func deliver(message: @autoclosure () -> Any,
+    func deliver(_ message: @autoclosure () -> Any,
                  withSeverity severity: LogSeverity,
-                 withTag tag: String,
-                 forFile file: String,
-                 forFunction function: String,
-                 forLine line: Int) {
+                 taggedWith tag: String,
+                 calledAt callSite: LogCallSite) {
 
         deliverMessage = "\(message())"
         deliverSeverity = severity
         deliverTag = tag
-        deliverFile = file
-        deliverFunction = function
-        deliverLine = line
+        deliverCallSite = callSite
     }
 }

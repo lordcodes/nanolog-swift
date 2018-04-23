@@ -12,15 +12,8 @@
 //
 // See the License for the specific language governing permissions and limitations under the License.
 
-@testable import NanoLog
-
-class LogFilterFake {
-    var loggable = false
-}
-
-// MARK: - LogFilter
-extension LogFilterFake: LogFilter {
-    func isLoggable(at severity: LogSeverity, taggedWith tag: String) -> Bool {
-        return loggable
-    }
+public struct LogCallSite {
+    let file: String
+    let function: String
+    let line: Int
 }

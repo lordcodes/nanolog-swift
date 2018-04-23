@@ -123,6 +123,10 @@
 		F6FBDB5B202E031400BB4D85 /* LogControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */; };
 		F6FBDB5C202E031500BB4D85 /* LogControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */; };
 		F6FBDB5D202E031500BB4D85 /* LogControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */; };
+		F6FFF2F42087CE4E0018C572 /* LogCallSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF2F32087CE4E0018C572 /* LogCallSite.swift */; };
+		F6FFF2F52087D3210018C572 /* LogCallSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF2F32087CE4E0018C572 /* LogCallSite.swift */; };
+		F6FFF2F62087D3210018C572 /* LogCallSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF2F32087CE4E0018C572 /* LogCallSite.swift */; };
+		F6FFF2F72087D3220018C572 /* LogCallSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF2F32087CE4E0018C572 /* LogCallSite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +205,12 @@
 		F6FBDB40202DC65A00BB4D85 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F6FBDB41202DC65A00BB4D85 /* NanoLog.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NanoLog.podspec; sourceTree = "<group>"; };
 		F6FBDB59202E031000BB4D85 /* LogControllerFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogControllerFake.swift; sourceTree = "<group>"; };
+		F6FFF2EE2087B86D0018C572 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		F6FFF2EF2087B8750018C572 /* .jazzy.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .jazzy.yml; sourceTree = "<group>"; };
+		F6FFF2F02087B87D0018C572 /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
+		F6FFF2F12087B8840018C572 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		F6FFF2F22087B8A10018C572 /* .ruby-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".ruby-version"; sourceTree = "<group>"; };
+		F6FFF2F32087CE4E0018C572 /* LogCallSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCallSite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,9 +276,15 @@
 			isa = PBXGroup;
 			children = (
 				F6D23206202F994300D862C1 /* .gitignore */,
+				F6FFF2EF2087B8750018C572 /* .jazzy.yml */,
+				F6FFF2F22087B8A10018C572 /* .ruby-version */,
+				F6FFF2F02087B87D0018C572 /* .swift-version */,
+				F6FFF2EE2087B86D0018C572 /* .swiftlint.yml */,
+				F6FFF2F12087B8840018C572 /* .travis.yml */,
 				F6D23200202F978100D862C1 /* Cartfile.private */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				F6FBDB3D202DC61200BB4D85 /* fastlane */,
+				F6D23207202F99FB00D862C1 /* Frameworks */,
 				F6FBDB3E202DC65900BB4D85 /* Gemfile */,
 				F6FBDB41202DC65A00BB4D85 /* NanoLog.podspec */,
 				F6FBDB40202DC65A00BB4D85 /* Package.swift */,
@@ -276,7 +292,6 @@
 				F6FBDB3F202DC65A00BB4D85 /* README.md */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				8933C7831EB5B7EB000D00A4 /* Tests */,
-				F6D23207202F99FB00D862C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -370,6 +385,7 @@
 		F65CFC35202B824A00C3EC6C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F6FFF2F32087CE4E0018C572 /* LogCallSite.swift */,
 				F65CFC36202B824A00C3EC6C /* LogController.swift */,
 				F65063C4202B83E100535D9B /* NanoLogController.swift */,
 			);
@@ -526,6 +542,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6D9901BEFF229002C0205 /* Build configuration list for PBXNativeTarget "NanoLog-iOS" */;
 			buildPhases = (
+				F6FFF2EA2087B6FC0018C572 /* Run SwiftLint */,
 				52D6D9771BEFF229002C0205 /* Sources */,
 				52D6D9781BEFF229002C0205 /* Frameworks */,
 				52D6D9791BEFF229002C0205 /* Headers */,
@@ -563,6 +580,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6D9E71BEFFF6E002C0205 /* Build configuration list for PBXNativeTarget "NanoLog-watchOS" */;
 			buildPhases = (
+				F6FFF2EC2087B7470018C572 /* Run SwiftLint */,
 				52D6D9DD1BEFFF6E002C0205 /* Sources */,
 				52D6D9DE1BEFFF6E002C0205 /* Frameworks */,
 				52D6D9DF1BEFFF6E002C0205 /* Headers */,
@@ -581,6 +599,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6DA011BEFFFBE002C0205 /* Build configuration list for PBXNativeTarget "NanoLog-tvOS" */;
 			buildPhases = (
+				F6FFF2ED2087B7530018C572 /* Run SwiftLint */,
 				52D6D9EB1BEFFFBE002C0205 /* Sources */,
 				52D6D9EC1BEFFFBE002C0205 /* Frameworks */,
 				52D6D9ED1BEFFFBE002C0205 /* Headers */,
@@ -599,6 +618,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6DA201BF000BD002C0205 /* Build configuration list for PBXNativeTarget "NanoLog-macOS" */;
 			buildPhases = (
+				F6FFF2EB2087B7360018C572 /* Run SwiftLint */,
 				52D6DA0A1BF000BD002C0205 /* Sources */,
 				52D6DA0B1BF000BD002C0205 /* Frameworks */,
 				52D6DA0C1BF000BD002C0205 /* Headers */,
@@ -815,6 +835,62 @@
 			shellPath = /bin/sh;
 			shellScript = "carthage copy-frameworks";
 		};
+		F6FFF2EA2087B6FC0018C572 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"$CI\" ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi";
+		};
+		F6FFF2EB2087B7360018C572 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"$CI\" ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi";
+		};
+		F6FFF2EC2087B7470018C572 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"$CI\" ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi";
+		};
+		F6FFF2ED2087B7530018C572 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"$CI\" ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -839,6 +915,7 @@
 				F65CFC3D202B824B00C3EC6C /* LogFilter.swift in Sources */,
 				F6D231E1202E563F00D862C1 /* LogFormat.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* NanoLog.swift in Sources */,
+				F6FFF2F42087CE4E0018C572 /* LogCallSite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -884,6 +961,7 @@
 				F6FBDB55202DFD6800BB4D85 /* LogSeverity.swift in Sources */,
 				F65063D0202B83F400535D9B /* NanoLogController.swift in Sources */,
 				F6D231FA202F7DC500D862C1 /* PrettyLogFormat.swift in Sources */,
+				F6FFF2F62087D3210018C572 /* LogCallSite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,6 +986,7 @@
 				F6FBDB53202DFD6800BB4D85 /* LogSeverity.swift in Sources */,
 				F65063D1202B83F400535D9B /* NanoLogController.swift in Sources */,
 				F6D231F8202F7DC400D862C1 /* PrettyLogFormat.swift in Sources */,
+				F6FFF2F72087D3220018C572 /* LogCallSite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -932,6 +1011,7 @@
 				F6FBDB57202DFD6900BB4D85 /* LogSeverity.swift in Sources */,
 				F65063CF202B83F300535D9B /* NanoLogController.swift in Sources */,
 				F6D231FC202F7DC500D862C1 /* PrettyLogFormat.swift in Sources */,
+				F6FFF2F52087D3210018C572 /* LogCallSite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -73,20 +73,16 @@ extension PrettyLogFormat: LogFormat {
      */
     public func formattedMessage(from message: @autoclosure () -> Any,
                                  withSeverity severity: LogSeverity,
-                                 withTag tag: String,
-                                 forFile file: String,
-                                 forFunction function: String,
-                                 forLine line: Int) -> String {
+                                 taggedWith tag: String,
+                                 calledAt callSite: LogCallSite) -> String {
 
         var formattedMessage = ""
         for component in components {
             if let formattedComponent = createFormattedComponent(component,
                                                                  from: message,
                                                                  withSeverity: severity,
-                                                                 withTag: tag,
-                                                                 forFile: file,
-                                                                 forFunction: function,
-                                                                 forLine: line) {
+                                                                 taggedWith: tag,
+                                                                 calledAt: callSite) {
                 formattedMessage += formattedComponent
             }
         }
@@ -98,21 +94,19 @@ private extension PrettyLogFormat {
     private func createFormattedComponent(_ component: LogFormatComponent,
                                           from message: @autoclosure () -> Any,
                                           withSeverity severity: LogSeverity,
-                                          withTag tag: String,
-                                          forFile file: String,
-                                          forFunction function: String,
-                                          forLine line: Int) -> String? {
+                                          taggedWith tag: String,
+                                          calledAt callSite: LogCallSite) -> String? {
         switch component {
         case .date(let dateFormat):
             return createDate(withFormat: dateFormat)
         case .dateUtc(let dateFormat):
             return createUtcDate(withFormat: dateFormat)
         case .file(let withExtension):
-            return createFile(file, withExtension: withExtension)
+            return createFile(callSite.file, withExtension: withExtension)
         case .function(let withArgs):
-            return createFunction(function, withArgs: withArgs)
+            return createFunction(callSite.function, withArgs: withArgs)
         case .lineNumber:
-            return "\(line)"
+            return "\(callSite.line)"
         case .message:
             return "\(message())"
         case .separator(let string):

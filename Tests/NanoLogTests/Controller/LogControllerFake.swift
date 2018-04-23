@@ -26,7 +26,7 @@ class LogControllerFake {
 
 // MARK: - LogController
 extension LogControllerFake: LogController {
-    func loggingTag(_ tag: String) {
+    func register(loggingTag tag: String) {
         loggedTag = tag
     }
 

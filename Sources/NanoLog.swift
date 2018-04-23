@@ -240,8 +240,8 @@ public class NanoLog {
 
      - parameter tag: The tag to register.
      */
-    public static func withLoggingTag(_ tag: String) {
-        controller.loggingTag(tag)
+    public static func register(loggingTag tag: String) {
+        controller.register(loggingTag: tag)
     }
 
     /**

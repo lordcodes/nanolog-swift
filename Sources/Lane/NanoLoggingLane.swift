@@ -59,23 +59,17 @@ extension NanoLoggingLane: LoggingLane {
      - parameter message: The message to be logged.
      - parameter severity: The severity the message is logged at.
      - parameter tag: The tag attached to a particular message.
-     - parameter file: The file the log call came from.
-     - parameter function: The function the log call came from.
-     - parameter line: The line number of the log call.
+     - parameter callSite: The call site the log call came from (e.g. file, function, line).
      */
-    public func deliver(message: @autoclosure () -> Any,
+    public func deliver(_ message: @autoclosure () -> Any,
                         withSeverity severity: LogSeverity,
-                        withTag tag: String,
-                        forFile file: String,
-                        forFunction function: String,
-                        forLine line: Int) {
-        if filter.isLoggable(atSeverity: severity, withTag: tag) {
+                        taggedWith tag: String,
+                        calledAt callSite: LogCallSite) {
+        if filter.isLoggable(at: severity, taggedWith: tag) {
             let formattedMessage = format.formattedMessage(from: message,
                                                            withSeverity: severity,
-                                                           withTag: tag,
-                                                           forFile: file,
-                                                           forFunction: function,
-                                                           forLine: line)
+                                                           taggedWith: tag,
+                                                           calledAt: callSite)
             printer.printMessage(formattedMessage)
         }
     }

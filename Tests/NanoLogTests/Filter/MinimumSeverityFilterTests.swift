@@ -24,19 +24,19 @@ class MinimumSeverityFilterTests: XCTestCase {
 // MARK: - Tests
 extension MinimumSeverityFilterTests {
     func test_whenIsLoggable_thenTrue_givenEqualSeverity() {
-        let result = filter.isLoggable(atSeverity: LogSeverity.info, withTag: "tag")
+        let result = filter.isLoggable(at: LogSeverity.info, taggedWith: "tag")
 
         expect(result).to(beTrue())
     }
 
     func test_whenIsLoggable_thenTrue_givenGreaterSeverity() {
-        let result = filter.isLoggable(atSeverity: LogSeverity.warning, withTag: "tag")
+        let result = filter.isLoggable(at: LogSeverity.warning, taggedWith: "tag")
 
         expect(result).to(beTrue())
     }
 
     func test_whenIsLoggable_thenFalse_givenLowerSeverity() {
-        let result = filter.isLoggable(atSeverity: LogSeverity.verbose, withTag: "tag")
+        let result = filter.isLoggable(at: LogSeverity.verbose, taggedWith: "tag")
 
         expect(result).to(beFalse())
     }
