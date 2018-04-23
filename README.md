@@ -379,7 +379,13 @@ In the above example, any log calls at the 'error' severity will now use the new
 
 ## Contributing
 
-Issues and pull requests are welcome!
+- [Open an issue](https://github.com/andrewlord1990/nanolog-swift/issues)
+
+If you find something that you don't think is working correctly, you have a feature you would like to see in NanoLog or just because you want to ask for some help, please [open an issue](https://github.com/andrewlord1990/nanolog-swift/issues).
+
+- [Open a PR](https://github.com/andrewlord1990/nanolog-swift/pulls)
+
+If you would like to contribute some changes to NanoLog, I would greatly appreciate a PR. If you would like to make a major change, please create an issue first to discuss it.
 
 ## Author
 
