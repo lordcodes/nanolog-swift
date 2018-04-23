@@ -152,12 +152,10 @@ extension NanoLogController: LogController {
                            line: Int = #line) {
 
         for lane in loggingLanes {
-            lane.deliver(message: message,
+            lane.deliver(message,
                          withSeverity: severity,
-                         withTag: tag,
-                         forFile: file,
-                         forFunction: function,
-                         forLine: line)
+                         taggedWith: tag,
+                         calledAt: LogCallSite(file: file, function: function, line: line))
         }
     }
 
@@ -169,7 +167,7 @@ extension NanoLogController: LogController {
 
      - parameter tag: The tag to register.
      */
-    public func loggingTag(_ tag: String) {
+    public func register(loggingTag tag: String) {
         self.tag = tag
     }
 

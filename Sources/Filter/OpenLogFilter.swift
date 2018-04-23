@@ -39,7 +39,7 @@ extension OpenLogFilter: LogFilter {
 
      - returns: Whether a message should be logged, which is always true.
      */
-    public func isLoggable(atSeverity severity: LogSeverity, withTag tag: String) -> Bool {
+    public func isLoggable(at severity: LogSeverity, taggedWith tag: String) -> Bool {
         return true
     }
 }
