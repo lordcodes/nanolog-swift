@@ -24,7 +24,7 @@ class OpenLogFilterTests: XCTestCase {
 // MARK: - Tests
 extension OpenLogFilterTests {
     func test_whenIsLoggable_thenTrue() {
-        let actualLoggable = filter.isLoggable(atSeverity: LogSeverity.info, withTag: "Some tag")
+        let actualLoggable = filter.isLoggable(at: LogSeverity.info, taggedWith: "Some tag")
 
         expect(actualLoggable).to(beTrue())
     }

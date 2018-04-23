@@ -31,10 +31,10 @@ class NanoLogControllerTests: XCTestCase {
 
 // MARK: - Tests
 extension NanoLogControllerTests {
-    func test_whenLoggingTag_thenTagSet() {
+    func test_whenRegisterLoggingTag_thenTagSet() {
         let expectedTag = "some-expected-tag"
 
-        controller.loggingTag(expectedTag)
+        controller.register(loggingTag: expectedTag)
         controller.logVerbose("Test", file: "File", function: "Function", line: 0)
 
         expect(self.lane.deliverTag).to(equal(expectedTag))
@@ -71,9 +71,9 @@ extension NanoLogControllerTests {
 
         expect(self.lane.deliverMessage).to(equal(expectedMessage))
         expect(self.lane.deliverSeverity?.label).to(equal(LogSeverity.verbose.label))
-        expect(self.lane.deliverFile).to(equal(expectedFile))
-        expect(self.lane.deliverFunction).to(equal(expectedFunction))
-        expect(self.lane.deliverLine).to(equal(expectedLine))
+        expect(self.lane.deliverCallSite?.file).to(equal(expectedFile))
+        expect(self.lane.deliverCallSite?.function).to(equal(expectedFunction))
+        expect(self.lane.deliverCallSite?.line).to(equal(expectedLine))
     }
 
     func test_whenLogDebug_thenDebugMessageDelivered() {
@@ -86,9 +86,9 @@ extension NanoLogControllerTests {
 
         expect(self.lane.deliverMessage).to(equal(expectedMessage))
         expect(self.lane.deliverSeverity?.label).to(equal(LogSeverity.debug.label))
-        expect(self.lane.deliverFile).to(equal(expectedFile))
-        expect(self.lane.deliverFunction).to(equal(expectedFunction))
-        expect(self.lane.deliverLine).to(equal(expectedLine))
+        expect(self.lane.deliverCallSite?.file).to(equal(expectedFile))
+        expect(self.lane.deliverCallSite?.function).to(equal(expectedFunction))
+        expect(self.lane.deliverCallSite?.line).to(equal(expectedLine))
     }
 
     func test_whenLogInfo_thenInfoMessageDelivered() {
@@ -101,9 +101,9 @@ extension NanoLogControllerTests {
 
         expect(self.lane.deliverMessage).to(equal(expectedMessage))
         expect(self.lane.deliverSeverity?.label).to(equal(LogSeverity.info.label))
-        expect(self.lane.deliverFile).to(equal(expectedFile))
-        expect(self.lane.deliverFunction).to(equal(expectedFunction))
-        expect(self.lane.deliverLine).to(equal(expectedLine))
+        expect(self.lane.deliverCallSite?.file).to(equal(expectedFile))
+        expect(self.lane.deliverCallSite?.function).to(equal(expectedFunction))
+        expect(self.lane.deliverCallSite?.line).to(equal(expectedLine))
     }
 
     func test_whenLogWarning_thenWarningMessageDelivered() {
@@ -116,9 +116,9 @@ extension NanoLogControllerTests {
 
         expect(self.lane.deliverMessage).to(equal(expectedMessage))
         expect(self.lane.deliverSeverity?.label).to(equal(LogSeverity.warning.label))
-        expect(self.lane.deliverFile).to(equal(expectedFile))
-        expect(self.lane.deliverFunction).to(equal(expectedFunction))
-        expect(self.lane.deliverLine).to(equal(expectedLine))
+        expect(self.lane.deliverCallSite?.file).to(equal(expectedFile))
+        expect(self.lane.deliverCallSite?.function).to(equal(expectedFunction))
+        expect(self.lane.deliverCallSite?.line).to(equal(expectedLine))
     }
 
     func test_whenLogError_thenErrorMessageDelivered() {
@@ -131,9 +131,9 @@ extension NanoLogControllerTests {
 
         expect(self.lane.deliverMessage).to(equal(expectedMessage))
         expect(self.lane.deliverSeverity?.label).to(equal(LogSeverity.error.label))
-        expect(self.lane.deliverFile).to(equal(expectedFile))
-        expect(self.lane.deliverFunction).to(equal(expectedFunction))
-        expect(self.lane.deliverLine).to(equal(expectedLine))
+        expect(self.lane.deliverCallSite?.file).to(equal(expectedFile))
+        expect(self.lane.deliverCallSite?.function).to(equal(expectedFunction))
+        expect(self.lane.deliverCallSite?.line).to(equal(expectedLine))
     }
 
     func test_whenLogMessage_thenMessageWithSeverityDelivered() {
@@ -151,16 +151,16 @@ extension NanoLogControllerTests {
 
         expect(self.lane.deliverMessage).to(equal(expectedMessage))
         expect(self.lane.deliverSeverity?.label).to(equal(expectedSeverity.label))
-        expect(self.lane.deliverFile).to(equal(expectedFile))
-        expect(self.lane.deliverFunction).to(equal(expectedFunction))
-        expect(self.lane.deliverLine).to(equal(expectedLine))
+        expect(self.lane.deliverCallSite?.file).to(equal(expectedFile))
+        expect(self.lane.deliverCallSite?.function).to(equal(expectedFunction))
+        expect(self.lane.deliverCallSite?.line).to(equal(expectedLine))
     }
 }
 
 #if os(Linux)
 extension NanoLogControllerTests {
     static var allTests = [
-        ("test_whenLoggingTag_thenTagSet", test_whenLoggingTag_thenTagSet),
+        ("test_whenRegisterLoggingTag_thenTagSet", test_whenRegisterLoggingTag_thenTagSet),
         ("test_whenAddLoggingLane_thenMessageDeliveredToIt", test_whenAddLoggingLane_thenMessageDeliveredToIt),
         ("test_whenRemoveAllLoggingLanes_thenMessageNotDeliveredToLane", test_whenRemoveAllLoggingLanes_thenMessageNotDeliveredToLane),
         ("test_whenLogVerbose_thenVerboseMessageDelivered", test_whenLogVerbose_thenVerboseMessageDelivered),

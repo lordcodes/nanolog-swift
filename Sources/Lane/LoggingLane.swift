@@ -25,14 +25,10 @@ public protocol LoggingLane {
      - parameter message: The message to be logged.
      - parameter severity: The severity the message is logged at.
      - parameter tag: The tag attached to a particular message.
-     - parameter file: The file the log call came from.
-     - parameter function: The function the log call came from.
-     - parameter line: The line number of the log call.
+     - parameter callSite: The call site the log call came from (e.g. file, function, line).
      */
-    func deliver(message: @autoclosure () -> Any,
+    func deliver(_ message: @autoclosure () -> Any,
                  withSeverity severity: LogSeverity,
-                 withTag tag: String,
-                 forFile file: String,
-                 forFunction function: String,
-                 forLine line: Int)
+                 taggedWith tag: String,
+                 calledAt callSite: LogCallSite)
 }

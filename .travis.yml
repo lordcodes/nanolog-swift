@@ -12,10 +12,11 @@ before_install:
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       bundle install;
       bundle exec fastlane dependencies;
+      ./Scripts/install-swiftlint.sh
     fi
   - |
     if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      eval "$(curl -sL https://swiftenv.fuller.li/install.sh)";
+      eval "$(curl -sL https://swiftenv.fuller.li/en/latest/install.sh)";
     fi
 
 stages:
@@ -40,6 +41,10 @@ jobs:
 
     - stage: test
       env: LANE=lint_podspec
+      script: bundle exec fastlane $LANE
+
+    - stage: test
+      env: LANE=check
       script: bundle exec fastlane $LANE
 
     - stage: deploy

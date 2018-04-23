@@ -103,7 +103,7 @@ extension LogSeverity: Comparable {
 
      - returns: Whether the two instances are equivalent.
      */
-    public static func ==(lhs: LogSeverity, rhs: LogSeverity) -> Bool {
+    public static func == (lhs: LogSeverity, rhs: LogSeverity) -> Bool {
         return lhs.severity == rhs.severity &&
             lhs.label == rhs.label &&
             lhs.icon == rhs.icon
@@ -117,7 +117,7 @@ extension LogSeverity: Comparable {
 
      - returns: Whether the first instance is less than the second.
      */
-    public static func <(lhs: LogSeverity, rhs: LogSeverity) -> Bool {
+    public static func < (lhs: LogSeverity, rhs: LogSeverity) -> Bool {
         return lhs.severity < rhs.severity
     }
 }

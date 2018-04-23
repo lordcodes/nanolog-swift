@@ -36,12 +36,8 @@ extension NanoLoggingLaneTests {
         let expectedMessage = "a log message"
         filter.loggable = false
 
-        lane.deliver(message: expectedMessage,
-                     withSeverity: LogSeverity.verbose,
-                     withTag: "",
-                     forFile: "",
-                     forFunction: "",
-                     forLine: 0)
+        lane.deliver(expectedMessage, withSeverity: LogSeverity.verbose, taggedWith: "",
+                     calledAt: LogCallSite(file: "", function: "", line: 0))
 
         expect(self.printer.messagePrinted).to(beNil())
     }
@@ -50,12 +46,8 @@ extension NanoLoggingLaneTests {
         let expectedMessage = "a log message"
         filter.loggable = true
 
-        lane.deliver(message: expectedMessage,
-                     withSeverity: LogSeverity.verbose,
-                     withTag: "",
-                     forFile: "",
-                     forFunction: "",
-                     forLine: 0)
+        lane.deliver(expectedMessage, withSeverity: LogSeverity.verbose, taggedWith: "",
+                     calledAt: LogCallSite(file: "", function: "", line: 0))
 
         expect(self.printer.messagePrinted).to(equal(expectedMessage))
     }

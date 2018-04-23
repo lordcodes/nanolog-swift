@@ -1,0 +1,21 @@
+disabled_rules:
+  - weak_delegate
+
+included:
+  - Sources
+  - Tests
+  - NanoLog Sample/Sources
+
+excluded:
+  - Carthage
+
+line_length:
+  warning: 150
+  error: 250
+
+type_name:
+  min_length:
+    error: 1
+  max_length:
+    warning: 50
+    error: 100
