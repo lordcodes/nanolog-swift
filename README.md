@@ -234,6 +234,23 @@ func someMethod(withIntArg intArg: Int) {
   NanoLog.verbose("Something verbose")
 }
 ```
+### Disable Logging in Production
+
+Often you will just want to use the default logging lane, which outputs to the console. Needless to say, particularly for iOS, watchOS, tvOS and MacOS, you won't want this logging enabled in production. A very simple way to achieve this is to not enable logging except for development builds of the app.
+
+```swift
+#if ENABLE_LOGGING
+NanoLog.addDefaultConsoleLane()
+#endif
+```
+
+For the `DEBUG` symbol to work you must set it:
+- Open your project file
+- Select `Build Settings`
+- Got to `Swift Compiler - Custom Flags`
+- Add `-D ENABLE_LOGGING` to the `Other Swift Flags` option.
+
+To only enable logging for development builds, you will only want to set this for `Debug`.
 
 ## Advanced Usage
 
