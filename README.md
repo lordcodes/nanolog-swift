@@ -13,7 +13,7 @@ A **powerful** and **extensible** logging framework for Swift that is **small** 
 &nbsp;
 
 <p align="center">
-    <a href="#usage">Features</a> • <a href="#installation">Installation</a> • <a href="#usage">Usage</a>
+    <a href="#key-benefits">Features</a> • <a href="#installation">Installation</a> • <a href="#usage">Usage</a>
 </p>
 
 ***
