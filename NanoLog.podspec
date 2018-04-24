@@ -1,14 +1,20 @@
 Pod::Spec.new do |spec|
   spec.name = 'NanoLog'
   spec.version = '0.1'
-  spec.summary = 'Simple logging for Swift'
+  spec.summary = 'Small and simple, yet powerful, logging for Swift'
   spec.description = <<-DESC
-    Simple logging for Swift.
+    NanoLog is a Swift framework, for easily adding logging to your apps.
+    It is small, but powerful and offers an extensible API along with many
+    customisations.
+
+    It is easy-to-use; lightweight; extensible; offers multiple severity
+    levels; provides coloured output; shows the context of your log calls;
+    has a customisable log format and is fully documented.
   DESC
   spec.homepage = 'https://github.com/andrewlord1990/nanolog-swift'
   spec.license = { type: 'MIT', file: 'LICENSE' }
   spec.author = { 'Andrew Lord' => 'andrewlord1990@gmail.com' }
-  spec.social_media_url = ''
+  spec.social_media_url = 'https://twitter.com/@andrewlord1990'
 
   spec.ios.deployment_target = '8.0'
   spec.osx.deployment_target = '10.10'
