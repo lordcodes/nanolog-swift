@@ -74,7 +74,7 @@ You can use [Carthage](https://github.com/Carthage/Carthage) to integrate NanoLo
 To do so, simply specify the dependency in your `Cartfile`:
 
 ```ogdl
-github "andrewlord1990/NanoLog" == '0.0.1'
+github "andrewlord1990/NanoLog" == '0.1'
 ```
 
 </p>
@@ -89,7 +89,7 @@ You can use [CocoaPods](http://cocoapods.org) to integrate NanoLog into your Xco
 To do so, simply specify the dependency in your `Podfile`:
 
 ```ruby
-pod 'NanoLog', '0.0.1'
+pod 'NanoLog', '0.1'
 ```
 
 </p>
@@ -104,7 +104,7 @@ You can use [Swift Package Manager](https://swift.org/package-manager/) to integ
 To do so, simply specify the dependency in your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/andrewlord1990/nanolog-swift.git", .exact("0.0.1"))
+.package(url: "https://github.com/andrewlord1990/nanolog-swift.git", .exact("0.1"))
 ```
 
 </p>
