@@ -74,7 +74,7 @@ You can use [Carthage](https://github.com/Carthage/Carthage) to integrate NanoLo
 To do so, simply specify the dependency in your `Cartfile`:
 
 ```ogdl
-github "andrewlord1990/NanoLog" == '0.1'
+github "andrewlord1990/nanolog-swift" == 0.1
 ```
 
 </p>
