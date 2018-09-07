@@ -412,7 +412,7 @@ If you would like to contribute some changes to NanoLog, I would greatly appreci
 
 ## Author
 
-Andrew Lord [@andrewlord1990](https://twitter.com/@andrewlord1990)
+Andrew Lord [@lordcodes](https://twitter.com/@lordcodes)
 
 ## License
 
