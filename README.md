@@ -1,10 +1,8 @@
 # NanoLog
 
-[![Build Status](https://travis-ci.org/andrewlord1990/nanolog-swift.svg?branch=master)](https://travis-ci.org/andrewlord1990/nanolog-swift)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/NanoLog.svg)](https://cocoapods.org/pods/NanoLog)
-[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/andrewlord1990/nanolog-swift/blob/master/LICENSE)
+NOTE - No longer actively developed. The repository should be treated as a demo framework and not an actively maintained logging framework. It was originally created to try out some ideas with logging in Swift and creating a Swift framework. There are many other powerful logging frameworks available for Swift and so this repository won't be actively developed any further. As such, no support will be provided for this repository.
+
+# Details
 
 A **powerful** and **extensible** logging framework for Swift that is **small** and **easy** to use!
 
@@ -399,16 +397,6 @@ LogSeverity.error = LogSeverity(severity: 500, label: "ALERT", icon: "🔺")
 ```
 
 In the above example, any log calls at the 'error' severity will now use the new label and icon.
-
-## Contributing
-
-- [Open an issue](https://github.com/andrewlord1990/nanolog-swift/issues)
-
-If you find something that you don't think is working correctly, you have a feature you would like to see in NanoLog or just because you want to ask for some help, please [open an issue](https://github.com/andrewlord1990/nanolog-swift/issues).
-
-- [Open a PR](https://github.com/andrewlord1990/nanolog-swift/pulls)
-
-If you would like to contribute some changes to NanoLog, I would greatly appreciate a PR. If you would like to make a major change, please create an issue first to discuss it.
 
 ## Author
 
