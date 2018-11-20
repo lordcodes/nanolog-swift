@@ -401,7 +401,3 @@ In the above example, any log calls at the 'error' severity will now use the new
 ## Author
 
 Andrew Lord [@lordcodes](https://twitter.com/@lordcodes)
-
-## License
-
-NanoLog is released under the Apache 2.0 license. See [LICENSE](https://github.com/andrewlord1990/nanolog-swift/blob/master/LICENSE) for details.
